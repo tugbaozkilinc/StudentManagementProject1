@@ -11,9 +11,6 @@ public class MainMenu {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
-
-
     @FindBy(linkText = "Admin Management")
     public WebElement adminManagement;
 
@@ -44,12 +41,10 @@ public class MainMenu {
     @FindBy(linkText = "Contact Get All")
     public WebElement contactGetAll;
 
-
     @FindBy(linkText = "Guest User")
     public WebElement guestUser;
 
     @FindBy(linkText = "Logout")
     public WebElement logout;
-
 
 }
