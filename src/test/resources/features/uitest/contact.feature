@@ -28,8 +28,8 @@
 
   Examples:
     | name |     email     | subject  |    message   | warning message   |
-  ##  |      | t09@gmail.com | schedule | T09 Was Here |                       |  name boş olunca kabul ediyor
-  ##  | John |               | schedule | T09 Was Here |  Please enter valid email | yanlış hata mesajı geliyor
+  ##  |      | t09@gmail.com | schedule | T09 Was Here |  bos birakilamamali                     |  name boş olunca kabul ediyor
+   ## | John |               | schedule | T09 Was Here |  Boyut 5 - 80 Arası olmalı |
   ##  | John | t09@mail.com  |          | T09 Was Here |                       |    subject boş olunca kabul ediyor
   ##  | John | t09@gmail.com | schedule |              |                           |  message boş olunca kabul ediyor
     | John | t09.gmail.com | schedule | T09 Was Here |  Please enter valid email |

@@ -5,51 +5,56 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import pages.HomePage;
+import pages.MainMenu;
 import pages.ViceDeanManagement;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.Map;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class ViceDeanManagementStepDefinitions {
+public class ViceDeanManagementStepDefinitions extends AbstractClassVerifyingThePage {
 
-    ViceDeanManagement deanHomePage = new ViceDeanManagement();
-
-
+    ViceDeanManagement viceDeanManagement = new ViceDeanManagement();
+    MainMenu mainMenu = new MainMenu();
+    HomePage homePage = new HomePage();
     @Given("user is navigated to dean page")
     public void user_is_navigated_to_dean_page() {
-        assertTrue(deanHomePage.user.isDisplayed());
+        verifyingYouAreInCorrectPage(viceDeanManagement.user);
     }
 
     @When("user clicks on menu button in dean page")
     public void user_clicks_on_menu_button_in_dean_page() {
-        //deanHomePage.menuButton.click();
+        homePage.menuButton.click();
     }
 
     @When("user clicks on vice dean management button in main menu")
     public void user_clicks_on_vice_dean_management_button_in_main_menu() {
-        //deanHomePage.viceDeanManagementButton.click();
+        mainMenu.viceDeanManagement.click();
     }
 
     @When("user is navigated to vice dean management page")
     public void user_is_navigated_to_vice_dean_management_page() {
-        //assertTrue(deanHomePage.viceDeanManagementPage.isDisplayed());
+        verifyingYouAreInCorrectPage(viceDeanManagement.viceDeanManagementPage);
     }
 
     @And("user enters the date of birth in date of birth text box")
     public void userEntersTheDateOfBirthInDateOfBirthTextBox() {
-        deanHomePage.dateOfBirth.sendKeys("17Mart", Keys.TAB, "1990");
+        viceDeanManagement.dateOfBirth.sendKeys("17Mart", Keys.TAB, "1990");
     }
 
     @When("user clicks on submit button on vice dean management page")
     public void user_clicks_on_submit_button_on_vice_dean_management_page() {
-        deanHomePage.submitButton.click();
+        viceDeanManagement.submitButton.click();
     }
 
     @Then("user verifies that vice dean is created by dean")
     public void user_verifies_that_vice_dean_is_created_by_dean() {
-        assertTrue(ReusableMethods.waitForVisibility(deanHomePage.successfulMessage, 10).isDisplayed());
+        assertTrue(ReusableMethods.waitForVisibility(viceDeanManagement.successfulMessage, 10).isDisplayed());
     }
 
     @Then("user closes the application")
@@ -57,23 +62,64 @@ public class ViceDeanManagementStepDefinitions {
         Driver.closeDriver();
     }
 
-    @Then("user verifies that the required text under name text box is visible on vice dean management page")
-    public void userVerifiesThatTheRequiredTextUnderNameTextBoxIsVisibleOnViceDeanManagementPage() {
-        assertTrue(deanHomePage.nameRequiredText.isDisplayed());
+    @And("user enters the {string} in the name text box")
+    public void userEntersTheInTheNameTextBox(String arg0) {
+        viceDeanManagement.nameTextBox.sendKeys(arg0);
     }
 
-    @Then("user verifies that the required text under surname text box is visible on vice dean management page")
-    public void userVerifiesThatTheRequiredTextUnderSurnameTextBoxIsVisibleOnViceDeanManagementPage() {
-        assertTrue(deanHomePage.surnameRequiredText.isDisplayed());
+    @And("user enters the {string} in the surname text box")
+    public void userEntersTheInTheSurnameTextBox(String arg0) {
+        viceDeanManagement.surnameTextBox.sendKeys(arg0);
     }
 
-    @Then("user verifies that the required text under birth place text box is visible on vice dean management page")
-    public void userVerifiesThatTheRequiredTextUnderBirthPlaceTextBoxIsVisibleOnViceDeanManagementPage() {
+    @And("user enters the {string} in the birth place text box")
+    public void userEntersTheInTheBirthPlaceTextBox(String arg0) {
+        viceDeanManagement.birthPlaceTextBox.sendKeys(arg0);
     }
 
-    @Then("user verifies that the required text under date of birth text box is visible on vice dean management page")
-    public void userVerifiesThatTheRequiredTextUnderDateOfBirthTextBoxIsVisibleOnViceDeanManagementPage() {
-        assertTrue(deanHomePage.dateOfBirthRequiredText.isDisplayed());
+    @And("user enters the {string} in date of birth text box")
+    public void userEntersTheInDateOfBirthTextBox(String arg0) {
+        viceDeanManagement.dateOfBirth.sendKeys(arg0);
+    }
+
+    @And("user enters the {string} in the phone text box")
+    public void userEntersTheInThePhoneTextBox(String arg0) {
+        viceDeanManagement.phoneNumberTextBox.sendKeys(arg0);
+    }
+
+    @And("user enters the {string} in the ssn text box")
+    public void userEntersTheInTheSsnTextBox(String arg0) {
+        viceDeanManagement.SSNTextBox.sendKeys(arg0);
+    }
+
+    @And("user enters the {string} in the username text box")
+    public void userEntersTheInTheUsernameTextBox(String arg0) {
+        viceDeanManagement.usernameTextBox.sendKeys(arg0);
+    }
+
+    @And("user enters the {string} in the password text box")
+    public void userEntersTheInThePasswordTextBox(String arg0) {
+        viceDeanManagement.passwordTextBox.sendKeys(arg0);
+    }
+
+    @Then("user verifies that the required text under {string} is visible on vice dean management page")
+    public void userVerifiesThatTheRequiredTextUnderIsVisibleOnViceDeanManagementPage(String arg0) {
+            assertTrue(viceDeanManagement.requiredTexts.get(Integer.parseInt(arg0)).isDisplayed());
+    }
+
+    @Override
+    public void verifyingYouAreInCorrectPage(WebElement pageWebElement) {
+          assertTrue(pageWebElement.isDisplayed());
+    }
+
+    @And("user enters the invalid values {string} in date of birth text box")
+    public void userEntersTheInvalidValuesInDateOfBirthTextBox(String arg0) {
+        viceDeanManagement.dateOfBirth.sendKeys("17Mart", Keys.TAB, arg0);
+    }
+
+    @Then("user sees the warning message {string}")
+    public void userSeesTheWarningMessage(String arg0) {
+        assertTrue(ReusableMethods.waitForVisibility(viceDeanManagement.dateOfBirthErrorMessage, 10).getText().contains(arg0));
     }
 
 }
