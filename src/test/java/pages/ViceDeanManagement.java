@@ -58,7 +58,7 @@ public class ViceDeanManagement {
     @FindBy(css = "div[class='invalid-feedback']")
     public List<WebElement> requiredTexts;
 
-    @FindBy(xpath = "//div[contains(text(),'Cannot deserialize value of type')]")
+    @FindBy(xpath = "//div[@role='alert']")
     public WebElement dateOfBirthErrorMessage;
 
 }

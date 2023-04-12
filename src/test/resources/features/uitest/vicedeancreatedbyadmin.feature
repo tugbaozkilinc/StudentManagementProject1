@@ -1,8 +1,8 @@
-Feature: US06 Dean should be able to create vice dean account
+Feature: US23 Admin should be able to create vice dean account
 
-  @TC01_vice_dean_created_by_dean
-  Scenario: TC01 Creating vice dean account by dean(positive test)
-    Given user login as Dean
+  @TC01_vice_dean_created_by_admin
+  Scenario: TC01 Creating vice dean account by admin(positive test)
+    Given user login as Admin
     And user is navigated to dean page
     When user clicks on menu button in dean page
     And user clicks on vice dean management button in main menu
@@ -20,9 +20,9 @@ Feature: US06 Dean should be able to create vice dean account
     Then user verifies that vice dean is created by dean
     And user closes the application
 
-  @TC02_vice_dean_created_by_dean
-  Scenario Outline: Verifying that the inputs cannot be left blank
-    Given user login as Dean
+  @TC02_vice_dean_created_by_admin
+  Scenario Outline: Verifying that the inputs cannot be left blank while admin creates vice dean
+    Given user login as Admin
     And user is navigated to dean page
     When user clicks on menu button in dean page
     And user clicks on vice dean management button in main menu
@@ -50,9 +50,9 @@ Feature: US06 Dean should be able to create vice dean account
       | Tami | Jessie  | France      | 17Mart        | 292-454-7222 | 209-59-4414 |            | 12345678 | 6        |
       | Tami | Jessie  | France      | 17Mart        | 292-454-7222 | 209-59-4414 | TamiJessie |          | 7        |
 
-  @TC03_vice_dean_created_by_dean
-  Scenario Outline: Verifying that the date of birth input does not accept invalid formats
-    Given user login as Dean
+  @TC03_vice_dean_created_by_admin
+  Scenario Outline: Verifying that the date of birth input does not accept invalid formats while admin creates vice dean
+    Given user login as Admin
     And user is navigated to dean page
     When user clicks on menu button in dean page
     And user clicks on vice dean management button in main menu
@@ -74,41 +74,3 @@ Feature: US06 Dean should be able to create vice dean account
       | 275760        | Cannot deserialize value of type |
       | 20281         | Cannot deserialize value of type |
       | 2080          | must be a past date              |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

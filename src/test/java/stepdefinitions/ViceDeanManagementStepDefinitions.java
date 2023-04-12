@@ -5,23 +5,26 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import pages.MainMenu;
 import pages.ViceDeanManagement;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.Map;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class ViceDeanManagementStepDefinitions extends AbstractVerifyingThePageClass{
+public class ViceDeanManagementStepDefinitions extends AbstractClassVerifyingThePage {
 
     ViceDeanManagement viceDeanManagement = new ViceDeanManagement();
     MainMenu mainMenu = new MainMenu();
     HomePage homePage = new HomePage();
     @Given("user is navigated to dean page")
     public void user_is_navigated_to_dean_page() {
-        assertTrue(viceDeanManagement.user.isDisplayed());
+        verifyingYouAreInCorrectPage(viceDeanManagement.user);
     }
 
     @When("user clicks on menu button in dean page")
@@ -36,7 +39,7 @@ public class ViceDeanManagementStepDefinitions extends AbstractVerifyingThePageC
 
     @When("user is navigated to vice dean management page")
     public void user_is_navigated_to_vice_dean_management_page() {
-        assertTrue(viceDeanManagement.viceDeanManagementPage.isDisplayed());
+        verifyingYouAreInCorrectPage(viceDeanManagement.viceDeanManagementPage);
     }
 
     @And("user enters the date of birth in date of birth text box")
@@ -105,8 +108,18 @@ public class ViceDeanManagementStepDefinitions extends AbstractVerifyingThePageC
     }
 
     @Override
-    public void verifyingYouAreInCorrectPage() {
+    public void verifyingYouAreInCorrectPage(WebElement pageWebElement) {
+          assertTrue(pageWebElement.isDisplayed());
+    }
 
+    @And("user enters the invalid values {string} in date of birth text box")
+    public void userEntersTheInvalidValuesInDateOfBirthTextBox(String arg0) {
+        viceDeanManagement.dateOfBirth.sendKeys("17Mart", Keys.TAB, arg0);
+    }
+
+    @Then("user sees the warning message {string}")
+    public void userSeesTheWarningMessage(String arg0) {
+        assertTrue(ReusableMethods.waitForVisibility(viceDeanManagement.dateOfBirthErrorMessage, 10).getText().contains(arg0));
     }
 
 }
