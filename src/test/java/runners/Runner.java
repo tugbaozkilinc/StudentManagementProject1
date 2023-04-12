@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@NegativeContactTest",
+        tags = "@TC06_date_of_birth_blank",
         dryRun = false
 )
 
