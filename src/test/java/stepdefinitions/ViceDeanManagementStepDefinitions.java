@@ -5,16 +5,16 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
-import pages.DeanManagement;
+import pages.ViceDeanManagement;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class ViceDeanCreatedByDeanStepDefinitions {
+public class ViceDeanManagementStepDefinitions {
 
-    DeanManagement deanHomePage = new DeanManagement();
+    ViceDeanManagement deanHomePage = new ViceDeanManagement();
 
 
     @Given("user is navigated to dean page")
