@@ -29,6 +29,7 @@ public class StudentManagementStepDefinitions {
     @When("user clicks the Student Management on the menu")
     public void user_clicks_the_student_management_on_the_menu() {
         waitAndClick(mainMenu.studentManagement, 2);
+        waitFor(2);
     }
 
     @When("user selects the advisor teacher")
@@ -70,61 +71,6 @@ public class StudentManagementStepDefinitions {
         Assert.assertEquals(string, studentManagement.alertMessage.getText());
     }
 
-    @Then("user verifies that the required text under name text box is visible")
-    public void userVerifiesThatTheRequiredTextUnderNameTextBoxIsVisible() {
-        Assert.assertTrue(studentManagement.requiredTextForNameTextBox.isDisplayed());
-    }
-
-    @Then("user verifies that the required text under surname text box is visible")
-    public void userVerifiesThatTheRequiredTextUnderSurnameTextBoxIsVisible() {
-        Assert.assertTrue(studentManagement.requiredTextForSurnameTextBox.isDisplayed());
-    }
-
-    @Then("user verifies that the required text under birth place text box is visible")
-    public void userVerifiesThatTheRequiredTextUnderBirthPlaceTextBoxIsVisible() {
-        Assert.assertTrue(studentManagement.requiredTextForBirthPlaceTextBox.isDisplayed());
-    }
-
-    @Then("user verifies that the required text under email text box is visible")
-    public void userVerifiesThatTheRequiredTextUnderEmailTextBoxIsVisible() {
-        Assert.assertTrue(studentManagement.requiredTextForEmailTextBox.isDisplayed());
-    }
-
-    @Then("user verifies that the required text under phone text box is visible")
-    public void userVerifiesThatTheRequiredTextUnderPhoneTextBoxIsVisible() {
-        Assert.assertTrue(studentManagement.requiredTextForPhoneTextBox.isDisplayed());
-    }
-
-    @Then("user verifies that the required text under date of birth text box is visible")
-    public void userVerifiesThatTheRequiredTextUnderDateOfBirthTextBoxIsVisible() {
-        Assert.assertTrue(studentManagement.requiredTextForDateOfBirthTextBox.isDisplayed());
-    }
-
-    @Then("user verifies that the required text under ssn text box is visible")
-    public void userVerifiesThatTheRequiredTextUnderSsnTextBoxIsVisible() {
-        Assert.assertTrue(studentManagement.requiredTextForSsnTextBox.isDisplayed());
-    }
-
-    @Then("user verifies that the required text under username text box is visible")
-    public void userVerifiesThatTheRequiredTextUnderUsernameTextBoxIsVisible() {
-        Assert.assertTrue(studentManagement.requiredTextForUserNameTextBox.isDisplayed());
-    }
-
-    @Then("user verifies that the required text under father name text box is visible")
-    public void userVerifiesThatTheRequiredTextUnderFatherNameTextBoxIsVisible() {
-        Assert.assertTrue(studentManagement.requiredTextForFatherNameTextBox.isDisplayed());
-    }
-
-    @Then("user verifies that the required text under mother name text box is visible")
-    public void userVerifiesThatTheRequiredTextUnderMotherNameTextBoxIsVisible() {
-        Assert.assertTrue(studentManagement.requiredTextForMotherNameTextBox.isDisplayed());
-    }
-
-    @Then("user verifies that the required text under password text box is visible")
-    public void userVerifiesThatTheRequiredTextUnderPasswordTextBoxIsVisible() {
-        Assert.assertTrue(studentManagement.requiredTextForUserPasswordTextBox.isDisplayed());
-    }
-
     @Then("user verifies that the created student has an automatically generated student number")
     public void userVerifiesThatTheCreatedStudentHasAnAutomaticallyGeneratedStudentNumber() {
         clickWithJS(studentManagement.paginationLastPageButton);
@@ -140,6 +86,61 @@ public class StudentManagementStepDefinitions {
     @When("user enters the phone in the {string} text box")
     public void user_enters_the_phone_in_the_text_box(String phone) {
         studentManagement.phoneNumberTextBox.sendKeys(phone);
+    }
+
+    @Then("user verifies that the warning {string} text under name text box is visible")
+    public void user_verifies_that_the_warning_text_under_name_text_box_is_visible(String string) {
+        Assert.assertEquals(string, studentManagement.warningTextUnderNameTextBox.getText());
+    }
+
+    @Then("user verifies that the warning {string} text under surname text box is visible")
+    public void user_verifies_that_the_warning_text_under_surname_text_box_is_visible(String string) {
+        Assert.assertEquals(string, studentManagement.warningTextUnderSurnameTextBox.getText());
+    }
+
+    @Then("user verifies that the warning {string} text under birth place text box is visible")
+    public void user_verifies_that_the_warning_text_under_birth_place_text_box_is_visible(String string) {
+        Assert.assertEquals(string, studentManagement.warningTextUnderBirthPlaceTextBox.getText());
+    }
+
+    @Then("user verifies that the warning {string} text under email text box is visible")
+    public void user_verifies_that_the_warning_text_under_email_text_box_is_visible(String string) {
+        Assert.assertEquals(string, studentManagement.warningTextUnderEmailTextBox.getText());
+    }
+
+    @Then("user verifies that the warning {string} text under phone text box is visible")
+    public void user_verifies_that_the_warning_text_under_phone_text_box_is_visible(String string) {
+        Assert.assertEquals(string, studentManagement.warningTextUnderPhoneTextBox.getText());
+    }
+
+    @Then("user verifies that the warning {string} text under date of birth text box is visible")
+    public void user_verifies_that_the_warning_text_under_date_of_birth_text_box_is_visible(String string) {
+        Assert.assertEquals(string, studentManagement.warningTextUnderDateOfBirthTextBox.getText());
+    }
+
+    @Then("user verifies that the warning {string} text under ssn text box is visible")
+    public void user_verifies_that_the_warning_text_under_ssn_text_box_is_visible(String string) {
+        Assert.assertEquals(string, studentManagement.warningTextUnderSsnTextBox.getText());
+    }
+
+    @Then("user verifies that the warning {string} text under username text box is visible")
+    public void user_verifies_that_the_warning_text_under_username_text_box_is_visible(String string) {
+        Assert.assertEquals(string, studentManagement.warningTextUnderUserNameTextBox.getText());
+    }
+
+    @Then("user verifies that the warning {string} text under father name text box is visible")
+    public void user_verifies_that_the_warning_text_under_father_name_text_box_is_visible(String string) {
+        Assert.assertEquals(string, studentManagement.warningTextUnderFatherNameTextBox.getText());
+    }
+
+    @Then("user verifies that the warning {string} text under mother name text box is visible")
+    public void user_verifies_that_the_warning_text_under_mother_name_text_box_is_visible(String string) {
+        Assert.assertEquals(string, studentManagement.warningTextUnderMotherNameTextBox.getText());
+    }
+
+    @Then("user verifies that the warning {string} text under password text box is visible")
+    public void user_verifies_that_the_warning_text_under_password_text_box_is_visible(String string) {
+        Assert.assertEquals(string, studentManagement.warningTextUnderPasswordTextBox.getText());
     }
 
 }

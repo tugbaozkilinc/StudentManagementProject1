@@ -58,7 +58,7 @@ Feature: US015_creating_student_(vice_dean)
     And user enters the mother name in the mother name text box
     And user enters the password in the password text box
     And user clicks the create student submit button
-    Then user verifies that the required text under name text box is visible
+    Then user verifies that the warning "Required" text under name text box is visible
     When user closes the application
 
 
@@ -77,7 +77,7 @@ Feature: US015_creating_student_(vice_dean)
     And user enters the mother name in the mother name text box
     And user enters the password in the password text box
     And user clicks the create student submit button
-    Then user verifies that the required text under surname text box is visible
+    Then user verifies that the warning "Required" text under surname text box is visible
     When user closes the application
 
 
@@ -96,7 +96,7 @@ Feature: US015_creating_student_(vice_dean)
     And user enters the mother name in the mother name text box
     And user enters the password in the password text box
     And user clicks the create student submit button
-    Then user verifies that the required text under birth place text box is visible
+    Then user verifies that the warning "Required" text under birth place text box is visible
     When user closes the application
 
   @vice_dean_create_student_negative_email_blank
@@ -114,7 +114,7 @@ Feature: US015_creating_student_(vice_dean)
     And user enters the mother name in the mother name text box
     And user enters the password in the password text box
     And user clicks the create student submit button
-    Then user verifies that the required text under email text box is visible
+    Then user verifies that the warning "Required" text under email text box is visible
     When user closes the application
 
 
@@ -133,7 +133,7 @@ Feature: US015_creating_student_(vice_dean)
     And user enters the mother name in the mother name text box
     And user enters the password in the password text box
     And user clicks the create student submit button
-    Then user verifies that the required text under phone text box is visible
+    Then user verifies that the warning "Required" text under phone text box is visible
     When user closes the application
 
 
@@ -152,7 +152,7 @@ Feature: US015_creating_student_(vice_dean)
     And user enters the mother name in the mother name text box
     And user enters the password in the password text box
     And user clicks the create student submit button
-    Then user verifies that the required text under date of birth text box is visible
+    Then user verifies that the warning "Required" text under date of birth text box is visible
     When user closes the application
 
 
@@ -171,7 +171,7 @@ Feature: US015_creating_student_(vice_dean)
     And user enters the mother name in the mother name text box
     And user enters the password in the password text box
     And user clicks the create student submit button
-    Then user verifies that the required text under ssn text box is visible
+    Then user verifies that the warning "Required" text under ssn text box is visible
     When user closes the application
 
 
@@ -190,7 +190,7 @@ Feature: US015_creating_student_(vice_dean)
     And user enters the mother name in the mother name text box
     And user enters the password in the password text box
     And user clicks the create student submit button
-    Then user verifies that the required text under username text box is visible
+    Then user verifies that the warning "Required" text under username text box is visible
     When user closes the application
 
   @vice_dean_create_student_negative_father_name_blank
@@ -208,7 +208,7 @@ Feature: US015_creating_student_(vice_dean)
     And user enters the mother name in the mother name text box
     And user enters the password in the password text box
     And user clicks the create student submit button
-    Then user verifies that the required text under father name text box is visible
+    Then user verifies that the warning "Required" text under father name text box is visible
     When user closes the application
 
   @vice_dean_create_student_negative_mother_name_blank
@@ -226,7 +226,7 @@ Feature: US015_creating_student_(vice_dean)
     And user enters the father name in the father name text box
     And user enters the password in the password text box
     And user clicks the create student submit button
-    Then user verifies that the required text under mother name text box is visible
+    Then user verifies that the warning "Required" text under mother name text box is visible
     When user closes the application
 
   @vice_dean_create_student_negative_password_blank
@@ -244,7 +244,7 @@ Feature: US015_creating_student_(vice_dean)
     And user enters the father name in the father name text box
     And user enters the mother name in the mother name text box
     And user clicks the create student submit button
-    Then user verifies that the required text under password text box is visible
+    Then user verifies that the warning "Required" text under password text box is visible
     When user closes the application
 
   @automatically_generated_student_number_verification
@@ -294,7 +294,7 @@ Feature: US015_creating_student_(vice_dean)
 
 
   @invalid_phone_input_verification
-  Scenario Outline: TC16_create_student_as_vice_dean_(Positive Test)
+  Scenario Outline: TC16_invalid_phone_input_verification
     And user selects the advisor teacher
     And user enters the name in the name text box
     And user enters the surname in the surname text box
@@ -321,4 +321,33 @@ Feature: US015_creating_student_(vice_dean)
       | 123-12-12345 |
       | 123-1234-123 |
       | ?=)-?=)-..,, |
+
+
+  @phone_min_character_verification
+  Scenario: TC17_phone_min_character_verification
+    And user enters the phone in the "123-123-123" text box
+    Then user verifies that the warning "Minimum 12 character (XXX-XXX-XXXX)" text under phone text box is visible
+    When user closes the application
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

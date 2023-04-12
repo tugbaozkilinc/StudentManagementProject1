@@ -61,41 +61,38 @@ public class StudentManagement {
     @FindBy(xpath = "//button[.='Submit']")
     public WebElement createStudentSubmitButton;
 
-    @FindAll({@FindBy(xpath = "//*[@class='invalid-feedback']")})
-    public List<WebElement> requiredTextList;
-
     @FindBy(xpath = "//*[@id='name']/following-sibling::div[@class='invalid-feedback']")
-    public WebElement requiredTextForNameTextBox;
+    public WebElement warningTextUnderNameTextBox;
 
     @FindBy(xpath = "//*[@id='surname']/following-sibling::div[@class='invalid-feedback']")
-    public WebElement requiredTextForSurnameTextBox;
+    public WebElement warningTextUnderSurnameTextBox;
 
     @FindBy(xpath = "//*[@id='birthPlace']/following-sibling::div[@class='invalid-feedback']")
-    public WebElement requiredTextForBirthPlaceTextBox;
+    public WebElement warningTextUnderBirthPlaceTextBox;
 
     @FindBy(xpath = "//*[@id='email']/following-sibling::div[@class='invalid-feedback']")
-    public WebElement requiredTextForEmailTextBox;
+    public WebElement warningTextUnderEmailTextBox;
 
     @FindBy(xpath = "//*[@id='phoneNumber']/following-sibling::div[@class='invalid-feedback']")
-    public WebElement requiredTextForPhoneTextBox;
+    public WebElement warningTextUnderPhoneTextBox;
 
     @FindBy(xpath = "//*[@id='birthDay']/following-sibling::div[@class='invalid-feedback']")
-    public WebElement requiredTextForDateOfBirthTextBox;
+    public WebElement warningTextUnderDateOfBirthTextBox;
 
     @FindBy(xpath = "//*[@id='ssn']/following-sibling::div[@class='invalid-feedback']")
-    public WebElement requiredTextForSsnTextBox;
+    public WebElement warningTextUnderSsnTextBox;
 
     @FindBy(xpath = "//*[@id='username']/following-sibling::div[@class='invalid-feedback']")
-    public WebElement requiredTextForUserNameTextBox;
+    public WebElement warningTextUnderUserNameTextBox;
 
     @FindBy(xpath = "//*[@id='fatherName']/following-sibling::div[@class='invalid-feedback']")
-    public WebElement requiredTextForFatherNameTextBox;
+    public WebElement warningTextUnderFatherNameTextBox;
 
     @FindBy(xpath = "//*[@id='motherName']/following-sibling::div[@class='invalid-feedback']")
-    public WebElement requiredTextForMotherNameTextBox;
+    public WebElement warningTextUnderMotherNameTextBox;
 
     @FindBy(xpath = "//*[@id='password']/following-sibling::div[@class='invalid-feedback']")
-    public WebElement requiredTextForUserPasswordTextBox;
+    public WebElement warningTextUnderPasswordTextBox;
 
     @FindBy(xpath = "//*[@class='col']//ul//li[4]")
     public WebElement paginationLastPageButton;
@@ -111,4 +108,5 @@ public class StudentManagement {
 
     @FindAll({@FindBy(xpath = "//*[@class='table-responsive']//tbody//tr//td[1]")})
     public List<WebElement> studentNumbersListOnCurrentPage;
+
 }
