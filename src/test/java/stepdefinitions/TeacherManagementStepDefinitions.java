@@ -12,10 +12,7 @@ public class TeacherManagementStepDefinitions {
 
 
 
-    @And("user clicks the menu button")
-    public void userClicksTheMenuButton() {
 
-    }
 
     @And("user clicks the Teacher Management")
     public void userClicksTheTeacherManagement() {

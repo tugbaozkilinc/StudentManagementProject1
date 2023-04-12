@@ -1,9 +1,12 @@
 package pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+
+import java.util.List;
 
 public class StudentManagement {
 
@@ -52,11 +55,47 @@ public class StudentManagement {
     @FindBy(xpath = "//input[@id='motherName']")
     public WebElement motherNameTextBox;
 
-    @FindBy(xpath = "//div[@role='alert']")
+    @FindBy(xpath = "//div[@role='alert']//div[2]")
     public WebElement alertMessage;
 
     @FindBy(xpath = "//button[.='Submit']")
     public WebElement createStudentSubmitButton;
+
+    @FindAll({@FindBy(xpath = "//*[@class='invalid-feedback']")})
+    public List<WebElement> requiredTextList;
+
+    @FindBy(xpath = "//*[@id='name']/following-sibling::div[@class='invalid-feedback']")
+    public WebElement requiredTextForNameTextBox;
+
+    @FindBy(xpath = "//*[@id='surname']/following-sibling::div[@class='invalid-feedback']")
+    public WebElement requiredTextForSurnameTextBox;
+
+    @FindBy(xpath = "//*[@id='birthPlace']/following-sibling::div[@class='invalid-feedback']")
+    public WebElement requiredTextForBirthPlaceTextBox;
+
+    @FindBy(xpath = "//*[@id='email']/following-sibling::div[@class='invalid-feedback']")
+    public WebElement requiredTextForEmailTextBox;
+
+    @FindBy(xpath = "//*[@id='phoneNumber']/following-sibling::div[@class='invalid-feedback']")
+    public WebElement requiredTextForPhoneTextBox;
+
+    @FindBy(xpath = "//*[@id='birthDay']/following-sibling::div[@class='invalid-feedback']")
+    public WebElement requiredTextForDateOfBirthTextBox;
+
+    @FindBy(xpath = "//*[@id='ssn']/following-sibling::div[@class='invalid-feedback']")
+    public WebElement requiredTextForSsnTextBox;
+
+    @FindBy(xpath = "//*[@id='username']/following-sibling::div[@class='invalid-feedback']")
+    public WebElement requiredTextForUserNameTextBox;
+
+    @FindBy(xpath = "//*[@id='fatherName']/following-sibling::div[@class='invalid-feedback']")
+    public WebElement requiredTextForFatherNameTextBox;
+
+    @FindBy(xpath = "//*[@id='motherName']/following-sibling::div[@class='invalid-feedback']")
+    public WebElement requiredTextForMotherNameTextBox;
+
+    @FindBy(xpath = "//*[@id='password']/following-sibling::div[@class='invalid-feedback']")
+    public WebElement requiredTextForUserPasswordTextBox;
 
 
 }
