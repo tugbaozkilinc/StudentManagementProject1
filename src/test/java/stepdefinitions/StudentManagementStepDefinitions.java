@@ -60,13 +60,13 @@ public class StudentManagementStepDefinitions {
 
     @Then("user verifies that the student is created successfully")
     public void user_verifies_that_the_student_is_created_successfully() {
-        waitForVisibility(studentManagement.alertMessage,3);
+        waitForVisibility(studentManagement.alertMessage, 3);
         Assert.assertEquals("Student saved Successfully", studentManagement.alertMessage.getText());
     }
 
     @Then("user verifies that the alert message says {string}")
     public void userVerifiesThatTheAlertMessageSays(String string) {
-        waitForVisibility(studentManagement.alertMessage,3);
+        waitForVisibility(studentManagement.alertMessage, 3);
         Assert.assertEquals(string, studentManagement.alertMessage.getText());
     }
 
@@ -74,7 +74,6 @@ public class StudentManagementStepDefinitions {
     public void userVerifiesThatTheRequiredTextUnderNameTextBoxIsVisible() {
         Assert.assertTrue(studentManagement.requiredTextForNameTextBox.isDisplayed());
     }
-
 
     @Then("user verifies that the required text under surname text box is visible")
     public void userVerifiesThatTheRequiredTextUnderSurnameTextBoxIsVisible() {
@@ -126,6 +125,21 @@ public class StudentManagementStepDefinitions {
         Assert.assertTrue(studentManagement.requiredTextForUserPasswordTextBox.isDisplayed());
     }
 
+    @Then("user verifies that the created student has an automatically generated student number")
+    public void userVerifiesThatTheCreatedStudentHasAnAutomaticallyGeneratedStudentNumber() {
+        clickWithJS(studentManagement.paginationLastPageButton);
+        int lastIndex = studentManagement.studentNumbersListOnCurrentPage.size() - 1;
+        Assert.assertNotEquals("", studentManagement.studentNumbersListOnCurrentPage.get(lastIndex).getText());
+    }
 
+    @When("user enters the email {string} in the email text box")
+    public void user_enters_the_email_in_the_email_text_box(String email) {
+        studentManagement.emailTextBox.sendKeys(email);
+    }
+
+    @When("user enters the phone in the {string} text box")
+    public void user_enters_the_phone_in_the_text_box(String phone) {
+        studentManagement.phoneNumberTextBox.sendKeys(phone);
+    }
 
 }

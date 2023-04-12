@@ -247,7 +247,78 @@ Feature: US015_creating_student_(vice_dean)
     Then user verifies that the required text under password text box is visible
     When user closes the application
 
+  @automatically_generated_student_number_verification
+  Scenario: TC14_automatically_generated_student_number_verification
+    And user selects the advisor teacher
+    And user enters the name in the name text box
+    And user enters the surname in the surname text box
+    And user enters the birth place in the birth place text box
+    And user enters the email in the email text box
+    And user enters the phone in the phone text box
+    And user selects a gender
+    And user enters the date of birth in the date of birth text box
+    And user enters the ssn in the ssn text box
+    And user enters the username in the username text box
+    And user enters the father name in the father name text box
+    And user enters the mother name in the mother name text box
+    And user enters the password in the password text box
+    And user clicks the create student submit button
+    Then user verifies that the created student has an automatically generated student number
+    When user closes the application
 
 
+  @invalid_email_input_verification
+  Scenario Outline: TC15_invalid_email_input_verification
+    And user selects the advisor teacher
+    And user enters the name in the name text box
+    And user enters the surname in the surname text box
+    And user enters the birth place in the birth place text box
+    And user enters the email "<email>" in the email text box
+    And user enters the phone in the phone text box
+    And user selects a gender
+    And user enters the date of birth in the date of birth text box
+    And user enters the ssn in the ssn text box
+    And user enters the username in the username text box
+    And user enters the father name in the father name text box
+    And user enters the mother name in the mother name text box
+    And user enters the password in the password text box
+    And user clicks the create student submit button
+    Then user verifies that the alert message says "Please enter valid email"
+    When user closes the application
 
+    Examples:
+      | email             |
+      | Abc.example.com   |
+      | A@b@c@example.com |
+      | emin z@gmail.com  |
+
+
+  @invalid_phone_input_verification
+  Scenario Outline: TC16_create_student_as_vice_dean_(Positive Test)
+    And user selects the advisor teacher
+    And user enters the name in the name text box
+    And user enters the surname in the surname text box
+    And user enters the birth place in the birth place text box
+    And user enters the email in the email text box
+    And user enters the phone in the "<phone>" text box
+    And user selects a gender
+    And user enters the date of birth in the date of birth text box
+    And user enters the ssn in the ssn text box
+    And user enters the username in the username text box
+    And user enters the father name in the father name text box
+    And user enters the mother name in the mother name text box
+    And user enters the password in the password text box
+    And user clicks the create student submit button
+    Then user verifies that the alert message says "Please enter valid phone number"
+    When user closes the application
+
+    Examples:
+      | phone        |
+      | abcdabcdabcd |
+      | abc-abc-abab |
+      | 12-123-12345 |
+      | 1234-123-123 |
+      | 123-12-12345 |
+      | 123-1234-123 |
+      | ?=)-?=)-..,, |
 

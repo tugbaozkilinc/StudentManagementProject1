@@ -97,5 +97,18 @@ public class StudentManagement {
     @FindBy(xpath = "//*[@id='password']/following-sibling::div[@class='invalid-feedback']")
     public WebElement requiredTextForUserPasswordTextBox;
 
+    @FindBy(xpath = "//*[@class='col']//ul//li[4]")
+    public WebElement paginationLastPageButton;
 
+    @FindBy(xpath = "//*[@class='col']//ul//li[1]")
+    public WebElement paginationFirstPageButton;
+
+    @FindBy(xpath = "//*[@class='col']//ul//li[3]")
+    public WebElement paginationNextPageButton;
+
+    @FindBy(xpath = "//*[@class='col']//ul//li[2]")
+    public WebElement paginationPreviousPageButton;
+
+    @FindAll({@FindBy(xpath = "//*[@class='table-responsive']//tbody//tr//td[1]")})
+    public List<WebElement> studentNumbersListOnCurrentPage;
 }

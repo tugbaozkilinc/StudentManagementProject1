@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@vice_dean_create_student",
+        tags = "@invalid_phone_input_verification",
         dryRun = false
 )
 
