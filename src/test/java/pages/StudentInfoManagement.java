@@ -51,7 +51,8 @@ public class StudentInfoManagement {
     public WebElement nameTextInStudentInfo;
 
 
-
+//   /html/body/div[3]/div[2]/div/div/div/form/div/div[1]/span
+    // //*[@class='mt-2 col-md-auto']//span
     @FindBy(xpath = "//*[@id='lessonId']")
     public WebElement lessonIdTextBox;
 
