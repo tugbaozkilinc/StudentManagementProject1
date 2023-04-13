@@ -36,6 +36,7 @@ public class TeacherManagementStepDefinitions {
         homepage.menuButton.click();
     }
 
+
     @And("user clicks the Teacher Management")
     public void userClicksTheTeacherManagement() {
         mainMenu.teacherManagement.click();
@@ -47,7 +48,6 @@ public class TeacherManagementStepDefinitions {
         homepage.title.click();
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.TAB).sendKeys("MathT6" + Keys.SPACE + Keys.ENTER).perform();
-
 
     }
 
