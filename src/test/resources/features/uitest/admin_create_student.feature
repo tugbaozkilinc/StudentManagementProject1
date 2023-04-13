@@ -23,7 +23,23 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the student is created successfully
-    When user closes the application
+
+
+#  @required_text_verification
+#  Scenario Outline: TC02_"<textBoxName>"_verification
+#    And user enters the name "<name>" in the name text box
+#    And user enters the surname "<surname>" in the surname text box
+#    And user enters the birth place "<birth_place>" in the birth place text box
+#    And user enters the email "<email>" in the email text box
+#    And user enters the phone "<phone>" in the phone text box
+#    And user enters the date of birth "<date_of_birth>" in the date of birth text box
+#    And user enters the ssn "<ssn>" in the ssn text box
+#    And user enters the username "<username>" in the username text box
+#    And user enters the father name "<father_name>" in the father name text box
+#    And user enters the mother name "<mother_name>" in the mother name text box
+#    And user enters the password "<password>" in the password text box
+#    And user clicks the create student submit button
+
 
   @admin_create_student_negative_advisor_teacher_blank
   Scenario: TC02_advisor_teacher_cannot_be_left_blank
@@ -41,7 +57,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the alert message says "Please select advisor teacher"
-    When user closes the application
+    
 
   @admin_create_student_negative_name_blank
   Scenario: TC03_name_cannot_be_left_blank
@@ -59,7 +75,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the warning "Required" text under name text box is visible
-    When user closes the application
+    
 
 
   @admin_create_student_negative_surname_blank
@@ -78,7 +94,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the warning "Required" text under surname text box is visible
-    When user closes the application
+    
 
 
   @admin_create_student_negative_birth_place_blank
@@ -97,7 +113,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the warning "Required" text under birth place text box is visible
-    When user closes the application
+    
 
   @admin_create_student_negative_email_blank
   Scenario: TC06_email_cannot_be_left_blank
@@ -115,7 +131,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the warning "Required" text under email text box is visible
-    When user closes the application
+    
 
 
   @admin_create_student_negative_phone_blank
@@ -134,7 +150,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the warning "Required" text under phone text box is visible
-    When user closes the application
+    
 
 
   @admin_create_student_negative_date_of_birth_blank
@@ -153,7 +169,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the warning "Required" text under date of birth text box is visible
-    When user closes the application
+    
 
 
   @admin_create_student_negative_ssn_blank
@@ -172,7 +188,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the warning "Required" text under ssn text box is visible
-    When user closes the application
+    
 
 
   @admin_create_student_negative_username_blank
@@ -191,7 +207,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the warning "Required" text under username text box is visible
-    When user closes the application
+    
 
   @admin_create_student_negative_father_name_blank
   Scenario: TC011_father_name_cannot_be_left_blank
@@ -209,7 +225,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the warning "Required" text under father name text box is visible
-    When user closes the application
+    
 
   @admin_create_student_negative_mother_name_blank
   Scenario: TC012_mother_name_cannot_be_left_blank
@@ -227,7 +243,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the warning "Required" text under mother name text box is visible
-    When user closes the application
+    
 
   @admin_create_student_negative_password_blank
   Scenario: TC013_password_cannot_be_left_blank
@@ -245,7 +261,7 @@ Feature: US25_creating_student_(admin)
     And user enters the mother name in the mother name text box
     And user clicks the create student submit button
     Then user verifies that the warning "Required" text under password text box is visible
-    When user closes the application
+    
 
   @admin_create_student_automatically_generated_student_number_verification
   Scenario: TC14_automatically_generated_student_number_verification
@@ -264,7 +280,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the created student has an automatically generated student number
-    When user closes the application
+    
 
 
   @admin_create_student_invalid_email_input_verification
@@ -284,7 +300,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the alert message says "Please enter valid email"
-    When user closes the application
+    
 
     Examples:
       | email             |
@@ -310,7 +326,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the alert message says "Please enter valid phone number"
-    When user closes the application
+    
 
     Examples:
       | phone        |
@@ -327,7 +343,7 @@ Feature: US25_creating_student_(admin)
   Scenario: TC17_phone_min_character_verification
     And user enters the phone in the "123-123-123" text box
     Then user verifies that the warning "Minimum 12 character (XXX-XXX-XXXX)" text under phone text box is visible
-    When user closes the application
+    
 
 
   @admin_create_student_phone_max_character_verification
@@ -347,7 +363,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the alert message says "Phone number should be exact 12 characters"
-    When user closes the application
+    
 
 
   @admin_create_student_date_of_birth_future_date_verification
@@ -367,7 +383,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the alert message says "must be a past date"
-    When user closes the application
+    
 
   @admin_create_student_date_of_birth_current_date_verification
   Scenario: TC20_date_of_birth_current_date_verification
@@ -386,7 +402,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the alert message says "must be a past date"
-    When user closes the application
+    
 
 
   @admin_create_student_invalid_ssn_input_verification
@@ -406,7 +422,7 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the alert message says "Please enter valid SSN number"
-    When user closes the application
+    
 
     Examples:
       | ssn          |
@@ -422,7 +438,7 @@ Feature: US25_creating_student_(admin)
   Scenario: TC17_phone_min_character_verification
     And user enters the ssn in the "123-12-123" text box
     Then user verifies that the warning "Minimum 11 character (XXX-XX-XXXX)" text under ssn text box is visible
-    When user closes the application
+    
 
   @admin_create_student_ssn_max_character_verification
   Scenario: TC18_phone_max_character_verification
@@ -441,17 +457,17 @@ Feature: US25_creating_student_(admin)
     And user enters the password in the password text box
     And user clicks the create student submit button
     Then user verifies that the alert message says "Please enter valid SSN number"
-    When user closes the application
+    
 
   @admin_create_student_password_min_character_verification
   Scenario: TC17_phone_min_character_verification
     And user enters the "Emin.12" in the password text box
     Then user verifies that the warning "Minimum 8 character" text under password text box is visible
-    When user closes the application
+    
 
   @admin_create_student_automatically_generated_student_number_uniqueness_verification
   Scenario: TC17_automatically_generated_student_number_uniqueness_verification
     When user clicks the last page button in the pagination
     And user scrolls the page until sees the student list title
     Then user verifies that all the student numbers are unique in the student list
-    When user closes the application
+    
