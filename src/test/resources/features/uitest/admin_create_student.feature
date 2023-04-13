@@ -1,4 +1,4 @@
-@admin_create_student
+@admin_create_student @emin
 Feature: US25_creating_student_(admin)
 
   Background:

@@ -1,4 +1,4 @@
-@vice_dean_create_student
+@vice_dean_create_student @emin
 Feature: US015_creating_student_(vice_dean)
 
   Background:
