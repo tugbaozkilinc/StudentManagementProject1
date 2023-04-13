@@ -5,14 +5,21 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.HomePage;
 import pages.MainMenu;
 import pages.StudentManagement;
+import utilities.ReusableMethods;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import static utilities.ReusableMethods.*;
+import static utilities.ReusableMethods.generateTomorrowsDate;
 
 public class StudentManagementStepDefinitions {
 
@@ -28,8 +35,8 @@ public class StudentManagementStepDefinitions {
 
     @When("user clicks the Student Management on the menu")
     public void user_clicks_the_student_management_on_the_menu() {
-        waitAndClick(mainMenu.studentManagement, 2);
-        waitFor(2);
+        waitAndClick(mainMenu.studentManagement, 1);
+        waitFor(1);
     }
 
     @When("user selects the advisor teacher")
@@ -142,5 +149,43 @@ public class StudentManagementStepDefinitions {
     public void user_verifies_that_the_warning_text_under_password_text_box_is_visible(String string) {
         Assert.assertEquals(string, studentManagement.warningTextUnderPasswordTextBox.getText());
     }
+
+    @And("user enters the future date in the date of birth text box")
+    public void userEntersTheFutureDateInTheDateOfBirthTextBox() {
+        studentManagement.dateOfBirthTextBox.sendKeys(generateTomorrowsDate());
+    }
+
+    @And("user enters the current date in the date of birth text box")
+    public void userEntersTheCurrentDateInTheDateOfBirthTextBox() {
+        studentManagement.dateOfBirthTextBox.sendKeys(generateCurrentDate());
+    }
+
+    @When("user enters the ssn in the {string} text box")
+    public void user_enters_the_ssn_in_the_text_box(String string) {
+        studentManagement.ssnTextBox.sendKeys(string);
+    }
+
+    @When("user clicks the last page button in the pagination")
+    public void user_clicks_the_last_page_button_in_the_pagination() {
+        clickWithJS(studentManagement.paginationLastPageButton);
+    }
+
+    @When("user scrolls the page until sees the student list title")
+    public void user_scrolls_the_page_until_sees_the_student_list_title() {
+        ReusableMethods.executeJSCommand(studentManagement.studentListHeader, "arguments[0].scrollIntoView(true);");
+    }
+
+    @Then("user verifies that all the student numbers are unique in the student list")
+    public void user_verifies_that_all_the_student_numbers_are_unique_in_the_student_list() {
+        boolean isUnique = true;
+        List<WebElement> studentList = studentManagement.studentNumbersListOnCurrentPage;
+        for (int i = 0; i < studentList.size() - 1; i++) {
+            if (studentList.indexOf(studentList.get(i)) != studentList.lastIndexOf(studentList.get(i))) {
+                isUnique = false;
+            }
+        }
+        Assert.assertTrue("All the student numbers are unique.", isUnique);
+    }
+
 
 }

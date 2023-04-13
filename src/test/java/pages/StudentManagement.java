@@ -35,10 +35,10 @@ public class StudentManagement {
     public WebElement maleRadioButton;
 
     @FindBy(xpath = "//input[@id='birthDay']")
-    public WebElement birthdayCalender;
+    public WebElement dateOfBirthTextBox;
 
     @FindBy(xpath = "//input[@id='ssn']")
-    public WebElement SSNTextBox;
+    public WebElement ssnTextBox;
 
     @FindBy(xpath = "//input[@id='username']")
     public WebElement usernameTextBox;
@@ -108,5 +108,8 @@ public class StudentManagement {
 
     @FindAll({@FindBy(xpath = "//*[@class='table-responsive']//tbody//tr//td[1]")})
     public List<WebElement> studentNumbersListOnCurrentPage;
+
+    @FindBy(xpath = "//h5[normalize-space()='Student List']")
+    public WebElement studentListHeader;
 
 }

@@ -330,20 +330,131 @@ Feature: US015_creating_student_(vice_dean)
     When user closes the application
 
 
+  @phone_max_character_verification
+  Scenario: TC18_phone_max_character_verification
+    And user selects the advisor teacher
+    And user enters the name in the name text box
+    And user enters the surname in the surname text box
+    And user enters the birth place in the birth place text box
+    And user enters the email in the email text box
+    And user enters the "124-123-12345" in the phone text box
+    And user selects a gender
+    And user enters the date of birth in the date of birth text box
+    And user enters the ssn in the ssn text box
+    And user enters the username in the username text box
+    And user enters the father name in the father name text box
+    And user enters the mother name in the mother name text box
+    And user enters the password in the password text box
+    And user clicks the create student submit button
+    Then user verifies that the alert message says "Phone number should be exact 12 characters"
+    When user closes the application
 
 
+  @date_of_birth_future_date_verification
+  Scenario: TC19_date_of_birth_future_date_verification
+    And user selects the advisor teacher
+    And user enters the name in the name text box
+    And user enters the surname in the surname text box
+    And user enters the birth place in the birth place text box
+    And user enters the email in the email text box
+    And user enters the phone in the phone text box
+    And user selects a gender
+    And user enters the future date in the date of birth text box
+    And user enters the ssn in the ssn text box
+    And user enters the username in the username text box
+    And user enters the father name in the father name text box
+    And user enters the mother name in the mother name text box
+    And user enters the password in the password text box
+    And user clicks the create student submit button
+    Then user verifies that the alert message says "must be a past date"
+    When user closes the application
+
+  @date_of_birth_current_date_verification
+  Scenario: TC20_date_of_birth_current_date_verification
+    And user selects the advisor teacher
+    And user enters the name in the name text box
+    And user enters the surname in the surname text box
+    And user enters the birth place in the birth place text box
+    And user enters the email in the email text box
+    And user enters the phone in the phone text box
+    And user selects a gender
+    And user enters the current date in the date of birth text box
+    And user enters the ssn in the ssn text box
+    And user enters the username in the username text box
+    And user enters the father name in the father name text box
+    And user enters the mother name in the mother name text box
+    And user enters the password in the password text box
+    And user clicks the create student submit button
+    Then user verifies that the alert message says "must be a past date"
+    When user closes the application
 
 
+  @invalid_ssn_input_verification
+  Scenario Outline: TC21_invalid_ssn_input_verification
+    And user selects the advisor teacher
+    And user enters the name in the name text box
+    And user enters the surname in the surname text box
+    And user enters the birth place in the birth place text box
+    And user enters the email in the email text box
+    And user enters the phone in the phone text box
+    And user selects a gender
+    And user enters the date of birth in the date of birth text box
+    And user enters the ssn in the "<ssn>" text box
+    And user enters the username in the username text box
+    And user enters the father name in the father name text box
+    And user enters the mother name in the mother name text box
+    And user enters the password in the password text box
+    And user clicks the create student submit button
+    Then user verifies that the alert message says "Please enter valid SSN number"
+    When user closes the application
 
+    Examples:
+      | ssn          |
+      | abcdabcdabc  |
+      | abc-abc-aba  |
+      | 12-123-1234  |
+      | 1234-123-123 |
+      | 123-123-1234 |
+      | 123-1-12345  |
+      | ???-??-????  |
 
+  @ssn_min_character_verification
+  Scenario: TC17_phone_min_character_verification
+    And user enters the ssn in the "123-12-123" text box
+    Then user verifies that the warning "Minimum 11 character (XXX-XX-XXXX)" text under ssn text box is visible
+    When user closes the application
 
+  @ssn_max_character_verification
+  Scenario: TC18_phone_max_character_verification
+    And user selects the advisor teacher
+    And user enters the name in the name text box
+    And user enters the surname in the surname text box
+    And user enters the birth place in the birth place text box
+    And user enters the email in the email text box
+    And user enters the phone in the phone text box
+    And user selects a gender
+    And user enters the date of birth in the date of birth text box
+    And user enters the "558-554-5656" in the ssn text box
+    And user enters the username in the username text box
+    And user enters the father name in the father name text box
+    And user enters the mother name in the mother name text box
+    And user enters the password in the password text box
+    And user clicks the create student submit button
+    Then user verifies that the alert message says "Please enter valid SSN number"
+    When user closes the application
 
+  @password_min_character_verification
+  Scenario: TC17_phone_min_character_verification
+    And user enters the "Emin.12" in the password text box
+    Then user verifies that the warning "Minimum 8 character" text under password text box is visible
+    When user closes the application
 
-
-
-
-
-
+  @automatically_generated_student_number_uniqueness_verification
+  Scenario: TC17_automatically_generated_student_number_uniqueness_verification
+    When user clicks the last page button in the pagination
+    And user scrolls the page until sees the student list title
+    Then user verifies that all the student numbers are unique in the student list
+    When user closes the application
 
 
 
