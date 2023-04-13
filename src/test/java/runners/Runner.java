@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@automatically_generated_student_number_uniqueness_verification",
+        tags = "@admin_create_student",
         dryRun = false
 )
 
