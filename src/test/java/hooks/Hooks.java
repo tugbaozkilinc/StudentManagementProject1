@@ -11,17 +11,21 @@ public class Hooks {
 
 
     @Before
-    public void setUp(){
+    public void setUp() {
         Driver.getDriver().get("https://www.managementonschools.com/");
     }
 
+    @After
+    public void tearDown() throws Exception {
+        Driver.closeDriver();
+    }
 
     @After //Cucumber dan geleni sec, junit tekini degil.
-    public void tearDownScenarios(Scenario scenario){
+    public void tearDownScenarios(Scenario scenario) {
         if (scenario.isFailed()) {
             final byte[] failedScreenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(failedScreenshot, "image/png", "failed-scenario-" + scenario.getName());
-           // Driver.closeDriver();
+            // Driver.closeDriver();
         }
     }
 
