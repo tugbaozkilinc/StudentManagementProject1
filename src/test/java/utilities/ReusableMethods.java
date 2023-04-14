@@ -11,6 +11,9 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -340,5 +343,17 @@ public class ReusableMethods {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
     }
 
+    public static String generateCurrentDate() {
+        SimpleDateFormat formatter = new SimpleDateFormat("MMddyyyy");
+        Date currentDate = new Date();
+        return formatter.format(currentDate);
+    }
+
+    public static String generateTomorrowsDate() {
+        LocalDate today = LocalDate.now();
+        LocalDate tomorrow = today.plusDays(1);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMddyyyy");
+        return tomorrow.format(formatter);
+    }
 
 }
