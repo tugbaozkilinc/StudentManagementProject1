@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class ContactGetAll {
 
     public ContactGetAll() {
@@ -43,5 +45,11 @@ public class ContactGetAll {
 
     @FindBy(xpath = "//table[@class='table table-striped table-bordered table-hover']//tbody//tr[1]//td[5]")
     public WebElement messageValue;
+
+    @FindBy(xpath = "//table[@class='table table-striped table-bordered table-hover']//tbody//tr[1]//td")
+    public List<WebElement> allInformationInFirstRow;
+
+    @FindBy(xpath = "//table[@class='table table-striped table-bordered table-hover']//thead//th")
+    public List<WebElement> allTitles;
 
 }

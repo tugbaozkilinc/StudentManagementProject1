@@ -12,10 +12,10 @@ import pages.ViceDeanManagement;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class ViceDeanManagementStepDefinitions extends AbstractClassVerifyingThePage {
 
@@ -120,6 +120,53 @@ public class ViceDeanManagementStepDefinitions extends AbstractClassVerifyingThe
     @Then("user sees the warning message {string}")
     public void userSeesTheWarningMessage(String arg0) {
         assertTrue(ReusableMethods.waitForVisibility(viceDeanManagement.dateOfBirthErrorMessage, 10).getText().contains(arg0));
+    }
+
+    @When("user enters the invalid value phone in the phone text box and sees message under phone text box")
+    public void user_enters_the_invalid_value_phone_in_the_phone_text_box_and_sees_message_under_phone_text_box(io.cucumber.datatable.DataTable dataTable) {
+        List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
+        for (Map<String, String> w : data){
+            viceDeanManagement.phoneNumberTextBox.sendKeys(w.get("phone"));
+            assertEquals(w.get("message"), viceDeanManagement.phoneMinimumOnIkiCharacterMessage.getText());
+        }
+    }
+
+    @And("user enters the invalid values {string} in the phone text box")
+    public void userEntersTheInvalidValuesInThePhoneTextBox(String arg0) {
+        viceDeanManagement.phoneNumberTextBox.sendKeys(arg0);
+    }
+
+    @Then("user sees the warning message {string} related to phone text box")
+    public void userSeesTheWarningMessageRelatedToPhoneTextBox(String arg0) {
+        assertEquals(arg0, ReusableMethods.waitForVisibility(viceDeanManagement.phoneInvalidMessage, 10).getText());
+    }
+
+    @When("user enters the invalid value ssn in the ssn text box and sees message under ssn text box")
+    public void user_enters_the_invalid_value_ssn_in_the_ssn_text_box_and_sees_message_under_ssn_text_box(io.cucumber.datatable.DataTable dataTable) {
+        List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
+        for (Map<String, String> w : data){
+            viceDeanManagement.SSNTextBox.sendKeys(w.get("ssn"));
+            assertEquals(w.get("message"), ReusableMethods.waitForVisibility(viceDeanManagement.ssnMinimumOnBirCharacterMessage, 10).getText());
+        }
+    }
+
+    @And("user enters the invalid values {string} in the ssn text box")
+    public void userEntersTheInvalidValuesInTheSsnTextBox(String arg0) {
+        viceDeanManagement.SSNTextBox.sendKeys(arg0);
+    }
+
+    @Then("user sees the warning message {string} related to ssn text box")
+    public void userSeesTheWarningMessageRelatedToSsnTextBox(String arg0) {
+        assertEquals(arg0, ReusableMethods.waitForVisibility(viceDeanManagement.ssnInvalidMessage, 10).getText());
+    }
+
+    @When("user enters the invalid value password in the password text box and sees message under password text box")
+    public void user_enters_the_invalid_value_password_in_the_password_text_box_and_sees_message_under_password_text_box(io.cucumber.datatable.DataTable dataTable) {
+        List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
+        for (Map<String, String> w : data){
+            viceDeanManagement.passwordTextBox.sendKeys(w.get("password"));
+            assertEquals(w.get("message"), ReusableMethods.waitForVisibility(viceDeanManagement.passwordInvalidMessage, 10).getText());
+        }
     }
 
 }
