@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class TeacherManagement {
 
 
@@ -53,8 +55,19 @@ public class TeacherManagement {
     @FindBy(xpath = "//button[normalize-space()='Submit']")
     public WebElement SubmitButton;
 
-    @FindBy(xpath = "//div[@role='alert']")
-    public WebElement alertMessage;
+    @FindBy (xpath = "//button[@id='controlled-tab-example-tab-teachersList']")
+    public WebElement teacher1;
+
+
+    @FindBy(xpath = "//div[@role='alert']//div")
+    public WebElement successMessage;
+
+    @FindBy(xpath = "//div[text()='Required']")
+    public WebElement required;
+
+    @FindBy(xpath = "//div[@id='48']")
+    public WebElement errorMessage;
+
 
 
 }

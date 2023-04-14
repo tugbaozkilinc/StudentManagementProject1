@@ -71,6 +71,8 @@ public class ContactMessageStepDefinitions {
         ReusableMethods.waitForVisibility(contactPage.validEmailAlert, 3);
         assert string.equalsIgnoreCase(contactPage.validEmailAlert.getText());
 
+     //   Boyut 5 - 80 Arası olmalı/,
+
     }
 
 

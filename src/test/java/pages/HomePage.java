@@ -27,5 +27,8 @@ public class HomePage {
     @FindBy(xpath = "//*[text()='Menu']")
     public WebElement menuButton;
 
+    @FindBy(xpath = "//h3")
+    public WebElement title;
+
 
 }
