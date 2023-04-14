@@ -15,7 +15,6 @@ public class Hooks {
         Driver.getDriver().get("https://www.managementonschools.com/");
     }
 
-
     @After //Cucumber dan geleni sec, junit tekini degil.
     public void tearDownScenarios(Scenario scenario){
         if (scenario.isFailed()) {
