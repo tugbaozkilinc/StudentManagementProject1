@@ -56,6 +56,15 @@ public class StudentInfoManagement {
     @FindBy(xpath = "//*[@id='lessonId']")
     public WebElement lessonIdTextBox;
 
+
+    @FindBy(xpath = " (//tr)[2]")
+    public WebElement studentIsDisplayed;
+
+    @FindBy(xpath = "//div[text()='Required']")
+    public WebElement required;
+
+
+
     @FindBy(xpath = "//*[@id='educationTermId']")
     public WebElement educationTermIdTextBox;
 
