@@ -54,7 +54,7 @@ Feature: US25_creating_student_(admin)
       | Emin | Z       | Ankara      | eminzeee@gmail.com | 156-897-5641 | 12122000      |             | eminz123 | Ali         | Veli        |          | password      |
 
 
-  @admin_create_student_negative_advisor_teacher_blank
+  @admin_create_student_advisor_teacher_blank
   Scenario: TC02_advisor_teacher_cannot_be_left_blank
     And user enters the name in the name text box
     And user enters the surname in the surname text box
@@ -71,7 +71,7 @@ Feature: US25_creating_student_(admin)
     And user clicks the create student submit button
     Then user verifies that the alert message says "Please select advisor teacher"
 
-    #!!!Buraya gender ile ilgili ayni TC'yi yaz!!!
+    #!!!Buraya gender ile ilgili ayni TC'yi yaz!!! Vice Dean icinde yap
 
   @admin_create_student_automatically_generated_student_number_verification
   Scenario: TC14_automatically_generated_student_number_verification
