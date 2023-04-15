@@ -61,4 +61,19 @@ public class ViceDeanManagement {
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement dateOfBirthErrorMessage;
 
+    @FindBy(xpath = "//*[contains(text(), 'Minimum 12 character')]")
+    public WebElement phoneMinimumOnIkiCharacterMessage;
+
+    @FindBy(xpath = "//*[text()='Please enter valid phone number']")
+    public WebElement phoneInvalidMessage;
+
+    @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    public WebElement ssnMinimumOnBirCharacterMessage;
+
+    @FindBy(xpath = "//*[text()='Please enter valid SSN number']")
+    public WebElement ssnInvalidMessage;
+
+    @FindBy(xpath = "//*[text()='Minimum 8 character']")
+    public WebElement passwordInvalidMessage;
+
 }
