@@ -48,7 +48,7 @@ public class RegisterModuleStepDefinitions {
 
     @Given("user selects a gender")
     public void user_selects_a_gender() {
-        registerPage.maleRadioButton.click();
+        ReusableMethods.clickWithJS(registerPage.maleRadioButton);
     }
 
     @Given("user enters the date of birth in the date of birth text box")
