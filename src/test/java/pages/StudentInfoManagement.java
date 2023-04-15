@@ -56,6 +56,13 @@ public class StudentInfoManagement {
     @FindBy(xpath = "//*[@id='lessonId']")
     public WebElement lessonIdTextBox;
 
+    @FindBy(xpath = "//*[@class='mt-2 col-md-auto']//span")
+    public WebElement nameIsDisplayed;
+
+
+    @FindBy(xpath = "//*[text()='Full authentication is required to access this resource']")
+    public WebElement canNotEdit;
+
 
     @FindBy(xpath = " (//tr)[2]")
     public WebElement studentIsDisplayed;

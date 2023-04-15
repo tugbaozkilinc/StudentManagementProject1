@@ -1,5 +1,5 @@
 @Us_17
-Feature:Teacher_should_be_able_to_grade_students
+Feature:US_17_Teacher_should_be_able_to_grade_students
 
   @TC_01
   Scenario:Add_Student_Info_page_should_be_displayed

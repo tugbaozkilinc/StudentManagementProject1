@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import pages.HomePage;
@@ -161,5 +162,66 @@ public class StudentInfoManagementStepDefinitions {
     @Then("user verifies that the red required {string} text is visible under the Final Exam textbox on the Add Student Info page")
     public void userVerifiesThatTheRedRequiredTextIsVisibleUnderTheFinalExamTextboxOnTheAddStudentInfoPage(String arg0) {
         assertTrue( waitForVisibility(studentInfoManagement.required,5).isDisplayed());
+    }
+
+    @Then("User click the delete button")
+    public void userClickTheDeleteButton() {
+        studentInfoManagement.deleteButtonInStudentInfo.click();
+    }
+
+    @Then("User sees that the Add Student Info is not displayed on the page")
+    public void userSeesThatTheAddStudentInfoIsNotDisplayedOnThePage() {
+        Assert.assertFalse(studentInfoManagement.studentIsDisplayed.isDisplayed());
+    }
+
+    @Then("User click the edit button")
+    public void userClickTheEditButton() {
+        studentInfoManagement.editButtonInStudentInfo.click();
+    }
+
+    @Then("User sees  the Edit Student Info page")
+    public void userSeesTheEditStudentInfoPage() {
+        assert studentInfoManagement.studentInfoListText.isDisplayed();
+    }
+
+    @Then("User sees  the Name Surname is selected in Edit Student Info page")
+    public void userSeesTheNameSurnameIsSelectedInEditStudentInfoPage() {
+        assert studentInfoManagement.nameIsDisplayed.isDisplayed();
+    }
+
+
+    @And("User sees that student info does not edit")
+    public void userSeesThatStudentInfoDoesNotEdit() {
+        assert studentInfoManagement.canNotEdit.isDisplayed();
+    }
+
+    @Then("User leaves lesson {string} textbox blank")
+    public void userLeavesLessonTextboxBlank(String arg0) {
+        studentInfoManagement.lessonIdTextBox.sendKeys(arg0);
+    }
+
+    @Then("User leaves education {string} textbox blank")
+    public void userLeavesEducationTextboxBlank(String arg0) {
+        studentInfoManagement.educationTermIdTextBox.sendKeys(arg0);
+    }
+
+    @Then("User leaves absentee {string} textbox blank")
+    public void userLeavesAbsenteeTextboxBlank(String arg0) {
+        studentInfoManagement.absenteeTextBoxInStudentInfo.sendKeys(arg0);
+    }
+
+    @Then("User leaves midExam {string} textbox blank")
+    public void userLeavesMidExamTextboxBlank(String arg0) {
+        studentInfoManagement.midtermExamTextBoxInStudentInfo.sendKeys(arg0);
+    }
+
+    @Then("User leaves finalExam {string} textbox blank")
+    public void userLeavesFinalExamTextboxBlank(String arg0) {
+        studentInfoManagement.finalExamTextBoxInStudentInfo.sendKeys(arg0);
+    }
+
+    @Then("User leaves ınfoNote {string} textbox blank")
+    public void userLeavesInfoNoteTextboxBlank(String arg0) {
+        studentInfoManagement.infoNoteTextBoxInStudentInfo.sendKeys(arg0);
     }
 }
