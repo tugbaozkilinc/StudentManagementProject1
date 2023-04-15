@@ -22,44 +22,47 @@ import static org.junit.Assert.assertTrue;
 import static utilities.ReusableMethods.waitForVisibility;
 
 public class StudentInfoManagementStepDefinitions {
-    HomePage homePage=new HomePage();
-    LoginPage loginPage=new LoginPage();
-    MainMenu mainMenu=new MainMenu();
-    StudentInfoManagement studentInfoManagement=new StudentInfoManagement();
+    HomePage homePage = new HomePage();
+    LoginPage loginPage = new LoginPage();
+    MainMenu mainMenu = new MainMenu();
+    StudentInfoManagement studentInfoManagement = new StudentInfoManagement();
     Faker faker = new Faker(Locale.US);
 
     @Given("User navigates to the specified URL")
     public void user_navigates_to_the_specified_url() {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
     }
+
     @When("User clicks on the Login button")
     public void user_clicks_on_the_login_button() {
-       homePage.loginButton.click();
+        homePage.loginButton.click();
     }
+
     @When("User enters the teacher username in the username textbox")
     public void user_enters_the_teacher_username_in_the_username_textbox() {
         loginPage.usernameTextBox.sendKeys(ConfigReader.getProperty("teacher_username"));
-
     }
+
     @When("User enters the teacher password in the password textbox")
     public void user_enters_the_teacher_password_in_the_password_textbox() {
         loginPage.passwordTextBox.sendKeys(ConfigReader.getProperty("teacher_password"));
     }
+
     @When("User clicks the Login button")
     public void user_clicks_the_login_button() {
         loginPage.submitLoginButton.click();
-       // ReusableMethods.clickWithJS(loginPage.submitLoginButton);
+        // ReusableMethods.clickWithJS(loginPage.submitLoginButton);
     }
+
     @When("User clicks the Menuu button")
     public void user_clicks_the_menu_button() {
-       homePage.menuButton.click();
+        homePage.menuButton.click();
     }
 
     @When("User sees that the Student Info Management page is displayed")
     public void user_sees_that_the_student_ınfo_management_page_is_displayed() {
         assert studentInfoManagement.studentInfoText.isDisplayed();
     }
-
 
     @And("User clicks the Student Info Management button on the menu")
     public void userClicksTheStudentInfoManagementButtonOnTheMenu() {
@@ -74,26 +77,27 @@ public class StudentInfoManagementStepDefinitions {
     @And("User choses the Lesson the Choose Lesson dropdown")
     public void userChosesTheLessonTheChooseLessonDropdown() {
         studentInfoManagement.chooseLessonTextBox.click();
-        Select select=new Select(studentInfoManagement.chooseLessonTextBox);
+        Select select = new Select(studentInfoManagement.chooseLessonTextBox);
         select.selectByIndex(0);
     }
 
     @And("User choses the Student the Choose Student dropdown")
     public void userChosesTheStudentTheChooseStudentDropdown() {
         studentInfoManagement.studentInfoText.click();
-        Select select=new Select(studentInfoManagement.studentInfoText);
+        Select select = new Select(studentInfoManagement.studentInfoText);
         select.selectByIndex(0);
     }
 
     @And("User choses the Education Term the Choose Education Term dropdown")
     public void userChosesTheEducationTermTheChooseEducationTermDropdown() {
         studentInfoManagement.chooseEducationTermTextBox.click();
-        Select select=new Select(studentInfoManagement.chooseEducationTermTextBox);
+        Select select = new Select(studentInfoManagement.chooseEducationTermTextBox);
         select.selectByIndex(0);
     }
+
     @And("User enters the Absentee in the Absentee textbox")
     public void userEntersTheAbsenteeInTheAbsenteeTextbox() {
-       studentInfoManagement.absenteeTextBox.sendKeys(faker.number().digit());
+        studentInfoManagement.absenteeTextBox.sendKeys(faker.number().digit());
 
     }
 
@@ -161,7 +165,7 @@ public class StudentInfoManagementStepDefinitions {
 
     @Then("user verifies that the red required {string} text is visible under the Final Exam textbox on the Add Student Info page")
     public void userVerifiesThatTheRedRequiredTextIsVisibleUnderTheFinalExamTextboxOnTheAddStudentInfoPage(String arg0) {
-        assertTrue( waitForVisibility(studentInfoManagement.required,5).isDisplayed());
+        assertTrue(waitForVisibility(studentInfoManagement.required, 5).isDisplayed());
     }
 
     @Then("User click the delete button")
