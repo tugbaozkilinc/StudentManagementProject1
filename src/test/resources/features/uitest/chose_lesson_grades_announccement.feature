@@ -20,8 +20,15 @@ Feature: student_chose_lesson_grades
   Scenario: TC03_Confirmation of the students choice of one courses
     Given user login as Student
     And The user activates the checkboxes against the courses to be selected
+    And And user clicks Submit button
+    Then user sees Lesson added to Student message on Chose lesson page
 
 
+  @TC04_Verification_about_not_being_able_to_choose_courses_that_come_on_the_same_day_and_time
+  Scenario:TC04_choosing a lesson on the same day and at the same time
+    Given user login as Student
+    And The user chooses a second lesson on the same day and time as the first lesson from the choose lesson section
+    And And user clicks Submit button
 
 
 

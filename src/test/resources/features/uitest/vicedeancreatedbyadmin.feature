@@ -1,8 +1,8 @@
-Feature: US06 Dean should be able to create vice dean account
+Feature: US23 Admin should be able to create vice dean account
 
-  @TC01_vice_dean_created_by_dean
-  Scenario: TC01 Creating vice dean account by dean(positive test)
-    Given user login as Dean
+  @TC01_vice_dean_created_by_admin
+  Scenario: TC01 Creating vice dean account by admin(positive test)
+    Given user login as Admin
     And user is navigated to dean page
     When user clicks on menu button in dean page
     And user clicks on vice dean management button in main menu
@@ -20,9 +20,9 @@ Feature: US06 Dean should be able to create vice dean account
     Then user verifies that vice dean is created by dean
     And user closes the application
 
-  @TC02_vice_dean_created_by_dean
-  Scenario Outline: TC02/TC03/TC04/TC06/TC07/TC08/TC09/TC10 Verifying that the inputs cannot be left blank
-    Given user login as Dean
+  @TC02_vice_dean_created_by_admin
+  Scenario Outline: TC02/TC03/TC04/TC06/TC07/TC08/TC09/TC10 Verifying that the inputs cannot be left blank while admin creates vice dean
+    Given user login as Admin
     And user is navigated to dean page
     When user clicks on menu button in dean page
     And user clicks on vice dean management button in main menu
@@ -50,9 +50,9 @@ Feature: US06 Dean should be able to create vice dean account
       | Tami | Jessie  | France      | 17Mart        | 292-454-7222 | 209-59-4414 |            | 12345678 | 6        |
       | Tami | Jessie  | France      | 17Mart        | 292-454-7222 | 209-59-4414 | TamiJessie |          | 7        |
 
-  @TC03_vice_dean_created_by_dean
-  Scenario Outline: TC11 Verifying that the date of birth input does not accept invalid formats
-    Given user login as Dean
+  @TC03_vice_dean_created_by_admin
+  Scenario Outline: TC11 Verifying that the date of birth input does not accept invalid formats while admin creates vice dean
+    Given user login as Admin
     And user is navigated to dean page
     When user clicks on menu button in dean page
     And user clicks on vice dean management button in main menu
@@ -75,9 +75,9 @@ Feature: US06 Dean should be able to create vice dean account
       | 20281         | Cannot deserialize value of type |
       | 2080          | must be a past date              |
 
-  @TC04_vice_dean_created_by_dean
-  Scenario: TC12 Verifying that the phone input does not accept invalid formats
-    Given user login as Dean
+  @TC04_vice_dean_created_by_admin
+  Scenario: TC12 Verifying that the phone input does not accept invalid formats while admin creates vice dean
+    Given user login as Admin
     And user is navigated to dean page
     When user clicks on menu button in dean page
     And user clicks on vice dean management button in main menu
@@ -92,9 +92,9 @@ Feature: US06 Dean should be able to create vice dean account
       | 11111111111 | Minimum 12 character (XXX-XXX-XXXX) |
     And user closes the application
 
-  @TC05_vice_dean_created_by_dean
-  Scenario Outline: TC13 Verifying that the phone input does not accept invalid formats
-    Given user login as Dean
+  @TC05_vice_dean_created_by_admin
+  Scenario Outline: TC13 Verifying that the phone input does not accept invalid formats while admin creates vice dean
+    Given user login as Admin
     And user is navigated to dean page
     When user clicks on menu button in dean page
     And user clicks on vice dean management button in main menu
@@ -118,9 +118,9 @@ Feature: US06 Dean should be able to create vice dean account
       | ++++++++++++ | Please enter valid phone number |
       | 111_111_1111 | Please enter valid phone number |
 
-  @TC06_vice_dean_created_by_dean
-  Scenario: TC14 Verifying that the ssn input does not accept invalid formats
-    Given user login as Dean
+  @TC06_vice_dean_created_by_admin
+  Scenario: TC14 Verifying that the ssn input does not accept invalid formats while admin creates vice dean
+    Given user login as Admin
     And user is navigated to dean page
     When user clicks on menu button in dean page
     And user clicks on vice dean management button in main menu
@@ -136,9 +136,9 @@ Feature: US06 Dean should be able to create vice dean account
       | 5555555555 | Minimum 11 character (XXX-XX-XXXX) |
     And user closes the application
 
-  @TC07_vice_dean_created_by_dean
-  Scenario Outline: TC15 Verifying that the ssn input does not accept invalid formats
-    Given user login as Dean
+  @TC07_vice_dean_created_by_admin
+  Scenario Outline: TC15 Verifying that the ssn input does not accept invalid formats while admin creates vice dean
+    Given user login as Admin
     And user is navigated to dean page
     When user clicks on menu button in dean page
     And user clicks on vice dean management button in main menu
@@ -163,9 +163,9 @@ Feature: US06 Dean should be able to create vice dean account
       | ???????????  | Please enter valid SSN number |
       | 44444444444  | Please enter valid SSN number |
 
-  @TC08_vice_dean_created_by_dean
-  Scenario: TC16 Verifying that the password input does not accept invalid formats
-    Given user login as Dean
+  @TC08_vice_dean_created_by_admin
+  Scenario: TC16 Verifying that the password input does not accept invalid formats while admin creates vice dean
+    Given user login as Admin
     And user is navigated to dean page
     When user clicks on menu button in dean page
     And user clicks on vice dean management button in main menu
@@ -182,42 +182,3 @@ Feature: US06 Dean should be able to create vice dean account
       | password | message             |
       | 1234567  | Minimum 8 character |
     And user closes the application
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -15,7 +15,6 @@ public class LoginStepDefinitions {
         loginPage.usernameTextBox.sendKeys(ConfigReader.getProperty("vicedean"));
         loginPage.passwordTextBox.sendKeys(ConfigReader.getProperty("vicedeanpassword"));
         loginPage.submitLoginButton.click();
-
     }
 
     @Given("user login as Dean")
@@ -24,7 +23,6 @@ public class LoginStepDefinitions {
         loginPage.usernameTextBox.sendKeys(ConfigReader.getProperty("dean_username"));
         loginPage.passwordTextBox.sendKeys(ConfigReader.getProperty("dean_password"));
         loginPage.submitLoginButton.click();
-
     }
 
     @Given("user login as Admin")
@@ -33,49 +31,7 @@ public class LoginStepDefinitions {
         loginPage.usernameTextBox.sendKeys(ConfigReader.getProperty("admin"));
         loginPage.passwordTextBox.sendKeys(ConfigReader.getProperty("adminpassword"));
         loginPage.submitLoginButton.click();
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @Given("user login as Student")
     public void userLoginAsStudent() {
@@ -83,7 +39,6 @@ public class LoginStepDefinitions {
         loginPage.usernameTextBox.sendKeys(ConfigReader.getProperty("student"));
         loginPage.passwordTextBox.sendKeys(ConfigReader.getProperty("studentpassword"));
         loginPage.submitLoginButton.click();
-
     }
 
 }

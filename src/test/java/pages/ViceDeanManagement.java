@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class ViceDeanManagement {
 
     public ViceDeanManagement() {
@@ -41,35 +43,37 @@ public class ViceDeanManagement {
     @FindBy(id = "password")
     public WebElement passwordTextBox;
 
-    @FindBy(xpath = "//*[@href='/login']")
-    public WebElement loginButton;
-
     @FindBy(xpath = "//*[@class='text-white text-white justify-content-center text-center navbar-brand']")
     public WebElement user;
 
     @FindBy(xpath = "//button[.='Submit']")
     public WebElement submitButton;
 
-    @FindBy(xpath = "//button[.='Login']")
-    public WebElement submitButtonInLogin;
-
     @FindBy(xpath = "//*[text()='Vice dean Saved']")
     public WebElement successfulMessage;
 
-    @FindBy(xpath = "(//*[text()='Required'])[1]")
-    public WebElement nameRequiredText;
+    @FindBy(xpath = "//h3")
+    public WebElement viceDeanManagementPage;
 
-    @FindBy(xpath = "(//*[@class='invalid-feedback'])[2]")
-    public WebElement surnameRequiredText;
+    @FindBy(css = "div[class='invalid-feedback']")
+    public List<WebElement> requiredTexts;
 
-    @FindBy(xpath = "(//*[@class='invalid-feedback'])[3]")
-    public WebElement birthPlaceRequiredText;
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement dateOfBirthErrorMessage;
 
-    @FindBy(xpath = "(//*[@class='invalid-feedback'])[4]")
-    public WebElement dateOfBirthRequiredText;
+    @FindBy(xpath = "//*[contains(text(), 'Minimum 12 character')]")
+    public WebElement phoneMinimumOnIkiCharacterMessage;
 
+    @FindBy(xpath = "//*[text()='Please enter valid phone number']")
+    public WebElement phoneInvalidMessage;
 
+    @FindBy(xpath = "//*[text()='Minimum 11 character (XXX-XX-XXXX)']")
+    public WebElement ssnMinimumOnBirCharacterMessage;
 
+    @FindBy(xpath = "//*[text()='Please enter valid SSN number']")
+    public WebElement ssnInvalidMessage;
 
+    @FindBy(xpath = "//*[text()='Minimum 8 character']")
+    public WebElement passwordInvalidMessage;
 
 }

@@ -49,6 +49,11 @@ public class ChooseLessonStepDefinitions {
 
     @And("The user activates the checkboxes against the courses to be selected")
     public void theUserActivatesTheCheckboxesAgainstTheCoursesToBeSelected() {
+    chooseLesson.secondLessonCheckbox.click();
+    }
+
+    @And("The user chooses a second lesson on the same day and time as the first lesson from the choose lesson section")
+    public void theUserChoosesASecondLessonOnTheSameDayAndTimeAsTheFirstLessonFromTheChooseLessonSection() {
 
     }
 }
