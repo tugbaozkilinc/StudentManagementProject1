@@ -33,4 +33,12 @@ public class LoginStepDefinitions {
         loginPage.submitLoginButton.click();
     }
 
+    @Given("user login as Student")
+    public void userLoginAsStudent() {
+        homePage.loginButton.click();
+        loginPage.usernameTextBox.sendKeys(ConfigReader.getProperty("student"));
+        loginPage.passwordTextBox.sendKeys(ConfigReader.getProperty("studentpassword"));
+        loginPage.submitLoginButton.click();
+    }
+
 }
