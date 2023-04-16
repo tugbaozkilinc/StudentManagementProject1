@@ -25,10 +25,6 @@ public class StudentManagementStepDefinitions {
     StudentManagement studentManagement = new StudentManagement();
     Faker faker = new Faker(Locale.US);
 
-    @And("user clicks the menu button")
-    public void userClicksTheMenuButton() {
-        homePage.menuButton.click();
-    }
 
     @When("user clicks the Student Management on the menu")
     public void user_clicks_the_student_management_on_the_menu() {
