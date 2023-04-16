@@ -190,33 +190,70 @@ actions.moveToElement(lessonManagement.chooseLessonsTextBox).sendKeys("Python_T0
 
     @And("user does not choose choose lesson textbox")
     public void userDoesNotChooseChooseLessonTextbox() {
+
     }
 
     @Then("user see required message")
     public void userSeeRequiredMessage() {
+
     }
 
     @And("user select choose lesson textbox")
     public void userSelectChooseLessonTextbox() {
+
     }
 
     @And("user don't click valid value choose Day")
     public void userDonTClickValidValueChooseDay() {
+
     }
 
     @And("user don't select choose education term")
     public void userDonTSelectChooseEducationTerm() {
+
     }
 
     @And("user select choose education term")
     public void userSelectChooseEducationTerm() {
+
     }
 
     @And("user don't enter stop time")
     public void userDonTEnterStopTime() {
+
     }
 
     @Then("user see required message below stop time")
     public void userSeeRequiredMessageBelowStopTime() {
+
+    }
+
+    @And("user sees lesson list")
+    public void userSeesLessonList() {
+
+    }
+
+    @Then("The user sees the name, credit score and compulsory of the course added from the lesson list section.")
+    public void theUserSeesTheNameCreditScoreAndCompulsoryOfTheCourseAddedFromTheLessonListSection() {
+    }
+
+    @And("The user sees the delete button next to the course list")
+    public void theUserSeesTheDeleteButtonNextToTheCourseList() {
+    }
+
+    @And("user clicks delete button")
+    public void userClicksDeleteButton() {
+    }
+
+    @And("user sees warning message")
+    public void userSeesWarningMessage() {
+    }
+
+    @Then("user user receives an information message that the course has been deleted")
+    public void userUserReceivesAnInformationMessageThatTheCourseHasBeenDeleted() {
+    }
+
+    @Then("The user sees the edit button next to the lecture list.")
+    public void theUserSeesTheEditButtonNextToTheLectureList() {
     }
 }

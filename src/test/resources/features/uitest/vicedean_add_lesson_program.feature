@@ -1,14 +1,15 @@
 Feature: US10 vice dean create lesson program
-
-  Scenario: TC01
-    Given user navigates to the specified URL
-    And user clicks on the login button
-    And user enters the "vice_dean_username" in the username textbox on the login page
-    And user enters the "vice_dean_password" in the password textbox on the login page
-    And user clicks the login button on the login page
+Background:
+  Given user navigates to the specified URL
+  And user clicks on the login button
+  And user enters the "vice_dean_username" in the username textbox on the login page
+  And user enters the "vice_dean_password" in the password textbox on the login page
+  And user clicks the login button on the login page
    # And user clicks the menu button
-    And User click lesson management
-    And user click lesson program
+  And User click lesson management
+  And user click lesson program
+  Scenario: TC01
+
     And user enter valid value choose lesson textbox
     And user click valid value choose Day
     And user choose education term
@@ -17,14 +18,7 @@ Feature: US10 vice dean create lesson program
   #  And user click submit button
     Then user see create lesson program
 Scenario: TC02
-  Given user navigates to the specified URL
-  And user clicks on the login button
-  And user enters the "vice_dean_username" in the username textbox on the login page
-  And user enters the "vice_dean_password" in the password textbox on the login page
-  And user clicks the login button on the login page
- # And user clicks the menu button
-  And User click lesson management
-  And user click lesson program
+
   And user does not choose choose lesson textbox
   And user click valid value choose Day
   And user choose education term
@@ -33,14 +27,7 @@ Scenario: TC02
  # And user click submit button
   Then user see required message
 Scenario: TC03
-  Given user navigates to the specified URL
-  And user clicks on the login button
-  And user enters the "vice_dean_username" in the username textbox on the login page
-  And user enters the "vice_dean_password" in the password textbox on the login page
-  And user clicks the login button on the login page
- # And user clicks the menu button
-  And User click lesson management
-  And user click lesson program
+
   And user select choose lesson textbox
   And user don't click valid value choose Day
   And user choose education term
@@ -49,14 +36,7 @@ Scenario: TC03
  # And user click submit button
   Then user see required message
 Scenario: TC04
-  Given user navigates to the specified URL
-  And user clicks on the login button
-  And user enters the "vice_dean_username" in the username textbox on the login page
-  And user enters the "vice_dean_password" in the password textbox on the login page
-  And user clicks the login button on the login page
- # And user clicks the menu button
-  And User click lesson management
-  And user click lesson program
+
   And user select choose lesson textbox
   And user click valid value choose Day
   And user don't select choose education term
@@ -65,14 +45,7 @@ Scenario: TC04
   #And user click submit button
   Then user see required message
 Scenario: TC05
-  Given user navigates to the specified URL
-  And user clicks on the login button
-  And user enters the "vice_dean_username" in the username textbox on the login page
-  And user enters the "vice_dean_password" in the password textbox on the login page
-  And user clicks the login button on the login page
- # And user clicks the menu button
-  And User click lesson management
-  And user click lesson program
+
   And user select choose lesson textbox
   And user click valid value choose Day
   And user select choose education term
