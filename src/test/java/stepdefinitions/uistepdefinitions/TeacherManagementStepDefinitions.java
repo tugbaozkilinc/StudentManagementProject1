@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uistepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
@@ -35,6 +35,7 @@ public class TeacherManagementStepDefinitions {
         homepage.menuButton.click();
     }
 
+
     @And("user clicks the Teacher Management")
     public void userClicksTheTeacherManagement() {
         mainMenu.teacherManagement.click();
@@ -47,7 +48,6 @@ public class TeacherManagementStepDefinitions {
         waitFor(4);
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.TAB).sendKeys("MathT6" + Keys.ENTER + Keys.ENTER).perform();
-
 
     }
 
