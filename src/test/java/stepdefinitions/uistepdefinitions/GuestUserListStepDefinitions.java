@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uistepdefinitions;
 
 import io.cucumber.java.en.*;
 import org.openqa.selenium.support.PageFactory;
