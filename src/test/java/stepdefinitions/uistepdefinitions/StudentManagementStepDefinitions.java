@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uistepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
@@ -25,10 +25,6 @@ public class StudentManagementStepDefinitions {
     StudentManagement studentManagement = new StudentManagement();
     Faker faker = new Faker(Locale.US);
 
-    @And("user clicks the menu button")
-    public void userClicksTheMenuButton() {
-        homePage.menuButton.click();
-    }
 
     @When("user clicks the Student Management on the menu")
     public void user_clicks_the_student_management_on_the_menu() {
@@ -183,6 +179,20 @@ public class StudentManagementStepDefinitions {
         }
         Assert.assertTrue("All the student numbers are unique.", isUnique);
     }
+
+    @When("user enters the father name {string} in the father name text box")
+    public void user_enters_the_father_name_in_the_father_name_text_box(String string) {
+        studentManagement.fatherNameTextBox.sendKeys(string);
+    }
+    @When("user enters the mother name {string} in the mother name text box")
+    public void user_enters_the_mother_name_in_the_mother_name_text_box(String string) {
+        studentManagement.motherNameTextBox.sendKeys(string);
+    }
+
+
+
+
+
 
 
 }
