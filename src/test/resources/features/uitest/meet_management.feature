@@ -56,7 +56,6 @@ Feature: US19 Teacher should be able to add the meet
       | Selcuk  | 01.06.2023 | 11.00      | 12.00     |             |
       | Selcuk  | 01.06.2023 | 11.00      | 12.00     | good        |
 
-<<<<<<< HEAD
   @TC04
   Scenario: TC04
     Given User navigates to the specified URL
@@ -76,8 +75,7 @@ Feature: US19 Teacher should be able to add the meet
 
 
   @US20
-=======
->>>>>>> cefdf0dd7fe9bba0d269093ad519ca5bf19c0d23
+
 
   Scenario: TC01
     Given User navigates to the specified URL
@@ -92,7 +90,7 @@ Feature: US19 Teacher should be able to add the meet
 
   Scenario: TC02
 
-<<<<<<< HEAD
+
     Given User navigates to the specified URL
     When User clicks on the Login button
     And User enters the "teacher username" in the username textbox
@@ -106,18 +104,17 @@ Feature: US19 Teacher should be able to add the meet
     And User enter new Date in the Date box
     And User click Submit button
     Then User sees success saved message
-=======
-      Scenario: TC01
-        Given User navigates to the specified URL
-        When User clicks on the Login button
-        And User enters the teacher username in the username textbox
-        And User enters the teacher password in the password textbox
-        And User clicks the Login button
-        And User clicks the Menuu button
-        And User clicks the Meet Management button on the menu
-        And User sees that the Meet Management page is displayed
-        Then User sees that the Meet List section is displayed on the page
->>>>>>> cefdf0dd7fe9bba0d269093ad519ca5bf19c0d23
+
+  Scenario: TC01
+    Given User navigates to the specified URL
+    When User clicks on the Login button
+    And User enters the teacher username in the username textbox
+    And User enters the teacher password in the password textbox
+    And User clicks the Login button
+    And User clicks the Menuu button
+    And User clicks the Meet Management button on the menu
+    And User sees that the Meet Management page is displayed
+    Then User sees that the Meet List section is displayed on the page
 
   Scenario: TC03
     Given User navigates to the specified URL
@@ -132,7 +129,6 @@ Feature: US19 Teacher should be able to add the meet
     And User click Submit button
     Then User sees success saved message
 
-<<<<<<< HEAD
   Scenario: TC04
     Given User navigates to the specified URL
     When User clicks on the Login button
@@ -197,97 +193,95 @@ Feature: US19 Teacher should be able to add the meet
     And User enter invalid new Date in the Date box
     And User click Submit button
     Then User sees that the the edit meet not created
-=======
-          Given User navigates to the specified URL
-          When User clicks on the Login button
-          And User enters the teacher username in the username textbox
-          And User enters the teacher password in the password textbox
-          And User clicks the Login button
-          And User clicks the Menuu button
-          And User clicks the Meet Management button on the menu
-          And User sees that the Meet Management page is displayed
-          And User sees that the Meet List section is displayed on the page
-          And User click edit button of any meet in Meet List
-          And User enter new Date in the Date box
-          And User clicks the Submit button
-          Then User sees success saved message
+    Given User navigates to the specified URL
+    When User clicks on the Login button
+    And User enters the teacher username in the username textbox
+    And User enters the teacher password in the password textbox
+    And User clicks the Login button
+    And User clicks the Menuu button
+    And User clicks the Meet Management button on the menu
+    And User sees that the Meet Management page is displayed
+    And User sees that the Meet List section is displayed on the page
+    And User click edit button of any meet in Meet List
+    And User enter new Date in the Date box
+    And User clicks the Submit button
+    Then User sees success saved message
 
-          Scenario: TC03
-            Given User navigates to the specified URL
-            When User clicks on the Login button
-            And User enters the teacher username in the username textbox
-            And User enters the teacher password in the password textbox
-            And User clicks the Login button
-            And User clicks the Menuu button
-            And User clicks the Meet Management button on the menu
-            And User click edit button of any meet in Meet List
-            And User enter new start time in the start time box
-            And User clicks the Submit button
-            Then User sees success saved message
+  Scenario: TC03
+    Given User navigates to the specified URL
+    When User clicks on the Login button
+    And User enters the teacher username in the username textbox
+    And User enters the teacher password in the password textbox
+    And User clicks the Login button
+    And User clicks the Menuu button
+    And User clicks the Meet Management button on the menu
+    And User click edit button of any meet in Meet List
+    And User enter new start time in the start time box
+    And User clicks the Submit button
+    Then User sees success saved message
 
-            Scenario: TC04
-              Given User navigates to the specified URL
-              When User clicks on the Login button
-              And User enters the teacher username in the username textbox
-              And User enters the teacher password in the password textbox
-              And User clicks the Login button
-              And User clicks the Menuu button
-              And User clicks the Meet Management button on the menu
-              And User click edit button of any meet in Meet List
-              And User enter new stop time in the stop time box
-              And User clicks the Submit button
-              Then User sees success saved message
+  Scenario: TC04
+    Given User navigates to the specified URL
+    When User clicks on the Login button
+    And User enters the teacher username in the username textbox
+    And User enters the teacher password in the password textbox
+    And User clicks the Login button
+    And User clicks the Menuu button
+    And User clicks the Meet Management button on the menu
+    And User click edit button of any meet in Meet List
+    And User enter new stop time in the stop time box
+    And User clicks the Submit button
+    Then User sees success saved message
 
-              Scenario: TC05
-                Given User navigates to the specified URL
-                When User clicks on the Login button
-                And User enters the teacher username in the username textbox
-                And User enters the teacher password in the password textbox
-                And User clicks the Login button
-                And User clicks the Menuu button
-                And User clicks the Meet Management button on the menu
-                And User click edit button of any meet in Meet List
-                And User enters new Description in the Description
-                And User clicks the Submit button
-                Then User sees success saved message
+  Scenario: TC05
+    Given User navigates to the specified URL
+    When User clicks on the Login button
+    And User enters the teacher username in the username textbox
+    And User enters the teacher password in the password textbox
+    And User clicks the Login button
+    And User clicks the Menuu button
+    And User clicks the Meet Management button on the menu
+    And User click edit button of any meet in Meet List
+    And User enters new Description in the Description
+    And User clicks the Submit button
+    Then User sees success saved message
 
-                Scenario: TC06
-                  Given User navigates to the specified URL
-                  When User clicks on the Login button
-                  And User enters the teacher username in the username textbox
-                  And User enters the teacher password in the password textbox
-                  And User clicks the Login button
-                  And User clicks the Menuu button
-                  And User clicks the Meet Management button on the menu
-                  And User click delete button of any meet in Meet List
-                  Then User sees success saved message
+  Scenario: TC06
+    Given User navigates to the specified URL
+    When User clicks on the Login button
+    And User enters the teacher username in the username textbox
+    And User enters the teacher password in the password textbox
+    And User clicks the Login button
+    And User clicks the Menuu button
+    And User clicks the Meet Management button on the menu
+    And User click delete button of any meet in Meet List
+    Then User sees success saved message
 
-                  Scenario: TC07
-                    Given User navigates to the specified URL
-                    When User clicks on the Login button
-                    And User enters the teacher username in the username textbox
-                    And User enters the teacher password in the password textbox
-                    And User clicks the Login button
-                    And User clicks the Menuu button
-                    And User clicks the Meet Management button on the menu
-                    And User click edit button of any meet in Meet List
-                    And User enter invalid new start time in the start time box
-                    And User clicks the Submit button
-                    Then User sees that the the edit meet not created
+  Scenario: TC07
+    Given User navigates to the specified URL
+    When User clicks on the Login button
+    And User enters the teacher username in the username textbox
+    And User enters the teacher password in the password textbox
+    And User clicks the Login button
+    And User clicks the Menuu button
+    And User clicks the Meet Management button on the menu
+    And User click edit button of any meet in Meet List
+    And User enter invalid new start time in the start time box
+    And User clicks the Submit button
+    Then User sees that the the edit meet not created
 
-                    Scenario: TC08
-                      Given User navigates to the specified URL
-                      When User clicks on the Login button
-                      And User enters the teacher username in the username textbox
-                      And User enters the teacher password in the password textbox
-                      And User clicks the Login button
-                      And User clicks the Menuu button
-                      And User clicks the Meet Management button on the menu
-                      And User sees that the Meet Management page is displayed
-                      And User sees that the Meet List section is displayed on the page
-                      And User click edit button of any meet in Meet List
-                      And User enter invalid new Date in the Date box
-                      And User clicks the Submit button
-                      Then User sees that the the edit meet not created
->>>>>>> cefdf0dd7fe9bba0d269093ad519ca5bf19c0d23
+  Scenario: TC08
+    Given User navigates to the specified URL
+    When User clicks on the Login button
+    And User enters the teacher username in the username textbox
+    And User enters the teacher password in the password textbox
+    And User clicks the Login button
+    And User clicks the Menuu button
+    And User clicks the Meet Management button on the menu
+    And User sees that the Meet Management page is displayed
+    And User sees that the Meet List section is displayed on the page
+    And User click edit button of any meet in Meet List
+    And User enter invalid new Date in the Date box
+    And User clicks the Submit button
+    Then User sees that the the edit meet not created
 
