@@ -8,7 +8,7 @@ Feature: US08_Lessons_Add_Lessons
     And user enters the "vice_dean_password" in the password textbox on the login page
     And user clicks the login button on the login page
     And user clicks the menu button
-    And User click lesson management
+
     And user click lesson area
     And user enters a valid value "Python09" lesson name
     And user sign Compulsory choice

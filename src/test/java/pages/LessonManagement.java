@@ -27,6 +27,7 @@ public class LessonManagement {
     @FindBy(xpath = "(//button[normalize-space()='Submit'])[1]")
     public WebElement SubmitButton;
 
+
     @FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonsList']")
     public WebElement lessonsButton;
 

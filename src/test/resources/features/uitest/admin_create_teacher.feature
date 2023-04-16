@@ -1,9 +1,9 @@
-@vicedean_create_teacher
-Feature: vice_dean_sohuld_be_create_teacher
+@admin_create_teacher
+Feature: admin_sohuld_be_create_teacher
 
   @possitive_test
-  Scenario: TC01_Vice_dean_should_be_able_to_create_teacher_possitive_test
-    Given user login as Vice Dean
+  Scenario: TC01_Admin_should_be_able_to_create_teacher_possitive_test
+    Given user login as Admin
     And user clicks the menu button
     And user clicks the Teacher Management
     And user chooses a lesson
@@ -20,10 +20,10 @@ Feature: vice_dean_sohuld_be_create_teacher
     And user enters the valid value in the Password textbox
     And user clicks the register submit button
     Then user verifies that the creation is succesfull
-@tc02
+  @tc02
   Scenario: TC02_Verifying_that_lesson_cannot_be_left_blank
 
-    And user login as Vice Dean
+    And user login as Admin
     And user clicks the menu button
     And user clicks the Teacher Management
     And user enters the valid value in the name textbox
@@ -42,7 +42,7 @@ Feature: vice_dean_sohuld_be_create_teacher
   @left_blank
   Scenario Outline: TC03_Verifying_that_"<field>"_cannot_be_left_blank
 
-    And user login as Vice Dean
+    And user login as Admin
     And user clicks the menu button
     And user clicks the Teacher Management
     And user enters the valid "<name>" value in the name textbox
@@ -72,7 +72,7 @@ Feature: vice_dean_sohuld_be_create_teacher
   @space
   Scenario Outline: TC04_Verifying_that_"<field>"_cannot_contain_only_space
 
-    And user login as Vice Dean
+    And user login as Admin
     And user clicks the menu button
     And user clicks the Teacher Management
     And user enters the valid "<name>" value in the name textbox space
