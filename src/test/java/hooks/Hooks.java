@@ -11,13 +11,13 @@ import utilities.Driver;
 public class Hooks {
     @Before
     public void setUp() {
-        //Driver.getDriver().get("https://www.managementonschools.com/");
-        BaseUrl.setUp();
+        Driver.getDriver().get("https://www.managementonschools.com/");
+      //  BaseUrl.setUp();
     }
 
     @After
     public void tearDown() throws Exception {
-        Driver.closeDriver();
+     //   Driver.closeDriver();
     }
 
     @After //Cucumber dan geleni sec, junit tekini degil.

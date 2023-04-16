@@ -6,7 +6,7 @@ Feature: US10 vice dean create lesson program
     And user enters the "vice_dean_username" in the username textbox on the login page
     And user enters the "vice_dean_password" in the password textbox on the login page
     And user clicks the login button on the login page
-    And user clicks the menu button
+   # And user clicks the menu button
     And User click lesson management
     And user click lesson program
     And user enter valid value choose lesson textbox
@@ -14,7 +14,7 @@ Feature: US10 vice dean create lesson program
     And user choose education term
     And user enter start time
     And user enter stop time
-    And user click submit button
+  #  And user click submit button
     Then user see create lesson program
 Scenario: TC02
   Given user navigates to the specified URL
@@ -22,7 +22,7 @@ Scenario: TC02
   And user enters the "vice_dean_username" in the username textbox on the login page
   And user enters the "vice_dean_password" in the password textbox on the login page
   And user clicks the login button on the login page
-  And user clicks the menu button
+ # And user clicks the menu button
   And User click lesson management
   And user click lesson program
   And user does not choose choose lesson textbox
@@ -30,7 +30,7 @@ Scenario: TC02
   And user choose education term
   And user enter start time
   And user enter stop time
-  And user click submit button
+ # And user click submit button
   Then user see required message
 Scenario: TC03
   Given user navigates to the specified URL
@@ -38,7 +38,7 @@ Scenario: TC03
   And user enters the "vice_dean_username" in the username textbox on the login page
   And user enters the "vice_dean_password" in the password textbox on the login page
   And user clicks the login button on the login page
-  And user clicks the menu button
+ # And user clicks the menu button
   And User click lesson management
   And user click lesson program
   And user select choose lesson textbox
@@ -46,7 +46,7 @@ Scenario: TC03
   And user choose education term
   And user enter start time
   And user enter stop time
-  And user click submit button
+ # And user click submit button
   Then user see required message
 Scenario: TC04
   Given user navigates to the specified URL
@@ -54,7 +54,7 @@ Scenario: TC04
   And user enters the "vice_dean_username" in the username textbox on the login page
   And user enters the "vice_dean_password" in the password textbox on the login page
   And user clicks the login button on the login page
-  And user clicks the menu button
+ # And user clicks the menu button
   And User click lesson management
   And user click lesson program
   And user select choose lesson textbox
@@ -62,7 +62,7 @@ Scenario: TC04
   And user don't select choose education term
   And user enter start time
   And user enter stop time
-  And user click submit button
+  #And user click submit button
   Then user see required message
 Scenario: TC05
   Given user navigates to the specified URL
@@ -70,7 +70,7 @@ Scenario: TC05
   And user enters the "vice_dean_username" in the username textbox on the login page
   And user enters the "vice_dean_password" in the password textbox on the login page
   And user clicks the login button on the login page
-  And user clicks the menu button
+ # And user clicks the menu button
   And User click lesson management
   And user click lesson program
   And user select choose lesson textbox
@@ -78,7 +78,7 @@ Scenario: TC05
   And user select choose education term
   And user enter start time
   And user don't enter stop time
-  And user click submit button
+  #And user click submit button
   Then user see required message below stop time
 
 

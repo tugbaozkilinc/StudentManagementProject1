@@ -77,11 +77,14 @@ public class LessonManagement {
 
 
 
+    @FindBy(xpath = "//*[@id=\"2\"]/div[1]/div[2]")
+    public WebElement lessoncreatesuccessmessage;
 
 
 
 
-
+    @FindBy(xpath = "//*[@id=\"day\"]/option[2]")
+    public WebElement chooseMonday;
 
 
 
