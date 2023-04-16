@@ -53,9 +53,12 @@ public class MeetManagement {
     @FindBy(xpath = "//*[@id='description']")
     public WebElement descriptionTextBoxInEdit;
 
-
+    @FindBy(xpath = "//div[@role='alert']//div[2]")
+    public WebElement alertMessage;
 
     @FindBy(xpath = " (//*[@class='fw-semibold btn btn-primary btn-lg'])[2]")
     public WebElement submitButtonInEdit;
+
+
 
 }
