@@ -33,11 +33,6 @@ public class StudentInfoManagementStepDefinitions {
         Driver.getDriver().get(ConfigReader.getProperty("url"));
     }
 
-    @When("User clicks on the Login button")
-    public void user_clicks_on_the_login_button() {
-        homePage.loginButton.click();
-    }
-
     @When("User enters the teacher username in the username textbox")
     public void user_enters_the_teacher_username_in_the_username_textbox() {
         loginPage.usernameTextBox.sendKeys(ConfigReader.getProperty("teacher_username"));
