@@ -189,10 +189,4 @@ public class StudentManagementStepDefinitions {
         studentManagement.motherNameTextBox.sendKeys(string);
     }
 
-
-
-
-
-
-
 }
