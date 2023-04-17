@@ -1,15 +1,18 @@
 package pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+
+import java.util.List;
 
 public class MeetManagement {
     public MeetManagement() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    @FindBy(xpath = "(//h5)[1]")
+    @FindBy(xpath = "//*[text()='Add Meet']")
     public WebElement addMeetText;
     @FindBy(xpath = "//*[@id='react-select-2-live-region']")
     public WebElement chooseStudentTextBox;
@@ -29,13 +32,13 @@ public class MeetManagement {
     @FindBy(xpath = "//*[@type='button']")
     public WebElement submitButton;
 
-    @FindBy(xpath = "(//h5)[2]")
-    public WebElement MeetText;
+    @FindBy(xpath = "//*[text()='Meet List']")
+    public WebElement meetListText;
 
-    @FindBy(xpath = " (//*[@type='button'])[6]")
+    @FindBy(xpath = "(//*[@type='button'])[6]")
     public WebElement editButton;
 
-    @FindBy(xpath = " (//*[@type='button'])[7]")
+    @FindBy(xpath = "(//*[@type='button'])[7]")
     public WebElement deleteButton;
 
     @FindBy(xpath = "//*[@id='react-select-4-placeholder']")
@@ -53,9 +56,14 @@ public class MeetManagement {
     @FindBy(xpath = "//*[@id='description']")
     public WebElement descriptionTextBoxInEdit;
 
+    @FindBy(xpath = "//div[@role='alert'][1]")
+    public WebElement alertMessage;
 
-
-    @FindBy(xpath = " (//*[@class='fw-semibold btn btn-primary btn-lg'])[2]")
+    @FindBy(xpath = "(//*[@class='fw-semibold btn btn-primary btn-lg'])[2]")
     public WebElement submitButtonInEdit;
+
+    @FindAll({@FindBy(xpath = "//*[@class='table-responsive']//tbody//tr//td[1]")})
+    public List<WebElement> meetListOnCurrentPage;
+
 
 }
