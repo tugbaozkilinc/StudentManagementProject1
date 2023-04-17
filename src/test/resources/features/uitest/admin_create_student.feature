@@ -1,4 +1,4 @@
-@admin_create_student @emin
+@admin_create_student @emin @regression
 Feature: US25_creating_student_(admin)
 
   Background:

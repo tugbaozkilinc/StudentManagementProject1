@@ -1,4 +1,4 @@
-@guestUserFeature
+@guestUserFeature @regression
 Feature: Guest User
 
   @guestUserListVerify

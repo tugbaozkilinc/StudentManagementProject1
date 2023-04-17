@@ -1,4 +1,4 @@
-@admin_create_teacher
+@admin_create_teacher @regression
 Feature: admin_sohuld_be_create_teacher
 
   @possitive_test @smoke

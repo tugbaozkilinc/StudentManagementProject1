@@ -1,4 +1,4 @@
-
+@regression
 Feature: US01_Register_Module
 
   @positive @smoke

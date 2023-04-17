@@ -1,4 +1,4 @@
-@addDeanAsAdmin
+@addDeanAsAdmin @regression
 Feature: Admin Management Module
 
   Background:

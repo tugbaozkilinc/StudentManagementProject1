@@ -1,3 +1,4 @@
+@regression
 Feature: US18 The teacher should be able to see and update the grades given to the student.
 
   Scenario: TC_01 Teacher can access Add Student Info page

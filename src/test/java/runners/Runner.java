@@ -17,7 +17,6 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@vice_dean_create_student_phone_max_character_verification",
         dryRun = false
 )
 public class Runner {
