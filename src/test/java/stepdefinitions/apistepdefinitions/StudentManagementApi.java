@@ -16,7 +16,7 @@ import java.util.Locale;
 import static io.restassured.RestAssured.given;
 
 
-public class StudentManagementStepDefinitionsApi extends BaseUrl {
+public class StudentManagementApi extends BaseUrl {
 
     CreateStudentPojo expectedData;
     CreateStudentInvalidDataPojo actualData;
