@@ -1,4 +1,4 @@
-@us11
+@us11 @regression
 Feature: Vice dean should be see syllabus
   Scenario: TC01 Vice dean should be able to see syllabus
     Given user login as Vice Dean

@@ -1,6 +1,7 @@
+@regression
 Feature: US23 Admin should be able to create vice dean account
 
-  @TC01_vice_dean_created_by_admin
+  @TC01_vice_dean_created_by_admin @smoke
   Scenario: TC01 Creating vice dean account by admin(positive test)
     Given user login as Admin
     And user is navigated to dean page

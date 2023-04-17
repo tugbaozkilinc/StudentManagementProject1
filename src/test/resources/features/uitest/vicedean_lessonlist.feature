@@ -1,3 +1,4 @@
+@regression
 Feature:US09 vice_dean should be see lesson list
 
   Background:

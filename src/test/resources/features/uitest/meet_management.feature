@@ -1,4 +1,4 @@
-@US19
+@US19 @regression
 Feature: US19 Teacher should be able to add the meet
 
   Background:
