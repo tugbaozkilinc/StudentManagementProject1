@@ -1,14 +1,19 @@
 package utilities;
 
 import baseurl.BaseUrl;
+import com.github.javafaker.Faker;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import pojos.register.RegisterPojo;
 
+import java.util.Locale;
+
 import static io.restassured.RestAssured.given;
 
 public class ReusableApiMethods extends BaseUrl {
+
+    static Faker faker = new Faker(Locale.US);
 
     public static void postRequest(RegisterPojo expectedData, int statusCode, String message) {
         spec.pathParams("first", "guestUser", "second", "register");
