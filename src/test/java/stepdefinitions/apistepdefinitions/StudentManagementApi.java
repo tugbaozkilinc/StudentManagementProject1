@@ -19,7 +19,7 @@ import static utilities.ReusableMethods.generateCurrentDate;
 import static utilities.ReusableMethods.generateTomorrowsDate;
 
 
-public class StudentManagementStepDefinitionsApi extends BaseUrl {
+public class StudentManagementApi extends BaseUrl {
 
     CreateStudentDataPojo expectedData;
     CreateStudentInvalidDataPojo actualData;
