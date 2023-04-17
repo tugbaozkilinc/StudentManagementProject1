@@ -3,11 +3,15 @@ package utilities;
 import baseurl.BaseUrl;
 import com.github.javafaker.Faker;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import pojos.register.RegisterPojo;
 
+import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
 import static io.restassured.RestAssured.given;
 
@@ -33,5 +37,16 @@ public class ReusableApiMethods extends BaseUrl {
         Assert.assertEquals(message, actualData.getMessage());
 
     }
+
+    public static Integer getARandomAdvisorTeacherId() {
+        spec.pathParams("first", "advisorTeacher", "second", "getAll");
+        Response response = given(spec).get("/{first}/{second}");
+        JsonPath jsonPath = response.jsonPath();
+        List<Integer> webList = jsonPath.getList("findAll{it.advisorTeacherId < 100}.advisorTeacherId");
+        Random random = new Random();
+        int optionIndex = 1 + random.nextInt(webList.size() - 1);
+        return webList.get(optionIndex);
+    }
+
 
 }
