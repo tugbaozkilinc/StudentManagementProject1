@@ -16,11 +16,11 @@ public class Hooks {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         Driver.closeDriver();
     }
 
-    @After //Cucumber dan geleni sec, junit tekini degil.
+    @After
     public void tearDownScenarios(Scenario scenario) {
         if (scenario.isFailed()) {
             final byte[] failedScreenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);

@@ -25,7 +25,6 @@ public class StudentManagementStepDefinitions {
     StudentManagement studentManagement = new StudentManagement();
     Faker faker = new Faker(Locale.US);
 
-
     @When("user clicks the Student Management on the menu")
     public void user_clicks_the_student_management_on_the_menu() {
         waitAndClick(mainMenu.studentManagement, 1);
