@@ -1,7 +1,7 @@
-@vicedean_create_teacher
+@vicedean_create_teacher @regression
 Feature: vice_dean_sohuld_be_create_teacher
 
-  @possitive_test
+  @possitive_test @smoke
   Scenario: TC01_Vice_dean_should_be_able_to_create_teacher_possitive_test
     Given user login as Vice Dean
     And user clicks the menu button

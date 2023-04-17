@@ -1,7 +1,7 @@
-@admin_create_teacher
+@admin_create_teacher @regression
 Feature: admin_sohuld_be_create_teacher
 
-  @possitive_test
+  @possitive_test @smoke
   Scenario: TC01_Admin_should_be_able_to_create_teacher_possitive_test
     Given user login as Admin
     And user clicks the menu button

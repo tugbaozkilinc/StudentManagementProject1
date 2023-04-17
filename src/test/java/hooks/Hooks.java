@@ -11,12 +11,12 @@ import utilities.Driver;
 public class Hooks {
     @Before
     public void setUp() {
-        //Driver.getDriver().get("https://www.managementonschools.com/");
-        BaseUrl.setUp();
+        Driver.getDriver().get("https://www.managementonschools.com/");
+        //  BaseUrl.setUp();
     }
 
     @After
-    public void tearDown() {
+    public void tearDown() throws Exception {
         Driver.closeDriver();
     }
 
@@ -30,3 +30,6 @@ public class Hooks {
     }
 
 }
+
+
+
