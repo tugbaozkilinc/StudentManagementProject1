@@ -1,7 +1,7 @@
 @contactFeature
   Feature: Contact Feature
 
-    @PositiveContactTest
+    @PositiveContactTest @smoke
 
     Scenario: Send_A_Message_0n_Contact_Page
 

@@ -4,7 +4,6 @@ Feature: Guest User
 
   @guestUserListVerify
   Scenario: Guest_user_List_Verification
-
     Given user login as Admin
     And user clicks the Menu button
     And user clicks the Guest User button

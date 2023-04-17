@@ -38,15 +38,4 @@ public class ReusableApiMethods extends BaseUrl {
 
     }
 
-    public static Integer getARandomAdvisorTeacherId() {
-        spec.pathParams("first", "advisorTeacher", "second", "getAll");
-        Response response = given(spec).get("/{first}/{second}");
-        JsonPath jsonPath = response.jsonPath();
-        List<Integer> webList = jsonPath.getList("findAll{it.advisorTeacherId < 100}.advisorTeacherId");
-        Random random = new Random();
-        int optionIndex = 1 + random.nextInt(webList.size() - 1);
-        return webList.get(optionIndex);
-    }
-
-
 }

@@ -15,6 +15,7 @@ Feature: US08_Lessons_Add_Lessons
     And user enter valid value "4" credit score
     When User click Submit Button
     Then user verify "create lesson" caution
+
 Scenario: TC02 lesson name area doesn't empty
 
   Given user clicks on the login button

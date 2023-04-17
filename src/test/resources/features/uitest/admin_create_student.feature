@@ -6,7 +6,7 @@ Feature: US25_creating_student_(admin)
     And user clicks the menu button
     And user clicks the Student Management on the menu
 
-  @admin_create_student_positive
+  @admin_create_student_positive @smoke
   Scenario: TC01_create_student_as_admin_(Positive Test)
     And user selects the advisor teacher
     And user enters the name in the name text box

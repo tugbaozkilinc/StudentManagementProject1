@@ -7,7 +7,7 @@ Feature: Admin Management Module
     And user clicks the Dean Management button on the menu
 
 
-  @positiveAddDeanAsAdmin
+  @positiveAddDeanAsAdmin @smoke
   Scenario:TC01_Add_Dean_As_Admin
 
     And user enters the valid value in the name textbox on the Dean Management page

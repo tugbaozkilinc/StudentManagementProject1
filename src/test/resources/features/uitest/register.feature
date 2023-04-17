@@ -1,7 +1,7 @@
 
 Feature: US01_Register_Module
 
-  @positive
+  @positive @smoke
   Scenario: TC01_User should be able to register (Positive Test)
 
     Given user clicks the register button
