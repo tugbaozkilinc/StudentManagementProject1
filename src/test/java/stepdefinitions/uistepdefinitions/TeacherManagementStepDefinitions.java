@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uistepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
@@ -20,8 +20,7 @@ import java.security.Key;
 import java.util.Locale;
 
 import static org.junit.Assert.assertTrue;
-import static utilities.ReusableMethods.clickWithJS;
-import static utilities.ReusableMethods.waitForVisibility;
+import static utilities.ReusableMethods.*;
 
 
 public class TeacherManagementStepDefinitions {
@@ -43,11 +42,12 @@ public class TeacherManagementStepDefinitions {
     }
 
     @And("user chooses a lesson")
-    public void userChoosesALesson() {
-
+    public void userChoosesALesson()   {
+        waitFor(4);
         homepage.title.click();
+        waitFor(4);
         Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.TAB).sendKeys("MathT6" + Keys.SPACE + Keys.ENTER).perform();
+        actions.sendKeys(Keys.TAB).sendKeys("MathT6" + Keys.ENTER + Keys.ENTER).perform();
 
     }
 
@@ -117,14 +117,14 @@ public class TeacherManagementStepDefinitions {
 
     @Then("user verifies that the creation is succesfull")
     public void userVerifiesThatTheCreationIsSuccesfull() {
-        assertTrue(waitForVisibility(teacherManagement.successMessage, 10).isDisplayed());
+        assertTrue(waitForVisibility(teacherManagement.successMessage, 3).isDisplayed());
 
 
     }
 
     @Then("user verifies that the creation is unsuccesfull")
     public void userVerifiesThatTheCreationIsUnsuccesfull() {
-        assertTrue(waitForVisibility(teacherManagement.errorMessage, 10).isDisplayed());
+        assertTrue(waitForVisibility(teacherManagement.errorMessage, 3).isDisplayed());
 
 
     }
@@ -177,7 +177,40 @@ public class TeacherManagementStepDefinitions {
 
     @Then("user verifies that {string} Required is appeared")
     public void userVerifiesThatRequiredIsAppeared(String arg0) {
-        assertTrue( waitForVisibility(teacherManagement.required,5).isDisplayed());
+        assertTrue(waitForVisibility(teacherManagement.required, 4).isDisplayed());
 
+    }
+
+    @Then("user verifies that the creation {string} is unsuccesfull")
+    public void userVerifiesThatTheCreationIsUnsuccesfull(String arg0) {
+        if (arg0.equals("password")) {
+            assertTrue(waitForVisibility(teacherManagement.passwordwarningText, 3).isDisplayed());
+        } else
+            assertTrue(waitForVisibility(teacherManagement.errorMessage, 3).isDisplayed());
+    }
+
+    @And("user enters the valid {string} value in the name textbox space")
+    public void userEntersTheValidValueInTheNameTextboxSpace(String arg0) {
+        teacherManagement.nameTextBox.sendKeys(arg0 + Keys.SPACE);
+    }
+
+    @And("user enters the valid {string} value in the surname textbox space")
+    public void userEntersTheValidValueInTheSurnameTextboxSpace(String arg0) {
+        teacherManagement.surnameTextBox.sendKeys(arg0 + Keys.SPACE);
+    }
+
+    @And("user enters the valid {string} value in the Birth Place space")
+    public void userEntersTheValidValueInTheBirthPlaceSpace(String arg0) {
+        teacherManagement.birthPlaceTextBox.sendKeys(arg0 + Keys.SPACE);
+    }
+
+    @And("user enters the valid {string} value in the And user Name textbox space")
+    public void userEntersTheValidValueInTheAndUserNameTextboxSpace(String arg0) {
+        teacherManagement.usernameTextBox.sendKeys(arg0 + Keys.SPACE);
+    }
+
+    @And("user enters the valid {string} value in the Password textbox space")
+    public void userEntersTheValidValueInThePasswordTextboxSpace(String arg0) {
+        teacherManagement.passwordTextBox.sendKeys(arg0 + Keys.SPACE);
     }
 }

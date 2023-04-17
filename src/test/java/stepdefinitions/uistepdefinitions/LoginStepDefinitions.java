@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.uistepdefinitions;
 
 import io.cucumber.java.en.Given;
 import pages.HomePage;
@@ -30,6 +30,14 @@ public class LoginStepDefinitions {
         homePage.loginButton.click();
         loginPage.usernameTextBox.sendKeys(ConfigReader.getProperty("admin"));
         loginPage.passwordTextBox.sendKeys(ConfigReader.getProperty("adminpassword"));
+        loginPage.submitLoginButton.click();
+    }
+
+    @Given("user login as Student")
+    public void userLoginAsStudent() {
+        homePage.loginButton.click();
+        loginPage.usernameTextBox.sendKeys(ConfigReader.getProperty("student"));
+        loginPage.passwordTextBox.sendKeys(ConfigReader.getProperty("studentpassword"));
         loginPage.submitLoginButton.click();
     }
 
