@@ -1,7 +1,8 @@
 package stepdefinitions.uistepdefinitions;
 
 import com.github.javafaker.Faker;
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.support.PageFactory;
 import pages.ContactPage;
 import pages.HomePage;
@@ -75,7 +76,27 @@ public class ContactMessageStepDefinitions {
 
     }
 
+    @Given("user enters a name value with {int} characters in the Your Name textbox on Contact Page")
+    public void user_enters_a_name_value_with_characters_in_the_your_name_textbox_on_contact_page(Integer int1) {
+        contactPage.name.sendKeys(faker.lorem().characters(int1));
+    }
+    @Given("user enters a email value in the Your Email textbox on Contact Page")
+    public void user_enters_a_email_value_in_the_your_email_textbox_on_contact_page() {
+        contactPage.email.sendKeys(faker.internet().emailAddress());
+    }
+    @Given("user enters a subject value with {int} characters in the Subject textbox on Contact Page")
+    public void user_enters_a_subject_value_with_characters_in_the_subject_textbox_on_contact_page(Integer int1) {
+        contactPage.subject.sendKeys(faker.lorem().characters(int1));
+    }
+    @Given("user enters a message with {int} sentence in the Message textbox on Contact Page")
+    public void user_enters_a_message_with_sentence_in_the_message_textbox_on_contact_page(Integer int1) {
+        contactPage.message.sendKeys(faker.lorem().sentence(int1));
+    }
 
 
-
+    @Then("user gets the warning message about boundary")
+    public void userGetsTheWarningMessageAboutBoundary() {
+        ReusableMethods.waitForVisibility(contactPage.boundaryAlert, 3);
+        assert contactPage.boundaryAlert.isDisplayed();
+    }
 }

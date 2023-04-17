@@ -7,6 +7,8 @@ import utilities.Driver;
 
 public class ContactPage {
 
+
+
     public ContactPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -32,6 +34,9 @@ public class ContactPage {
 
     @FindBy (xpath = "//*[text()='Please enter valid email']")
     public WebElement validEmailAlert ;
+
+    @FindBy (xpath = "//*[text()='Boundary Alert']")
+    public WebElement boundaryAlert ;
 
 
 
