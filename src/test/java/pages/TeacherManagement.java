@@ -65,9 +65,9 @@ public class TeacherManagement {
     @FindBy(xpath = "//div[text()='Required']")
     public WebElement required;
 
-    @FindBy(xpath = "//div[@id='48']")
+
+    @FindBy(xpath = "//div[contains(text(),'JSON parse error: Cannot coerce empty String (\"\") ')]")
     public WebElement errorMessage;
-
-
-
+    @FindBy(xpath = "//div[normalize-space()='Minimum 8 character']")
+    public WebElement passwordwarningText;
 }
