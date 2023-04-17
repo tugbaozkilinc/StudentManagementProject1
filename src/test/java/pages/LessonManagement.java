@@ -99,9 +99,18 @@ public class LessonManagement {
     @FindBy(xpath = "//div[contains(text(),'Lesson added to Teacher')]")
     public WebElement lessonAddedTeacherAlert;
 
+    @FindBy(xpath = "//*[@id=\"2\"]/div[1]/div[2]")
+    public WebElement lessoncreatesuccessmessage;
 
     @FindBy(xpath = "//div[contains(text(),'The given id must not be null!; nested exception i')]")
     public WebElement teacherWarningMessage;
+
+
+
+    @FindBy(xpath = "//*[@id=\"day\"]/option[2]")
+    public WebElement chooseMonday;
+
+
 
     @FindBy(xpath = "//div[contains(text(),'Error: Lesson Programs not found')]")
     public WebElement teacherWarningMessage2;
