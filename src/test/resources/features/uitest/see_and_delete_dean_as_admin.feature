@@ -1,4 +1,4 @@
-@seeAndDeleteDeanAsAdmin
+@seeAndDeleteDeanAsAdmin @regression
 Feature:Admin Management Edit Module
 
   Background:

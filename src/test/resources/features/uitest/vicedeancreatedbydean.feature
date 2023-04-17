@@ -1,6 +1,7 @@
+@regression
 Feature: US06 Dean should be able to create vice dean account
 
-  @TC01_vice_dean_created_by_dean
+  @TC01_vice_dean_created_by_dean @smoke
   Scenario: TC01 Creating vice dean account by dean(positive test)
     Given user login as Dean
     And user is navigated to dean page

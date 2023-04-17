@@ -1,3 +1,4 @@
+@regression
 Feature: US10 vice dean create lesson program
 Background:
   Given user navigates to the specified URL

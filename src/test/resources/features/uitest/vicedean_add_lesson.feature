@@ -1,6 +1,7 @@
+@regression
 Feature: US08_Lessons_Add_Lessons
 
-  #@positive_add_lesson
+  @positive_add_lesson @smoke
   Scenario:TC01 user should be able to create lesson
 
     Given user clicks on the login button
