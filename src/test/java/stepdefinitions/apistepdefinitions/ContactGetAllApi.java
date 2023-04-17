@@ -1,4 +1,4 @@
 package stepdefinitions.apistepdefinitions;
 
-public class StudentManagementApi {
+public class ContactGetAllApi {
 }

@@ -25,7 +25,6 @@ public class StudentManagementStepDefinitions {
     StudentManagement studentManagement = new StudentManagement();
     Faker faker = new Faker(Locale.US);
 
-
     @When("user clicks the Student Management on the menu")
     public void user_clicks_the_student_management_on_the_menu() {
         waitAndClick(mainMenu.studentManagement, 1);
@@ -188,11 +187,5 @@ public class StudentManagementStepDefinitions {
     public void user_enters_the_mother_name_in_the_mother_name_text_box(String string) {
         studentManagement.motherNameTextBox.sendKeys(string);
     }
-
-
-
-
-
-
 
 }
