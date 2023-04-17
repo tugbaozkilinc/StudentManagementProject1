@@ -33,7 +33,7 @@ public class StudentManagementStepDefinitions {
 
     @When("user selects the advisor teacher")
     public void user_selects_the_advisor_teacher() {
-        waitFor(2);
+        waitFor(4);
         Select advisorTeacherDropdown = new Select(studentManagement.advisorTeacherDropdown);
         selectRandomTextFromDropdown(advisorTeacherDropdown);
     }
