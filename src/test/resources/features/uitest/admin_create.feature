@@ -1,3 +1,4 @@
+@regression_test
 Feature:Admin_Create
 
 
