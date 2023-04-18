@@ -1,4 +1,3 @@
-@regression
 Feature:Admin_Create
 
 
