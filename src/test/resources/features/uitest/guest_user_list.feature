@@ -1,4 +1,4 @@
-@guestUserFeature @regression
+@guestUserFeature
 Feature: Guest User
 
   @guestUserListVerify
@@ -14,7 +14,6 @@ Feature: Guest User
 
   @guestUserDelete
   Scenario: Guest_user_delete
-
     Given User navigates to the specified URL
     When user login as Admin
     And user clicks the Menu button
