@@ -1,3 +1,4 @@
+@regression
 Feature: US07 Dean should be able to see the messages the users sent
 
   Background: User is navigated to contact message page

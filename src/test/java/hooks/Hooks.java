@@ -20,7 +20,7 @@ public class Hooks {
         Driver.closeDriver();
     }
 
-    @After //Cucumber dan geleni sec, junit tekini degil.
+    @After
     public void tearDownScenarios(Scenario scenario) {
         if (scenario.isFailed()) {
             final byte[] failedScreenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
@@ -30,3 +30,6 @@ public class Hooks {
     }
 
 }
+
+
+

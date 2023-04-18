@@ -1,8 +1,7 @@
-@regression_test
 Feature:Admin_Create
 
 
-  @TC01_adminCreate_positive
+  @TC01_adminCreate_positive @smoke
   Scenario:TC01 Admin account must be created
     Given user login as Admin
     And user enters the name in the name text box
