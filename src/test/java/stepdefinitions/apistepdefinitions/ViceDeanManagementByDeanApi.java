@@ -18,15 +18,16 @@ import static org.junit.Assert.assertEquals;
 public class ViceDeanManagementByDeanApi extends BaseUrl {
 
     Faker faker = new Faker(Locale.US);
-    String phoneNumber = faker.number().digits(3)+ "-" + faker.number().digits(3) + "-" + faker.number().digits(4) + "";
+    String phoneNumber = faker.number().digits(3) + "-" + faker.number().digits(3) + "-" + faker.number().digits(4) + "";
     String ssn = faker.idNumber().ssnValid() + "";
     String userName = faker.name().username();
     static int userId;
+
     @When("user sends POST request and do the assertion for creating vice dean by dean")
     public void user_sends_post_request_and_do_the_assertion_for_creating_vice_dean_by_dean() {
         spec.pathParams("first", "vicedean", "second", "save");
         ViceDeanManagement expectedData = new ViceDeanManagement("1990-04-17", "Paris", "MALE", "Natalia", "12345678", phoneNumber, ssn,
-                                                                 "Karima", userName);
+                "Karima", userName);
         Response response = given(spec).body(expectedData).contentType(ContentType.JSON).when().post("/{first}/{second}");
         ViceDeanManagementResponse actualData = response.as(ViceDeanManagementResponse.class);
         assertEquals(200, response.statusCode());
@@ -46,11 +47,11 @@ public class ViceDeanManagementByDeanApi extends BaseUrl {
     public void userSendsPUTRequestAndDoTheAssertionForCreatingViceDeanByDean() {
         spec.pathParams("first", "vicedean", "second", "update", "third", userId);
         ViceDeanManagement expectedData = new ViceDeanManagement("1994-05-17", "Italy", "FEMALE", "Suzie", "12345678", phoneNumber, ssn,
-                                                                 "Alter", userName);
+                "Alter", userName);
         Response response = given(spec).body(expectedData).contentType(ContentType.JSON).when().put("/{first}/{second}/{third}");
         ViceDeanManagementResponse actualData = response.as(ViceDeanManagementResponse.class);
         assertEquals(200, response.statusCode());
-        assertEquals(userId, (int)actualData.getObject().getUserId());
+        assertEquals(userId, (int) actualData.getObject().getUserId());
         assertEquals(expectedData.getBirthDay(), actualData.getObject().getBirthDay());
         assertEquals(expectedData.getBirthPlace(), actualData.getObject().getBirthPlace());
         assertEquals(expectedData.getGender(), actualData.getObject().getGender());

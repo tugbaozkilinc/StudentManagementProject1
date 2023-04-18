@@ -130,5 +130,68 @@ public class StudentManagementApi {
         Assert.assertEquals(400, response.statusCode());
         Assert.assertEquals(message, actualData.getValidations().getPhoneNumber());
     }
+
+    @Then("user gets the vice dean create student POST request response and assert message {string} for gender")
+    public void userGetsTheViceDeanCreateStudentPOSTRequestResponseAndAssertMessageForGender(String message) {
+        CreateStudentInvalidPojo actualData = response.as(CreateStudentInvalidPojo.class);
+        Assert.assertEquals(400, response.statusCode());
+        Assert.assertEquals(message, actualData.getValidations().getGender());
+    }
+
+    @Then("user gets the vice dean create student POST request response and assert message {string} for birthday")
+    public void user_gets_the_vice_dean_create_student_post_request_response_and_assert_message_for_birthday(String message) {
+        CreateStudentInvalidPojo actualData = response.as(CreateStudentInvalidPojo.class);
+        Assert.assertEquals(400, response.statusCode());
+        Assert.assertEquals(message, actualData.getValidations().getBirthDay());
+    }
+
+    @Then("user gets the vice dean create student POST request response and assert message {string} for ssn")
+    public void user_gets_the_vice_dean_create_student_post_request_response_and_assert_message_for_ssn(String message) {
+        CreateStudentInvalidPojo actualData = response.as(CreateStudentInvalidPojo.class);
+        Assert.assertEquals(400, response.statusCode());
+        Assert.assertEquals(message, actualData.getValidations().getSsn());
+    }
+
+    @Then("user gets the vice dean create student POST request response and assert message {string} for username")
+    public void user_gets_the_vice_dean_create_student_post_request_response_and_assert_message_for_username(String message) {
+        CreateStudentInvalidPojo actualData = response.as(CreateStudentInvalidPojo.class);
+        Assert.assertEquals(400, response.statusCode());
+        Assert.assertEquals(message, actualData.getValidations().getUsername());
+    }
+
+    @Then("user gets the vice dean create student POST request response and assert message {string} for father name")
+    public void user_gets_the_vice_dean_create_student_post_request_response_and_assert_message_for_father_name(String message) {
+        CreateStudentInvalidPojo actualData = response.as(CreateStudentInvalidPojo.class);
+        Assert.assertEquals(400, response.statusCode());
+        Assert.assertEquals(message, actualData.getValidations().getFatherName());
+    }
+
+    @Then("user gets the vice dean create student POST request response and assert message {string} for mother name")
+    public void user_gets_the_vice_dean_create_student_post_request_response_and_assert_message_for_mother_name(String message) {
+        CreateStudentInvalidPojo actualData = response.as(CreateStudentInvalidPojo.class);
+        Assert.assertEquals(400, response.statusCode());
+        Assert.assertEquals(message, actualData.getValidations().getMotherName());
+    }
+
+    @Then("user gets the vice dean create student POST request response and assert message {string} for password")
+    public void user_gets_the_vice_dean_create_student_post_request_response_and_assert_message_for_password(String message) {
+        CreateStudentInvalidPojo actualData = response.as(CreateStudentInvalidPojo.class);
+        Assert.assertEquals(400, response.statusCode());
+        Assert.assertEquals(message, actualData.getValidations().getPassword());
+    }
+
+    @Given("user sends a post request as vice dean to create student with invalid data {string} for email")
+    public void userSendsAPostRequestAsViceDeanToCreateStudentWithInvalidDataForEmail(String invalidData) {
+        spec.pathParams("first", "students", "second", "save");
+        expectedData.setEmail(invalidData);
+        response = given(spec).body(expectedData).when().post("/{first}/{second}");
+    }
+
+    @Given("user sends a post request as vice dean to create student with invalid data {string} for phone number")
+    public void userSendsAPostRequestAsViceDeanToCreateStudentWithInvalidDataForPhoneNumber(String invalidData) {
+        spec.pathParams("first", "students", "second", "save");
+        expectedData.setPhoneNumber(invalidData);
+        response = given(spec).body(expectedData).when().post("/{first}/{second}");
+    }
 }
 
