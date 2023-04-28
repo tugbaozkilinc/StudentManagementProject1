@@ -1,4 +1,4 @@
-@student_create_by_vice_dean_api
+@student_create_by_vice_dean_api_2
 Feature: US23 Admin should be able to create vice dean account api
 
   Scenario: Creating student by vice dean (api test)
