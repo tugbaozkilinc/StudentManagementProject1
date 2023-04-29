@@ -1,13 +1,11 @@
 package stepdefinitions.apistepdefinitions;
 
-import baseurl.BaseUrl;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
-import pojos.admin_creat.AdminDataPojo;
 import pojos.admin_creat.AdminPojo;
 import pojos.admin_creat.Adminbody;
 

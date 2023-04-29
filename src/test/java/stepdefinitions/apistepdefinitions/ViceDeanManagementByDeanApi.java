@@ -1,6 +1,5 @@
 package stepdefinitions.apistepdefinitions;
 
-import baseurl.BaseUrl;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;

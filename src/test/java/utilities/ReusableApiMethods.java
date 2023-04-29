@@ -1,17 +1,12 @@
 package utilities;
 
-import baseurl.BaseUrl;
 import com.github.javafaker.Faker;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import pojos.register.RegisterPojo;
 
-import java.util.List;
 import java.util.Locale;
-import java.util.Random;
 
 import static io.restassured.RestAssured.given;
 
