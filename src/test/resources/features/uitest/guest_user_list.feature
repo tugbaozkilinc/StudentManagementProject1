@@ -2,7 +2,7 @@
 Feature: Guest User
 
 
-  @guestUserListVerify
+  @guestUserListVerify @smoke
   Scenario: Guest_user_List_Verification
 
     Given user login as Admin
@@ -14,7 +14,7 @@ Feature: Guest User
     Then user verifies And user Name header on Guest User List
     Then user closes the application
 
-  @guestUserDelete
+  @guestUserDelete @smoke
   Scenario: Guest_user_delete
     Given user login as Admin
     And user clicks the Menu button

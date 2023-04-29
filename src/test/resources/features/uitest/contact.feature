@@ -1,7 +1,7 @@
 @contactFeature
   Feature: Contact Feature
 
-    @PositiveContactTest
+    @PositiveContactTest @smoke
 
     Scenario: Send_A_Message_0n_Contact_Page
 
@@ -14,7 +14,7 @@
       Then user verifies the verification message
 
 
-    @NegativeContactTest
+    @NegativeContactTest @smoke
     Scenario Outline: negative_test
 
       Given user clicks on the Contact button

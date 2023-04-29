@@ -1,6 +1,6 @@
 Feature: student_chose_lesson_grades
 
-  @TC01_Student_user_List_Verification
+  @TC01_Student_user_List_Verification @smoke
   Scenario:TC01_Confirmation of Teacher Day Start Time Stop Time display view
     Given user login as Student
     And user confirms that Teacher visible for the first element in the Choose lesson list

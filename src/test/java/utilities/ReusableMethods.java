@@ -355,8 +355,4 @@ public class ReusableMethods {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMddyyyy");
         return tomorrow.format(formatter);
     }
-
-
-
-
 }

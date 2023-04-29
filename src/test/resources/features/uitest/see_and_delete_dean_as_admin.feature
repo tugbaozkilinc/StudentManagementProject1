@@ -8,7 +8,7 @@ Feature:Admin Management Edit Module
 
 
 
-  @verifyDeanManagementHeader
+  @verifyDeanManagementHeader @smoke
   Scenario:TC01_Verify_Headers
 
     And user adds dean with valid values
