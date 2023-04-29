@@ -17,8 +17,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        dryRun = false,
-        tags = "@vice_dean_create_student_api"
+        dryRun = false
 )
 public class Runner {
 }
