@@ -12,11 +12,11 @@ public class Hooks {
     @Before
     public void setUp() {
         Driver.getDriver().get("https://www.managementonschools.com/");
-        //  BaseUrl.setUp();
+        BaseUrl.setUp();
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         Driver.closeDriver();
     }
 
@@ -25,11 +25,8 @@ public class Hooks {
         if (scenario.isFailed()) {
             final byte[] failedScreenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(failedScreenshot, "image/png", "failed-scenario-" + scenario.getName());
-            // Driver.closeDriver();
+            Driver.closeDriver();
         }
     }
 
 }
-
-
-
