@@ -33,7 +33,7 @@ public class StudentManagementStepDefinitions {
 
     @When("user selects the advisor teacher")
     public void user_selects_the_advisor_teacher() {
-        waitFor(2);
+        waitFor(4);
         Select advisorTeacherDropdown = new Select(studentManagement.advisorTeacherDropdown);
         selectRandomTextFromDropdown(advisorTeacherDropdown);
     }
@@ -144,12 +144,12 @@ public class StudentManagementStepDefinitions {
 
     @And("user enters the future date in the date of birth text box")
     public void userEntersTheFutureDateInTheDateOfBirthTextBox() {
-        studentManagement.dateOfBirthTextBox.sendKeys(generateTomorrowsDate());
+        studentManagement.dateOfBirthTextBox.sendKeys(generateTomorrowsDate("MMddyyyy"));
     }
 
     @And("user enters the current date in the date of birth text box")
     public void userEntersTheCurrentDateInTheDateOfBirthTextBox() {
-        studentManagement.dateOfBirthTextBox.sendKeys(generateCurrentDate());
+        studentManagement.dateOfBirthTextBox.sendKeys(generateCurrentDate("MMddyyyy"));
     }
 
     @When("user enters the ssn in the {string} text box")

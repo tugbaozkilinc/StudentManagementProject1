@@ -1,4 +1,4 @@
-@Us_17 @regression
+@Us_17
 Feature:US_17_Teacher_should_be_able_to_grade_students
 
   @TC_01
