@@ -12,7 +12,6 @@ Feature: US18 The teacher should be able to see and update the grades given to t
     Then User sees that the Add Student Info is displayed on the page
 
   Scenario:TC_02 Teacher can sees that the the Student Info created
-
     Given User navigates to the specified URL
     When User clicks on the Login button
     And User enters the teacher username in the username textbox
@@ -100,7 +99,6 @@ Feature: US18 The teacher should be able to see and update the grades given to t
 
 
   Scenario Outline: TC_05 input cannot left blank
-  STEPS
     Given User navigates to the specified URL
     When User clicks on the Login button
     And User enters the teacher username in the username textbox

@@ -1,6 +1,5 @@
 Feature:Admin_Create
 
-
   @TC01_adminCreate_positive
   Scenario:TC01 Admin account must be created
     Given user login as Admin
