@@ -11,13 +11,13 @@ import static io.restassured.RestAssured.given;
 
 public class Authorization {
 
-    public static String generateToken(){
+    public static String generateToken() {
 
-        Map<String,String> body = new HashMap<>();
-        body.put("password",ConfigReader.getProperty("adminpassword"));
-        body.put("username",ConfigReader.getProperty("admin"));
+        Map<String, String> body = new HashMap<>();
+        body.put("password", ConfigReader.getProperty("adminpassword"));
+        body.put("username", ConfigReader.getProperty("admin"));
 
-        String autUrl = "https://school-management-v1.herokuapp.com/auth/login";
+        String autUrl = "164.92.252.42:8080/auth/login";
 
         Response response = given().contentType(ContentType.JSON).body(body).when().post(autUrl);
         return response.jsonPath().getString("token");

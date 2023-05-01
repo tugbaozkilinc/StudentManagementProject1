@@ -1,12 +1,9 @@
 @guestUserFeature
 Feature: Guest User
 
-
   @guestUserListVerify
   Scenario: Guest_user_List_Verification
-
-    Given User navigates to the specified URL
-    When user login as Admin
+    Given user login as Admin
     And user clicks the Menu button
     And user clicks the Guest User button
     Then user verifies Name Surname header on Guest User List
@@ -17,7 +14,6 @@ Feature: Guest User
 
   @guestUserDelete
   Scenario: Guest_user_delete
-
     Given User navigates to the specified URL
     When user login as Admin
     And user clicks the Menu button
