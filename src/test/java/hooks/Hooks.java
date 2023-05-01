@@ -9,6 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
 public class Hooks {
+
     @Before
     public void setUp() {
         //Driver.getDriver().get("https://www.managementonschools.com/");
