@@ -14,10 +14,10 @@ Feature: US19 Teacher should be able to add the meet
   @TC02
   Scenario: TC02
     And User choses the Student from the Choose Student dropdown
-    And User enters the "Date" in the Date of Meet textbox
-    And User enters the "start time" in the start time textbox
-    And User enters the "stop time" in the start stop textbox
-    And User enters the "description" in the Description textbox
+    And User enters the "01062023" in the Date of Meet textbox
+    And User enters the "1100" in the start time textbox
+    And User enters the "1300" in the start stop textbox
+    And User enters the "great" in the Description textbox
     And User clicks the Submit button on the menu
     And User sees that the green confirmation "Meet saved successfully" text appeared on the page
     Then User sees that the created student is visible on the Meet List section on the page

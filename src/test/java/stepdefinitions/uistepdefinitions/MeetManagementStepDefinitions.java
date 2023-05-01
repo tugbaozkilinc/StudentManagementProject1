@@ -1,6 +1,7 @@
 package stepdefinitions.uistepdefinitions;
 
 import com.github.javafaker.Faker;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -13,8 +14,7 @@ import utilities.ReusableMethods;
 
 import java.util.Locale;
 
-import static utilities.ReusableMethods.generateTomorrowsDate;
-import static utilities.ReusableMethods.waitForVisibility;
+import static utilities.ReusableMethods.*;
 
 public class MeetManagementStepDefinitions {
 
@@ -30,30 +30,30 @@ public class MeetManagementStepDefinitions {
 
     @When("User clicks the Meet Management button on the menu")
     public void user_clicks_the_meet_management_button_on_the_menu() {
+        waitFor(2);
         mainMenu.meetManagement.click();
 
     }
 
     @When("User sees that the Meet Management page is displayed")
     public void user_sees_that_the_meet_management_page_is_displayed() {
-        assert meetManagement.addMeetText.isDisplayed();
+        Assert.assertTrue(meetManagement.addMeetText.isDisplayed());
 
     }
 
     @Then("User sees that the Add Meet section is displayed on the page")
     public void user_sees_that_the_add_meet_section_is_displayed_on_the_page() {
-        assert meetManagement.addMeetText.isDisplayed();
+        Assert.assertTrue(meetManagement.addMeetText.isDisplayed());
 
     }
 
     @When("User choses the Student from the Choose Student dropdown")
     public void user_choses_the_student_from_the_choose_student_dropdown() {
-        //wait(2);
+        waitFor(2);
         meetManagement.chooseStudentTextBox.click();
 
        Select select = new Select(meetManagement.chooseStudentTextBox);
-       select.selectByIndex(0);
-
+        ReusableMethods.selectRandomTextFromDropdown(select);
     }
 
     @When("User enters the {string} in the Date of Meet textbox")
@@ -119,7 +119,7 @@ public class MeetManagementStepDefinitions {
 
     @When("User click edit button of any meet in Meet List")
     public void user_click_edit_button_of_any_meet_in_meet_list() {
-        meetManagement.editButton.isSelected();
+        meetManagement.editButton.click();
 
     }
 
@@ -131,7 +131,7 @@ public class MeetManagementStepDefinitions {
 
     @Then("User sees success saved message")
     public void user_sees_success_saved_message() {
-       Assert.assertTrue("Meet Saved Successfully", true);
+       Assert.assertEquals("Meet Saved Successfully",meetManagement.alertMessage.getText());
 
     }
 
@@ -161,7 +161,7 @@ public class MeetManagementStepDefinitions {
 
     @When("User enter invalid new start time in the start time box")
     public void user_enter_invalid_new_start_time_in_the_start_time_box() {
-        meetManagement.startTimeTextBoxInEdit.sendKeys("22.00");
+        meetManagement.startTimeTextBoxInEdit.sendKeys("2200");
 
     }
 
@@ -173,9 +173,18 @@ public class MeetManagementStepDefinitions {
 
     @When("User enter invalid new Date in the Date box")
     public void user_enter_invalid_new_date_in_the_date_box() {
-        meetManagement.dateTextBoxInEdit.sendKeys("01.07.20255");
+        meetManagement.dateTextBoxInEdit.sendKeys("010720255");
 
     }
 
 
+    @And("User leaves blank in the stop time textbox")
+    public void userLeavesBlankInTheStopTimeTextbox() {
+      meetManagement.stopTimeTextBox.sendKeys();
+    }
+
+    @Then("User sees that the the add meet not created")
+    public void userSeesThatTheTheAddMeetNotCreated() {
+        Assert.assertTrue(meetManagement.meetListText.isEnabled());
+    }
 }
