@@ -9,15 +9,11 @@ import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
 public class Hooks {
-    @Before("@ApiGetLessonByVicedean")
+
+    @Before
     public void setUp() {
-
-      //  Driver.getDriver().get("https://www.managementonschools.com/");
-       BaseUrl.setUp();
-
-       // Driver.getDriver().get("https://www.managementonschools.com/");
-       // BaseUrl.setUp();
-
+        //Driver.getDriver().get("https://www.managementonschools.com/");
+        BaseUrl.setUp();
     }
 
     @After
