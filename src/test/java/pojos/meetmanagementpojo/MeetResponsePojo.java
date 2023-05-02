@@ -1,24 +1,24 @@
 package pojos.meetmanagementpojo;
 
 public class MeetResponsePojo {
-    public Object object;
+    public MeetManagementObjectPojo object;
     public String message;
     public String httpStatus;
 
     public MeetResponsePojo() {
     }
 
-    public MeetResponsePojo(Object object, String message, String httpStatus) {
+    public MeetResponsePojo(MeetManagementObjectPojo object, String message, String httpStatus) {
         this.object = object;
         this.message = message;
         this.httpStatus = httpStatus;
     }
 
-    public Object getObject() {
+    public MeetManagementObjectPojo getObject() {
         return object;
     }
 
-    public void setObject(Object object) {
+    public void setObject(MeetManagementObjectPojo object) {
         this.object = object;
     }
 

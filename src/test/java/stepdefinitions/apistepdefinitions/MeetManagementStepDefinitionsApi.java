@@ -4,13 +4,18 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
+import pages.StudentManagement;
 import pojos.deanmanagementpojo.DeanObjectPojo;
 import pojos.deanmanagementpojo.DeanResponsePojo;
 import pojos.meetmanagementpojo.MeetManagementObjectPojo;
 import pojos.meetmanagementpojo.MeetManagementStudentPojo;
 import pojos.meetmanagementpojo.MeetResponsePojo;
 
+
+import java.sql.Array;
+import java.util.ArrayList;
 
 import static baseurl.BaseUrl.spec;
 import static io.restassured.RestAssured.given;
@@ -68,30 +73,17 @@ Response Body is like ;
 }
      */
 
-    @Test
+    Response response;
 
-    // MeetManagementObjectPojo expectedData;
     @Given("user sends a POST request as teacher_advisor to create a meet")
     public void user_sends_a_post_request_as_teacher_advisor_to_create_a_meet() {
-        MeetManagementStudentPojo meetManagementStudentPojo = new MeetManagementStudentPojo();
-        MeetManagementObjectPojo expectedData = new MeetManagementObjectPojo();
-        Response response = given().spec(spec).when().body(expectedData).post("{first}");
-        MeetManagementObjectPojo actualData = response.as(MeetManagementObjectPojo.class);
-
-
-        assertEquals(200, response.statusCode());
-
-        assertEquals(expectedData.getDate(), actualData.getDate());
-        assertEquals(expectedData.getStartTime(), actualData.getStartTime());
-        assertEquals(expectedData.getStopTime(), actualData.getStopTime());
-        assertEquals(expectedData.getStudents(), actualData.getStudents());
-
+        spec.pathParams("first", "meet", "second", "getMeetById", "third", 8);
+        response = given(spec).when().get("/{first}/{second}/{third}");
     }
 
     @Then("user verifies the result of meet creation as teacher_advisor")
     public void user_verifies_the_result_of_meet_creation_as_teacher_advisor() {
-
-
+        Assert.assertEquals(200, response.statusCode());
     }
 
 

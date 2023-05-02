@@ -1,5 +1,7 @@
 package pojos.meetmanagementpojo;
 
+import java.util.ArrayList;
+
 public class MeetManagementObjectPojo {
 /*
  {
@@ -43,22 +45,21 @@ public class MeetManagementObjectPojo {
     public ArrayList<Student> students;
 }
  */
-    public int id;
-    public String description;
-    public String date;
-    public String startTime;
-    public String stopTime;
 
-
-    public int advisorTeacherId;
-    public String teacherName;
-    public String teacherSsn;
-    public MeetManagementStudentPojo students;
+    private int id;
+    private String description;
+    private String date;
+    private String startTime;
+    private String stopTime;
+    private int advisorTeacherId;
+    private String teacherName;
+    private String teacherSsn;
+    private ArrayList<MeetManagementStudentPojo> students;
 
     public MeetManagementObjectPojo() {
     }
 
-    public MeetManagementObjectPojo(int id, String description, String date, String startTime, String stopTime, int advisorTeacherId, String teacherName, String teacherSsn, MeetManagementStudentPojo students) {
+    public MeetManagementObjectPojo(int id, String description, String date, String startTime, String stopTime, int advisorTeacherId, String teacherName, String teacherSsn, ArrayList<MeetManagementStudentPojo> students) {
         this.id = id;
         this.description = description;
         this.date = date;
@@ -134,11 +135,11 @@ public class MeetManagementObjectPojo {
         this.teacherSsn = teacherSsn;
     }
 
-    public MeetManagementStudentPojo getStudents() {
+    public ArrayList<MeetManagementStudentPojo> getStudents() {
         return students;
     }
 
-    public void setStudents(MeetManagementStudentPojo students) {
+    public void setStudents(ArrayList<MeetManagementStudentPojo> students) {
         this.students = students;
     }
 
