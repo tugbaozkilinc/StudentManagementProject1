@@ -1,4 +1,3 @@
-@regression
 Feature: student_chose_lesson_grades
 
   @TC01_Student_user_List_Verification

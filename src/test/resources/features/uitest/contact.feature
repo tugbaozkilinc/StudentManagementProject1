@@ -1,33 +1,31 @@
-@contactFeature @regression
-  Feature: Contact Feature
+@contactFeature
+Feature: Contact Feature
 
-    @PositiveContactTest @smoke
-    Scenario: Send_A_Message_0n_Contact_Page
+  @PositiveContactTest @smoke
+  Scenario: Send_A_Message_0n_Contact_Page
+    Given User navigates to the specified URL
+    When user clicks on the Contact button
+    And user enters a valid name value in the Your Name textbox on Contact Page
+    And user enters a valid email value in the Your Email textbox on Contact Page
+    And user enters a valid subject value in the Subject textbox on Contact Page
+    And user enters a valid message in the Message textbox on Contact Page
+    And user clicks the Send Message button
+    Then user verifies the verification message
 
-      Given User navigates to the specified URL
-      When user clicks on the Contact button
-      And user enters a valid name value in the Your Name textbox on Contact Page
-      And user enters a valid email value in the Your Email textbox on Contact Page
-      And user enters a valid subject value in the Subject textbox on Contact Page
-      And user enters a valid message in the Message textbox on Contact Page
-      And user clicks the Send Message button
-      Then user verifies the verification message
-
-    @invalid_mail_test_us03
-    Scenario Outline: invalid_mail_test_with_"<email>"_value
-
-      Given User navigates to the specified URL
-      When user clicks on the Contact button
-      And user enters a "<name>" value in the Your Name textbox on Contact Page
-      And user enters an "<email>" value in the your email textbox on Contact Page
-      And user enters a "<subject>" value in the subject textbox on Contact Page
-      And user enters a "<message>" in the message textbox on Contact Page
-      And user clicks the Send Message button
-      And user gets "<warning message>"
-      Examples:
-        | name |     email        | subject  |    message   | warning message   |
-        | John | t09.gmail.com    | schedule | T09 Was Here |  Please enter valid email |
-        | John | @gmail           | schedule | T09 Was Here |  Please enter valid email |
+  @invalid_mail_test_us03
+  Scenario Outline: invalid_mail_test_with_"<email>"_value
+    Given User navigates to the specified URL
+    When user clicks on the Contact button
+    And user enters a "<name>" value in the Your Name textbox on Contact Page
+    And user enters an "<email>" value in the your email textbox on Contact Page
+    And user enters a "<subject>" value in the subject textbox on Contact Page
+    And user enters a "<message>" in the message textbox on Contact Page
+    And user clicks the Send Message button
+    And user gets "<warning message>"
+    Examples:
+      | name | email         | subject  | message      | warning message          |
+      | John | t09.gmail.com | schedule | T09 Was Here | Please enter valid email |
+      | John | @gmail        | schedule | T09 Was Here | Please enter valid email |
       ##  | John | t09@gmail        | schedule | T09 Was Here |  Please enter valid email |
      ##   | John | üğöı09@şmail.com | schedule | T09 Was Here |  Please enter valid email |
       ##3. Step gonna fail bcz using mail address without ".com" is acceptable!
@@ -66,6 +64,8 @@
    ##   And user enters a message with 101 sentence in the Message textbox on Contact Page
    ##   And user clicks the Send Message button
    ##   Then user gets the warning message about boundary
+
+
 
 
 

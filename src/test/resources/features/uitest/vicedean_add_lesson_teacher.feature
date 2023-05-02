@@ -1,4 +1,4 @@
-@us12 @regression
+@us12
 Feature: Vice dean should be able to create syllabus
 
   @viceDeanCreateSyllabusTest @smoke
