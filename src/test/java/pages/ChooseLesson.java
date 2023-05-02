@@ -2,10 +2,13 @@ package pages;
 
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
 import utilities.Driver;
+
+import java.util.List;
 
 public class ChooseLesson {
 
@@ -43,5 +46,9 @@ public class ChooseLesson {
     @FindBy(xpath = "//*[text()='Lesson added to Student']")
     public WebElement lessonAddedAlert;
 
+    @FindAll({@FindBy(xpath = "(//tbody)[1]//tr//td[2]//span")})
+    public List<WebElement> lessonList;
 
+    @FindAll({@FindBy(xpath = "(//tbody)[1]//tr//td[1]//input")})
+    public List<WebElement> checkboxList;
 }
