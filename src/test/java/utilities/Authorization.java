@@ -11,6 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class Authorization {
 
+
     public static String generateToken() {
 
         Map<String, String> body = new HashMap<>();
