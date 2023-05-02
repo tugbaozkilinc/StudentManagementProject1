@@ -4,9 +4,8 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
-
-
 import static utilities.Authorization.generateToken;
+
 
 public class BaseUrl {
 
@@ -15,7 +14,7 @@ public class BaseUrl {
 
     public static void setUp() {
         spec = new RequestSpecBuilder()
-                .setBaseUri("https://school-management-v1.herokuapp.com")
+                .setBaseUri("http://164.92.252.42:8080/")
                 .setContentType(ContentType.JSON)
                 .addHeader("Authorization", generateToken())
                 .build();

@@ -1,4 +1,4 @@
-@addDeanAsAdmin @regression
+@addDeanAsAdmin
 Feature: Admin Management Module
 
   Background:
@@ -7,9 +7,8 @@ Feature: Admin Management Module
     And user clicks the Dean Management button on the menu
 
 
-  @positiveAddDeanAsAdmin @smoke
+  @positiveAddDeanAsAdmin
   Scenario:TC01_Add_Dean_As_Admin
-
     And user enters the valid value in the name textbox on the Dean Management page
     And user enters the valid value in the surname textbox on the Dean Management page
     And user enters the valid value in the birth place textbox on the Dean Management page
@@ -24,7 +23,6 @@ Feature: Admin Management Module
 
   @leavingTheFieldBlankOnDeanMan
   Scenario Outline:TC02_TC03_TC04_TC05_TC06_TC07_TC08_TC09_Check_Empty_Fields
-
     And user enters the "<name>" in the name textbox on the Dean Management page
     And user enters the "<surname>" in the surname textbox on the Dean Management page
     And user enters the "<birth place>" in the birth place textbox on the Dean Management page
@@ -51,7 +49,6 @@ Feature: Admin Management Module
 
   @phoneNumberLessThan12charOnDeanMan
   Scenario Outline:TC10_Invalid_Phone_LessThan12char
-
     And user enters the valid value in the name textbox on the Dean Management page
     And user enters the valid value in the surname textbox on the Dean Management page
     And user enters the valid value in the birth place textbox on the Dean Management page
@@ -73,7 +70,6 @@ Feature: Admin Management Module
 
   @phoneNumberMoreThan12charAndInvalidValueOnDeanMan
   Scenario Outline:TC11_TC12_Invalid_Phone_MoreThan12char_AndInvalidValue
-
     And user enters the valid value in the name textbox on the Dean Management page
     And user enters the valid value in the surname textbox on the Dean Management page
     And user enters the valid value in the birth place textbox on the Dean Management page
@@ -100,7 +96,6 @@ Feature: Admin Management Module
 
   @invalidSSNOnDeanMan
   Scenario Outline:TC13_Invalid_SSN
-
     And user enters the valid value in the name textbox on the Dean Management page
     And user enters the valid value in the surname textbox on the Dean Management page
     And user enters the valid value in the birth place textbox on the Dean Management page
@@ -125,7 +120,6 @@ Feature: Admin Management Module
 
   @passwordInvalidOnDeanMan
   Scenario: TC14_Invalid_Password_lessThan8Char
-
     And user enters the valid value in the name textbox on the Dean Management page
     And user enters the valid value in the surname textbox on the Dean Management page
     And user enters the valid value in the birth place textbox on the Dean Management page

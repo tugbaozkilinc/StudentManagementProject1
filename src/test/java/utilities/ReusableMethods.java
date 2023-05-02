@@ -22,9 +22,6 @@ import java.util.Random;
 import java.util.function.Function;
 
 public class ReusableMethods {
-
-   static HomePage homePage= new HomePage();
-   static  LoginPage loginPage= new LoginPage();
     private static int timeout = 5;
 
     public static String getScreenshot(String name) throws IOException {
@@ -343,18 +340,21 @@ public class ReusableMethods {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
     }
 
-    public static String generateCurrentDate() {
-        SimpleDateFormat formatter = new SimpleDateFormat("MMddyyyy");
+    public static String generateCurrentDate(String pattern) {
+        SimpleDateFormat formatter = new SimpleDateFormat(pattern);
         Date currentDate = new Date();
         return formatter.format(currentDate);
     }
 
-    public static String generateTomorrowsDate() {
+    public static String generateTomorrowsDate(String pattern) {
         LocalDate today = LocalDate.now();
         LocalDate tomorrow = today.plusDays(1);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMddyyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
         return tomorrow.format(formatter);
     }
+
+
+
 
 
 

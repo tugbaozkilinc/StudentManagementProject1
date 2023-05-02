@@ -51,4 +51,10 @@ public class ChooseLesson {
 
     @FindAll({@FindBy(xpath = "(//tbody)[1]//tr//td[1]//input")})
     public List<WebElement> checkboxList;
+
+
+
+
+
+
 }

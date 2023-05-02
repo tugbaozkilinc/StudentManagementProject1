@@ -9,14 +9,19 @@ import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
 public class Hooks {
+
     @Before
     public void setUp() {
-        //Driver.getDriver().get("https://www.managementonschools.com/");
+
+
+
+        //Driver.getDriver().get("http://139.59.159.36:3000/");
+
         BaseUrl.setUp();
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         Driver.closeDriver();
     }
 
@@ -25,11 +30,8 @@ public class Hooks {
         if (scenario.isFailed()) {
             final byte[] failedScreenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(failedScreenshot, "image/png", "failed-scenario-" + scenario.getName());
-            // Driver.closeDriver();
+            Driver.closeDriver();
         }
     }
 
 }
-
-
-

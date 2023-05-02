@@ -9,7 +9,6 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
-import pojos.admin_creat.AdminDataPojo;
 import pojos.admin_creat.AdminPojo;
 import pojos.admin_creat.Adminbody;
 
