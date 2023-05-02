@@ -22,9 +22,6 @@ import java.util.Random;
 import java.util.function.Function;
 
 public class ReusableMethods {
-
-   static HomePage homePage= new HomePage();
-   static  LoginPage loginPage= new LoginPage();
     private static int timeout = 5;
 
     public static String getScreenshot(String name) throws IOException {

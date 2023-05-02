@@ -29,7 +29,7 @@ public class CreateStudentBodyPojo {
         this.advisorTeacherId = 107;
         this.birthDay = "1990-12-12";
         this.birthPlace = "Tokat";
-        this.email = faker.internet().emailAddress();
+        this.email = "emin" + faker.number().digits(3) + "@gmail.com";
         this.fatherName = "Ali";
         this.gender = "MALE";
         this.motherName = "Ayse";
