@@ -15,7 +15,6 @@ import org.junit.runner.RunWith;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,
-        tags = "@create_student_db",
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
         dryRun = false
