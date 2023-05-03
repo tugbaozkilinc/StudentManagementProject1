@@ -9,6 +9,7 @@ import io.restassured.response.Response;
 import pojos.contactgetall.ContactGetAll;
 import pojos.contactgetall.ContactGetAllResponse;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
@@ -17,38 +18,39 @@ import static org.junit.Assert.assertEquals;
 public class ContactGetAllApi extends BaseUrl {
 
     Faker faker = new Faker();
-    static String email;
-    static String message;
-    static String name;
-    static String subject;
+    public static String contactGetAllEmail;
+    public static String contactGetAllMessage;
+    public static String contactGetAllName;
+    public static String contactGetAllSubject;
+    public static LocalDate contactGetAllDate;
     @When("user sends POST request and do the assertion for reading contact messages by dean")
     public void userSendsPOSTRequestAndDoTheAssertionForReadingContactMessagesByDean() {
-        email = "tugba" + faker.number().digits(3) + "@gmail.com";
-        message = faker.lorem().sentence(5);
-        name = "Wednesday";
-        subject = "The beauty related to the world";
+        contactGetAllDate = LocalDate.now();
+        contactGetAllEmail = "tugba" + faker.number().digits(3) + "@gmail.com";
+        contactGetAllMessage = faker.lorem().sentence(5);
+        contactGetAllName = "Wednesday";
+        contactGetAllSubject = "subject";
         spec.pathParams("first", "contactMessages", "second", "save");
-        ContactGetAll expectedData = new ContactGetAll(email, message, name, subject);
+        ContactGetAll expectedData = new ContactGetAll(contactGetAllEmail, contactGetAllMessage, contactGetAllName, contactGetAllSubject);
         Response response = given(spec).body(expectedData).contentType(ContentType.JSON).when().post("/{first}/{second}");
         ContactGetAllResponse actualData = response.as(ContactGetAllResponse.class);
-        System.out.println(email);
         assertEquals(200, response.statusCode());
         assertEquals("Contact Message Created Successfully", actualData.getMessage());
     }
 
     @When("user sends GET request and do the assertion for reading contact messages by dean")
     public void user_sends_get_request_and_do_the_assertion_for_reading_contact_messages_by_dean() {
-        spec.pathParams("first", "contactMessages", "second", "searchByEmail").queryParams("email", email);
+        spec.pathParams("first", "contactMessages", "second", "searchByEmail").queryParams("email", contactGetAllEmail);
         Response response = given(spec).when().get("/{first}/{second}");
         JsonPath jsonPath = response.jsonPath();
         List<String> nameList = jsonPath.getList("content.name");
-        assert nameList.contains(name);
+        assert nameList.contains(contactGetAllName);
         List<String> emailList = jsonPath.getList("content.email");
-        assert emailList.contains(email);
+        assert emailList.contains(contactGetAllEmail);
         List<String> subjectList = jsonPath.getList("content.subject");
-        assert subjectList.contains(subject);
+        assert subjectList.contains(contactGetAllSubject);
         List<String> messageList = jsonPath.getList("content.message");
-        assert messageList.contains(message);
+        assert messageList.contains(contactGetAllMessage);
     }
 
 }
