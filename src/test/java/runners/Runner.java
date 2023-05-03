@@ -16,10 +16,7 @@ import org.junit.runner.RunWith;
         },
         monochrome = true,
         features = "./src/test/resources/features",
-        glue = {"stepdefinitions", "hooks"},
-        tags = "@vicedean_create_teacher_api",
-
-
+        glue = {"stepdefinitions","hooks"},
         dryRun = false
 )
 public class Runner {
