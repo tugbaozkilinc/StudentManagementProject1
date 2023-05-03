@@ -46,12 +46,15 @@ public class ChooseLesson {
     @FindBy(xpath = "//*[text()='Lesson added to Student']")
     public WebElement lessonAddedAlert;
 
-
     @FindAll({@FindBy(xpath = "(//tbody)[1]//tr//td[2]//span")})
     public List<WebElement> lessonList;
 
     @FindAll({@FindBy(xpath = "(//tbody)[1]//tr//td[1]//input")})
     public List<WebElement> checkboxList;
+
+
+
+
 
 
 }
