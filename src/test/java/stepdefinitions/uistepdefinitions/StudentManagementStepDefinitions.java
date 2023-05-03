@@ -24,6 +24,10 @@ public class StudentManagementStepDefinitions {
     MainMenu mainMenu = new MainMenu();
     StudentManagement studentManagement = new StudentManagement();
     Faker faker = new Faker(Locale.US);
+    static public String lastStudentNumber_US15_US25;
+    static public String lastStudentName_US15_US25;
+    static public String lastStudentPhoneNumber_US15_US25;
+    static public String lastStudentUsername_US15_US25;
 
     @When("user clicks the Student Management on the menu")
     public void user_clicks_the_student_management_on_the_menu() {
@@ -40,7 +44,7 @@ public class StudentManagementStepDefinitions {
 
     @When("user enters the email in the email text box")
     public void user_enters_the_email_in_the_email_text_box() {
-        studentManagement.emailTextBox.sendKeys(faker.internet().emailAddress());
+        studentManagement.emailTextBox.sendKeys("emin" + faker.number().digits(4) + "@gmail.com");
     }
 
     @When("user enters the father name in the father name text box")
@@ -183,9 +187,27 @@ public class StudentManagementStepDefinitions {
     public void user_enters_the_father_name_in_the_father_name_text_box(String string) {
         studentManagement.fatherNameTextBox.sendKeys(string);
     }
+
     @When("user enters the mother name {string} in the mother name text box")
     public void user_enters_the_mother_name_in_the_mother_name_text_box(String string) {
         studentManagement.motherNameTextBox.sendKeys(string);
     }
+
+    @And("user gets the last generated student info")
+    public void userGetsTheLastGeneratedStudentInfo() {
+        waitFor(2);
+        clickWithJS(studentManagement.paginationLastPageButton);
+        waitFor(2);
+
+        List<WebElement> lastRowElements = studentManagement.studentListLastRowElementsList;
+        lastStudentNumber_US15_US25 = lastRowElements.get(0).getText();
+        lastStudentName_US15_US25 = lastRowElements.get(1).getText();
+        lastStudentPhoneNumber_US15_US25 = lastRowElements.get(2).getText();
+        lastStudentUsername_US15_US25 = lastRowElements.get(4).getText();
+    }
+
+
+
+
 
 }
