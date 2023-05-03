@@ -1,28 +1,29 @@
-package pojos.contactgetall;
+package pojos.vicedeanmanagement;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContactGetAllResponse {
+public class TeacherActualData {
 
-    private ContactGetAllObject object;
+    private TeacherData object;
     private String message;
     private String httpStatus;
 
-    public ContactGetAllResponse() {
+    public TeacherActualData() {
     }
 
-    public ContactGetAllResponse(ContactGetAllObject object, String message, String httpStatus) {
+    public TeacherActualData(TeacherData object, String message, String httpStatus) {
         this.object = object;
         this.message = message;
         this.httpStatus = httpStatus;
     }
 
-    public ContactGetAllObject getObject() {
+    public TeacherData getObject() {
         return object;
     }
 
-    public void setObject(ContactGetAllObject object) {
+    public void setObject(TeacherData object) {
         this.object = object;
     }
 
@@ -44,11 +45,10 @@ public class ContactGetAllResponse {
 
     @Override
     public String toString() {
-        return "{" +
+        return "TeacherActualData{" +
                 "object=" + object +
                 ", message='" + message + '\'' +
                 ", httpStatus='" + httpStatus + '\'' +
                 '}';
     }
-
 }
