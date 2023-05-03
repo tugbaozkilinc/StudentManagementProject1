@@ -23,14 +23,15 @@ public class ContactGetAllApi extends BaseUrl {
     static String subject;
     @When("user sends POST request and do the assertion for reading contact messages by dean")
     public void userSendsPOSTRequestAndDoTheAssertionForReadingContactMessagesByDean() {
-        email = faker.internet().emailAddress();
+        email = "tugba" + faker.number().digits(3) + "@gmail.com";
         message = faker.lorem().sentence(5);
-        name = faker.name().fullName();
-        subject = "The beauty";
+        name = "Wednesday";
+        subject = "The beauty related to the world";
         spec.pathParams("first", "contactMessages", "second", "save");
         ContactGetAll expectedData = new ContactGetAll(email, message, name, subject);
         Response response = given(spec).body(expectedData).contentType(ContentType.JSON).when().post("/{first}/{second}");
         ContactGetAllResponse actualData = response.as(ContactGetAllResponse.class);
+        System.out.println(email);
         assertEquals(200, response.statusCode());
         assertEquals("Contact Message Created Successfully", actualData.getMessage());
     }
