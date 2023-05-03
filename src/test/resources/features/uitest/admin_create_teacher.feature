@@ -20,9 +20,9 @@ Feature: admin_sohuld_be_create_teacher
     And user enters the valid value in the Password textbox
     And user clicks the register submit button
     Then user verifies that the creation is succesfull
+
   @tc02
   Scenario: TC02_Verifying_that_lesson_cannot_be_left_blank
-
     And user login as Admin
     And user clicks the menu button
     And user clicks the Teacher Management
@@ -41,7 +41,6 @@ Feature: admin_sohuld_be_create_teacher
 
   @left_blank
   Scenario Outline: TC03_Verifying_that_"<field>"_cannot_be_left_blank
-
     And user login as Admin
     And user clicks the menu button
     And user clicks the Teacher Management
@@ -71,7 +70,6 @@ Feature: admin_sohuld_be_create_teacher
 
   @space
   Scenario Outline: TC04_Verifying_that_"<field>"_cannot_contain_only_space
-
     And user login as Admin
     And user clicks the menu button
     And user clicks the Teacher Management

@@ -1,7 +1,7 @@
 @us12
 Feature: Vice dean should be able to create syllabus
 
-  @viceDeanCreateSyllabusTest
+  @viceDeanCreateSyllabusTest @smoke
   Scenario: TC01 Vice dean should create syllabus
     Given user login as Vice Dean
     And user clicks the Menu button

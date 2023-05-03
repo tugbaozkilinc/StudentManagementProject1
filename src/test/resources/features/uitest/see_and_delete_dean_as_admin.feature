@@ -7,10 +7,8 @@ Feature:Admin Management Edit Module
     And user clicks the Dean Management button on the menu
 
 
-
   @verifyDeanManagementHeader
   Scenario:TC01_Verify_Headers
-
     And user adds dean with valid values
     Then user verifies Name Surname header on Dean List
     Then user verifies Gender header on Dean List
@@ -21,7 +19,6 @@ Feature:Admin Management Edit Module
 
   @editNameOnDeanMan
   Scenario:TC02_EditName_DeanMan
-
     And user selects last Dean from Dean List
     And user clicks Edit button on Dean Management Page
     And user edits name field on the Edit Dean Page
@@ -33,7 +30,6 @@ Feature:Admin Management Edit Module
 
   @editSurnameOnDeanMan
   Scenario:TC03_EditSurname_DeanMan
-
     And user selects last Dean from Dean List
     And user clicks Edit button on Dean Management Page
     And user edits surname field on the Edit Dean Page
@@ -45,7 +41,6 @@ Feature:Admin Management Edit Module
 
   @editBirthPlaceOnDeanMan
   Scenario:TC04_EditBirthPlace_DeanMan
-
     And user selects last Dean from Dean List
     And user clicks Edit button on Dean Management Page
     And user edits birth place field on the Edit Dean Page
@@ -55,10 +50,8 @@ Feature:Admin Management Edit Module
     Then user verifies "Dean updated Successful" alert message
 
 
-
   @editPhoneOnDeanMan
   Scenario:TC05_EditPhone_DeanMan
-
     And user selects last Dean from Dean List
     And user clicks Edit button on Dean Management Page
     And user edits phone field on the Edit Dean Page
@@ -70,7 +63,6 @@ Feature:Admin Management Edit Module
 
   @editSSNOnDeanMan
   Scenario:TC06_EditSSN_DeanMan
-
     And user selects last Dean from Dean List
     And user clicks Edit button on Dean Management Page
     And user edits ssn field on the Edit Dean Page
@@ -82,7 +74,6 @@ Feature:Admin Management Edit Module
 
   @editUserNameOnDeanMan
   Scenario:TC07_EditUsername_DeanMan
-
     And user selects last Dean from Dean List
     And user clicks Edit button on Dean Management Page
     And user edits username field on the Edit Dean Page
