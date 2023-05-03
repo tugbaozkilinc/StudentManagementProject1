@@ -22,9 +22,6 @@ import java.util.Random;
 import java.util.function.Function;
 
 public class ReusableMethods {
-
-   static HomePage homePage= new HomePage();
-   static  LoginPage loginPage= new LoginPage();
     private static int timeout = 5;
 
     public static String getScreenshot(String name) throws IOException {
@@ -307,6 +304,10 @@ public class ReusableMethods {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
 
+    public static void scrollWithJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
     public static void clickWithJSAsList(List<WebElement> elements) {
         for (WebElement each : elements) {
             ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", waitForVisibility(each, 5));
@@ -355,6 +356,12 @@ public class ReusableMethods {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
         return tomorrow.format(formatter);
     }
+
+
+
+
+
+
 
 
 

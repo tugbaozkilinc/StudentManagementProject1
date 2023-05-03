@@ -94,22 +94,22 @@ public class StudentManagement {
     @FindBy(xpath = "//*[@id='password']/following-sibling::div[@class='invalid-feedback']")
     public WebElement warningTextUnderPasswordTextBox;
 
-    @FindBy(xpath = "//*[@class='col']//ul//li[4]")
+    @FindBy(xpath = "//span[normalize-space()='»']")
     public WebElement paginationLastPageButton;
 
-    @FindBy(xpath = "//*[@class='col']//ul//li[1]")
-    public WebElement paginationFirstPageButton;
-
-    @FindBy(xpath = "//*[@class='col']//ul//li[3]")
-    public WebElement paginationNextPageButton;
-
-    @FindBy(xpath = "//*[@class='col']//ul//li[2]")
-    public WebElement paginationPreviousPageButton;
-
-    @FindAll({@FindBy(xpath = "//*[@class='table-responsive']//tbody//tr//td[1]")})
+    @FindAll({@FindBy(xpath = "//*[@class='table-responsive']//tbody//tr//td[1]//span")})
     public List<WebElement> studentNumbersListOnCurrentPage;
 
     @FindBy(xpath = "//h5[normalize-space()='Student List']")
     public WebElement studentListHeader;
+
+    @FindAll({@FindBy(xpath = "//*[@class='table-responsive']//tbody//tr")})
+    public List<WebElement> studentListRows;
+
+    @FindAll({@FindBy(xpath = "(//*[@class='table-responsive']//tbody//tr)[last()]//td")})
+    public List<WebElement> studentListLastRowElementsList;
+
+
+
 
 }
