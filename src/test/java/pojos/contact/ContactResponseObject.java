@@ -3,23 +3,23 @@ package pojos.contact;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContactPostPojo {
+public class ContactResponseObject {
 
     private String name;
     private String email;
     private String subject;
     private String message;
+    private String date;
 
-
-
-    public ContactPostPojo() {
+    public ContactResponseObject() {
     }
 
-    public ContactPostPojo(String name, String email, String subject, String message) {
+    public ContactResponseObject(String name, String email, String subject, String message, String date) {
         this.name = name;
         this.email = email;
         this.subject = subject;
         this.message = message;
+        this.date = date;
     }
 
     public String getName() {
@@ -54,13 +54,22 @@ public class ContactPostPojo {
         this.message = message;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
-        return "ContactPostPojo{" +
+        return "ContactResponseObject{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", subject='" + subject + '\'' +
                 ", message='" + message + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
 }

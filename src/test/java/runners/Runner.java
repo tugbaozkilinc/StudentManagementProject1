@@ -18,6 +18,7 @@ import org.junit.runner.RunWith;
 
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
+        tags = "@contact_validation_by_empty_values_api",
         dryRun = false
 )
 public class Runner {
