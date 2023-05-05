@@ -12,13 +12,9 @@ import org.junit.Assert;
 import pojos.contact.ContactNegativeResponse;
 import pojos.contact.ContactPostPojo;
 import pojos.contact.ContactResponsePojo;
-
-import java.time.LocalDate;
-import java.util.List;
 import java.util.Map;
 
-
-public class ContactApi extends BaseUrl {
+public class ContactStepDefsApi extends BaseUrl {
 
     private static String name;
     private static String email;
@@ -29,20 +25,14 @@ public class ContactApi extends BaseUrl {
 
     @When("user sends the POST request to send a message_US03")
     public void user_sends_the_post_request_to_send_a_message_us03() {
-        createName();
-        createEMail();
-        createSubject();
-        createMessage();
-
         //contactMessages/save
+
         spec.pathParams("first", "contactMessages","second","save");
 
         // Expected Data
-
-        ContactPostPojo expectedData = new ContactPostPojo(name,email,subject,message);
-
+        ContactPostPojo expectedData = createContactPostPojo();
         response = RestAssured.given().spec(spec).body(expectedData).contentType(ContentType.JSON).when().post("{first}/{second}");
-        response.prettyPrint();
+
     }
     @Then("user gets the response and do assertion_US03")
     public void user_gets_the_response_and_do_assertion_us03() {
@@ -79,12 +69,9 @@ public class ContactApi extends BaseUrl {
 
         spec.pathParams("first", "contactMessages","second","searchBySubject").queryParam("subject", subject);
         response = RestAssured.given(spec).get("{first}/{second}");
-        response.prettyPrint();
 
         JsonPath jsonPath = response.jsonPath();
         Map<Object, Object> actualData = jsonPath.getMap("content[0]");
-        System.out.println("actualData = " + actualData);
-
 
         Assert.assertEquals(name,actualData.get("name"));
         Assert.assertEquals(email,actualData.get("email"));
@@ -96,35 +83,32 @@ public class ContactApi extends BaseUrl {
 
     @When("user sends the POST request to send a message by empty {string} and sees the {string} US03")
     public void user_sends_the_post_request_to_send_a_message_by_empty_and_sees_the_us03(String value, String errorMessage) {
-        createName();
-        createEMail();
-        createSubject();
-        createMessage();
 
+        ContactPostPojo expectedData = createContactPostPojo();
 
         spec.pathParams("first", "contactMessages","second","save");
 
         if (value.equalsIgnoreCase("name")){
-            ContactPostPojo expectedData = new ContactPostPojo(null,email,subject,message);
+            expectedData.setName(null);
             response = RestAssured.given().spec(spec).body(expectedData).when().post("{first}/{second}");
             JsonPath jsonPath = response.jsonPath();
             Assert.assertEquals(errorMessage, jsonPath.getString("validations.name"));
         }
         else if (value.equalsIgnoreCase("email")){
-            ContactPostPojo expectedData = new ContactPostPojo(name,null,subject,message);
+            expectedData.setEmail(null);
             response = RestAssured.given().spec(spec).body(expectedData).when().post("{first}/{second}");
             JsonPath jsonPath = response.jsonPath();
             Assert.assertEquals(errorMessage, jsonPath.getString("validations.email"));
         }
 
         else if (value.equalsIgnoreCase("subject")){
-            ContactPostPojo expectedData = new ContactPostPojo(name,email,null,message);
+            expectedData.setSubject(null);
             response = RestAssured.given().spec(spec).body(expectedData).when().post("{first}/{second}");
             JsonPath jsonPath = response.jsonPath();
             Assert.assertEquals(errorMessage, jsonPath.getString("validations.subject"));
         }
         else if (value.equalsIgnoreCase("message")){
-            ContactPostPojo expectedData = new ContactPostPojo(name,email,subject,null);
+            expectedData.setMessage(null);
             response = RestAssured.given().spec(spec).body(expectedData).when().post("{first}/{second}");
             JsonPath jsonPath = response.jsonPath();
             Assert.assertEquals(errorMessage, jsonPath.getString("validations.message").trim());
@@ -138,18 +122,11 @@ public class ContactApi extends BaseUrl {
     @When("user sends the POST request to send a message by invalid {string} US03")
     public void user_sends_the_post_request_to_send_a_message_by_invalid_us03(String string) {
             //{{baseUrl}}/contactMessages/save
-        createName();
-        createSubject();
-        createMessage();
 
         spec.pathParams("first", "contactMessages","second","save");
-
-        ContactPostPojo expectedData = new ContactPostPojo(name,string,subject,message);
-
+        ContactPostPojo expectedData = createContactPostPojo();
+        expectedData.setEmail(string);
         response = RestAssured.given(spec).body(expectedData).when().post("{first}/{second}");
-        response.prettyPrint();
-
-
 
     }
     @Then("user gets the response and sees the {string} US03")
@@ -160,29 +137,9 @@ public class ContactApi extends BaseUrl {
         Assert.assertEquals(400, actualData.getStatusCode());
         Assert.assertEquals("/contactMessages/save", actualData.getPath());
         Assert.assertEquals(string, actualData.getValidations().getEmail());
-
-
-
-
-
     }
 
 
-    public static String createName(){
-        return name = faker.regexify("[A-Za-z]{7}").toUpperCase();
-    }
-
-    public static String createEMail(){
-       return email = "team09" + faker.number().digits(4) + "@gmail.com";
-    }
-
-    public static String createSubject(){
-        return subject = "Subject " + faker.lorem().characters(16);
-    }
-
-    public static String createMessage(){
-        return message = faker.lorem().sentence(3);
-    }
 
     public static ContactPostPojo createContactPostPojo() {
         Faker faker = new Faker();
