@@ -6,6 +6,7 @@ public class DBReusableMethods {
 
     private static Connection connection;
     private static Statement statement;
+    private static ResultSet resultSet;
     public static Connection connectToDatabase(){
         try {
             connection = DriverManager.getConnection("jdbc:postgresql://164.92.252.42:5432/school_management", "select_user", "43w5ijfso");

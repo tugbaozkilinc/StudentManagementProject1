@@ -17,6 +17,5 @@ import org.junit.runner.RunWith;
         features = "@target/failed_scenarios.txt",
         glue = {"stepdefinitions", "hooks"}
 )
-
 public class FailedRunner {
 }
