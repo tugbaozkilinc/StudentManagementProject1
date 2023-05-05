@@ -7,7 +7,7 @@ Feature: Admin Management Module
     And user clicks the Dean Management button on the menu
 
 
-  @positiveAddDeanAsAdmin
+  @positiveAddDeanAsAdmin @smoke
   Scenario:TC01_Add_Dean_As_Admin
     And user enters the valid value in the name textbox on the Dean Management page
     And user enters the valid value in the surname textbox on the Dean Management page
@@ -21,7 +21,7 @@ Feature: Admin Management Module
     Given user clicks the submit button on the Dean Management page
     Then user verifies "Dean Saved" alert message
 
-  @leavingTheFieldBlankOnDeanMan
+  @leavingTheFieldBlankOnDeanMan @smoke
   Scenario Outline:TC02_TC03_TC04_TC05_TC06_TC07_TC08_TC09_Check_Empty_Fields
     And user enters the "<name>" in the name textbox on the Dean Management page
     And user enters the "<surname>" in the surname textbox on the Dean Management page
@@ -47,7 +47,7 @@ Feature: Admin Management Module
       | Will | Smith   | Miami       | 766-565-7654 | 12121989      | 756-45-5465 | WillSmith01 |           |
 
 
-  @phoneNumberLessThan12charOnDeanMan
+  @phoneNumberLessThan12charOnDeanMan @smoke
   Scenario Outline:TC10_Invalid_Phone_LessThan12char
     And user enters the valid value in the name textbox on the Dean Management page
     And user enters the valid value in the surname textbox on the Dean Management page
