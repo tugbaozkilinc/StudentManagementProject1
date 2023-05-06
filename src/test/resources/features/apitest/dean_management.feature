@@ -1,4 +1,4 @@
-@deanManagementAPI
+@deanManagementAPI @api
 Feature: Post Request Dean
 
 
