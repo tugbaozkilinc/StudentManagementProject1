@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
-        tags = "@Tc01_Guest_User_Delete_Validation",
+        tags = "@contact_validation_by_empty_values_api",
         dryRun = false
 )
 public class Runner {
