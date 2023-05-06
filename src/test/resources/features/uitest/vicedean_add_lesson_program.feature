@@ -1,3 +1,4 @@
+@fail_scenerios
 Feature: US10 vice dean create lesson program
 
   Background:
@@ -18,7 +19,7 @@ Feature: US10 vice dean create lesson program
     And user enter stop time
   #  And user click submit button
     Then user see create lesson program
-
+  @regressiontest
   Scenario: TC02
     And user does not choose choose lesson textbox
     And user click valid value choose Day
@@ -27,7 +28,7 @@ Feature: US10 vice dean create lesson program
     And user enter stop time
  # And user click submit button
     Then user see required message
-
+  @smoketest
   Scenario: TC03
     And user select choose lesson textbox
     And user don't click valid value choose Day
@@ -36,7 +37,7 @@ Feature: US10 vice dean create lesson program
     And user enter stop time
  # And user click submit button
     Then user see required message
-
+  @testdeneme
   Scenario: TC04
     And user select choose lesson textbox
     And user click valid value choose Day
