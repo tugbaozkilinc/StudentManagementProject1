@@ -1,6 +1,5 @@
 package pojos.deanmanagementpojo;
 
-
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
