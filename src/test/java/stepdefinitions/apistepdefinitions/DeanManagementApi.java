@@ -14,22 +14,23 @@ import static io.restassured.RestAssured.given;
 public class DeanManagementApi {
 
 
-    Response response;
+    public static Response response;
     public static Integer deanID;
-    DeanObjectPojo expectedData;
+    public static DeanObjectPojo expectedData;
+    public static DeanResponsePojo actualData;
 
 
     @Given("user sends post request for Dean")
     public void user_sends_post_request_for_dean() {
         setSpecForDeanPost();
         expectedData = new DeanObjectPojo();
-        response = given(spec).body(expectedData).when().post("/{first}/{second}");
+        getResponse();
     }
 
 
     @Then("user gets the dean post request response and assert {string} and {string}")
     public void userGetsTheDeanPostRequestResponseAndAssertAnd(String arg0, String arg1) {
-        DeanResponsePojo actualData = response.as(DeanResponsePojo.class);
+        actualData = response.as(DeanResponsePojo.class);
         deanID = actualData.getObject().getUserId();
 
         Assert.assertEquals(200, response.getStatusCode());
@@ -51,7 +52,7 @@ public class DeanManagementApi {
         setSpecForDeanPost();
         expectedData = new DeanObjectPojo();
         expectedData.setBirthDay(arg0);
-        response = given(spec).body(expectedData).when().post("/{first}/{second}");
+        getResponse();
     }
 
     @Then("user gets the dean post request response and assert message {string} DateOfBirth")
@@ -67,7 +68,7 @@ public class DeanManagementApi {
         setSpecForDeanPost();
         expectedData = new DeanObjectPojo();
         expectedData.setPassword(password);
-        response = given(spec).body(expectedData).when().post("/{first}/{second}");
+        getResponse();
     }
 
 
@@ -84,7 +85,7 @@ public class DeanManagementApi {
         setSpecForDeanPost();
         expectedData = new DeanObjectPojo();
         expectedData.setPhoneNumber(arg0);
-        response = given(spec).body(expectedData).when().post("/{first}/{second}");
+        getResponse();
     }
 
     @Then("user gets the dean post request response and assert message {string}  or {string} SSN")
@@ -103,7 +104,7 @@ public class DeanManagementApi {
         setSpecForDeanPost();
         expectedData = new DeanObjectPojo();
         expectedData.setSsn(arg0);
-        response = given(spec).body(expectedData).when().post("/{first}/{second}");
+        getResponse();
     }
 
     @Then("user gets the dean post request response and assert message {string} SSN")
@@ -118,4 +119,61 @@ public class DeanManagementApi {
                 "second", "save");
     }
 
+
+    private void getResponse() {
+        response = given(spec).body(expectedData).when().post("/{first}/{second}");
+    }
+
+//........................Edit Dean..................
+
+
+    @Given("user sends put request for Dean name {string}")
+    public void userSendsPutRequestForDeanName(String name) {
+        spec.pathParams("first","dean","second","update","third",deanID);
+        expectedData = new DeanObjectPojo();
+        expectedData.setName(name);
+        response = given(spec).body(expectedData).when().put("/{first}/{second}/{third}");
+    }
+
+
+
+    @Given("user sends put request for Dean Username {string}")
+    public void userSendsPutRequestForDeanUsername(String username) {
+        spec.pathParams("first","dean","second","update","third",deanID);
+        expectedData = new DeanObjectPojo();
+        expectedData.setUsername(username);
+        response = given(spec).body(expectedData).when().put("/{first}/{second}/{third}");
+    }
+
+
+    @Given("user sends put request for Dean Surname {string}")
+    public void userSendsPutRequestForDeanSurname(String arg0) {
+        spec.pathParams("first","dean","second","update","third",deanID);
+        expectedData = new DeanObjectPojo();
+        expectedData.setSurname(arg0);
+        response = given(spec).body(expectedData).when().put("/{first}/{second}/{third}");
+    }
+
+    @Given("user sends put request for Dean Birthday {string}")
+    public void userSendsPutRequestForDeanBirthday(String arg0) {
+        spec.pathParams("first","dean","second","update","third",deanID);
+        expectedData = new DeanObjectPojo();
+        expectedData.setBirthDay(arg0);
+        response = given(spec).body(expectedData).when().put("/{first}/{second}/{third}");
+    }
+
+    @Given("user sends delete request for dean")
+    public void userSendsDeleteRequestForDean() {
+        spec.pathParams("first","dean","second","delete","third",deanID);
+        expectedData = new DeanObjectPojo();
+        response = given(spec).when().delete("/{first}/{second}/{third}");
+    }
+
+
+    @Then("user gets the dean request response and assert {string}")
+    public void userGetsTheDeanRequestResponseAndAssert(String arg0) {
+        DeanResponsePojo deanResponsePojo = response.as(DeanResponsePojo.class);
+        Assert.assertEquals("OK",deanResponsePojo.getHttpStatus());
+        Assert.assertEquals(arg0,deanResponsePojo.getMessage());
+    }
 }

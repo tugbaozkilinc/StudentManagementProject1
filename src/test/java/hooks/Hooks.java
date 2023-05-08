@@ -10,9 +10,11 @@ import utilities.Driver;
 
 public class Hooks {
 
+
     @Before("@ui")
     public void setUpUI() {
         Driver.getDriver().get("http://139.59.159.36:3000/");
+
     }
 
 
