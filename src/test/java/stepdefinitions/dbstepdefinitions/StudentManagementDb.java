@@ -3,7 +3,10 @@ package stepdefinitions.dbstepdefinitions;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import stepdefinitions.apistepdefinitions.StudentManagementApi;
+
 import java.sql.*;
+
 import static stepdefinitions.uistepdefinitions.StudentManagementStepDefinitions.*;
 import static utilities.DBReusableMethods.*;
 
@@ -14,6 +17,7 @@ public class StudentManagementDb {
     public void user_sends_the_query_with_the_student_number_to_the_database_us15_us25() throws SQLException {
         connectToDatabase();
         Statement statement = createStatement();
+        System.out.println(lastStudentNumber_US15_US25);
         resultSet = statement.executeQuery("select * from student where student_number =" + lastStudentNumber_US15_US25);
     }
 
@@ -25,6 +29,10 @@ public class StudentManagementDb {
             Assert.assertEquals(lastStudentName_US15_US25, resultSet.getString("name") + " " + resultSet.getString("surname"));
             Assert.assertEquals(lastStudentPhoneNumber_US15_US25, resultSet.getString("phone_number"));
             Assert.assertEquals(lastStudentUsername_US15_US25, resultSet.getString("username"));
+
+            StudentManagementApi.studentUserId = resultSet.getInt("id");
+            System.out.println(StudentManagementApi.studentUserId);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -15,11 +15,6 @@ public class Hooks {
         Driver.getDriver().get("http://139.59.159.36:3000/");
     }
 
-    @After("@ui")
-    public void tearDown() {
-        Driver.closeDriver();
-    }
-
 
     @Before("@api")
     public void setUpApi(){
@@ -31,8 +26,8 @@ public class Hooks {
         if (scenario.isFailed()) {
             final byte[] failedScreenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(failedScreenshot, "image/png", "failed-scenario-" + scenario.getName());
-            Driver.closeDriver();
         }
+        Driver.closeDriver();
     }
 
 

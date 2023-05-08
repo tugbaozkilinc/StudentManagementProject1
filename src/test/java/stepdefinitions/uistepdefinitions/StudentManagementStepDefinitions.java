@@ -65,7 +65,7 @@ public class StudentManagementStepDefinitions {
     @Then("user verifies that the student is created successfully")
     public void user_verifies_that_the_student_is_created_successfully() {
         waitForVisibility(studentManagement.alertMessage, 3);
-        Assert.assertEquals("Student saved Successfully", studentManagement.alertMessage.getText());
+        Assert.assertEquals("Student saved Successfullyyyyy", studentManagement.alertMessage.getText());
     }
 
     @Then("user verifies that the alert message says {string}")

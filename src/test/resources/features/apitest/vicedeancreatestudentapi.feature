@@ -1,4 +1,4 @@
-@vice_dean_create_student_api
+@vice_dean_create_student_api @api
 Feature: Vice Dean Student Creation
 
   Scenario: Vice Dean should be able to create student
