@@ -2,6 +2,7 @@
 Feature: StudentManagementEndToEnd
 
   Scenario: StudentManagementEndToEnd
+    #UI PART
     When user login as Vice Dean
     And user clicks the menu button
     And user clicks the Student Management on the menu
@@ -21,6 +22,8 @@ Feature: StudentManagementEndToEnd
     And user clicks the create student submit button
     Then user verifies that the student is created successfully
     When user gets the last generated student info
+    #DATABASE PART
     And user sends the query with the student number to the database_US15_US25
     Then user do the assertion_US15_US25
+    #API PART
     Then user do GET request with studentUserID to check if the student is created successfully

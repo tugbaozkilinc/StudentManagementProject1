@@ -17,7 +17,6 @@ public class Hooks {
 
     }
 
-
     @Before("@api")
     public void setUpApi(){
         BaseUrl.setUp();
