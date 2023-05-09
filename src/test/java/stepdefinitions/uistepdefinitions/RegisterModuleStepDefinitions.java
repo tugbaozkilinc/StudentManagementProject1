@@ -12,6 +12,8 @@ import utilities.ReusableMethods;
 
 import java.util.Locale;
 
+import static utilities.ReusableMethods.waitFor;
+
 public class RegisterModuleStepDefinitions {
 
     RegisterPage registerPage = new RegisterPage();
@@ -48,7 +50,8 @@ public class RegisterModuleStepDefinitions {
 
     @Given("user selects a gender")
     public void user_selects_a_gender() {
-        ReusableMethods.clickWithJS(registerPage.maleRadioButton);
+        registerPage.maleRadioButton.click();
+
     }
 
     @Given("user enters the date of birth in the date of birth text box")
