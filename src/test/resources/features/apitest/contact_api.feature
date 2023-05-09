@@ -40,7 +40,7 @@
         | t09InvalidMail       | Please enter valid email                   |
         | @gmail.com           | Please enter valid email                   |
       ##  | şiüğç@gmail.com      | Please enter valid email              |
-      ##  | abcd@gmail           | Please enter valid email                   |
+      ##  | abcd@gmail           | Please enter valid email                  |
 
 
 
