@@ -17,8 +17,8 @@ import org.junit.runner.RunWith;
         monochrome = true,
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","hooks"},
-        tags = "@contact_validation_by_empty_values_api",
-        dryRun = false
+        dryRun = false,
+        tags = "@e2e"
 )
 public class Runner {
 }

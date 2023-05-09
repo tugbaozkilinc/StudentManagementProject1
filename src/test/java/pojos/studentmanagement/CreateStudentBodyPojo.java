@@ -41,6 +41,22 @@ public class CreateStudentBodyPojo {
         this.username = faker.name().username();
     }
 
+    public CreateStudentBodyPojo(Integer advisorTeacherId, String birthDay, String birthPlace, String email, String fatherName, String gender, String motherName, String name, String password, String phoneNumber, String ssn, String surname, String username) {
+        this.advisorTeacherId = advisorTeacherId;
+        this.birthDay = birthDay;
+        this.birthPlace = birthPlace;
+        this.email = email;
+        this.fatherName = fatherName;
+        this.gender = gender;
+        this.motherName = motherName;
+        this.name = name;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.ssn = ssn;
+        this.surname = surname;
+        this.username = username;
+    }
+
     public Integer getAdvisorTeacherId() {
         return advisorTeacherId;
     }
