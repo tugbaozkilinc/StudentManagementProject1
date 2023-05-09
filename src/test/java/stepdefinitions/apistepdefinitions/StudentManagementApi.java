@@ -15,13 +15,13 @@ public class StudentManagementApi {
     Response response;
     CreateStudentBodyPojo body = new CreateStudentBodyPojo();
     CreateStudentResponsePojo actualData;
-    private static int userId;
+    public static int studentUserId;
 
     @When("user sends the POST request to create student as vice dean_(US15)")
     public void user_sends_the_post_request_to_create_student_as_vice_dean_us15() {
         spec.pathParams("first", "students", "second", "save");
         response = given(spec).body(body).when().post("/{first}/{second}");
-        userId = response.jsonPath().getInt("object.userId");
+        studentUserId = response.jsonPath().getInt("object.userId");
     }
 
     @Then("user gets the response and do assertion_(US15)")
@@ -44,11 +44,11 @@ public class StudentManagementApi {
 
     @Then("user sends GET request with userId to check if the student is created successfully_(US15)")
     public void userSendsGETRequestWithUserIdToCheckIfTheStudentIsCreatedSuccessfully_us15() {
-        spec.pathParams("first", "students", "second", "getStudentById").queryParam("id", userId);
+        spec.pathParams("first", "students", "second", "getStudentById").queryParam("id", studentUserId);
         response = given(spec).body(body).when().get("/{first}/{second}");
 
         Assert.assertEquals(200, response.statusCode());
-        Assert.assertEquals(userId, actualData.getObject().getUserId());
+        Assert.assertEquals(studentUserId, actualData.getObject().getUserId());
         Assert.assertEquals(body.getUsername(), actualData.getObject().getUsername());
         Assert.assertEquals(body.getName(), actualData.getObject().getName());
         Assert.assertEquals(body.getSurname(), actualData.getObject().getSurname());
@@ -65,7 +65,7 @@ public class StudentManagementApi {
     public void user_sends_the_post_request_to_create_student_as_admin_us25() {
         spec.pathParams("first", "students", "second", "save");
         response = given(spec).body(body).when().post("/{first}/{second}");
-        userId = response.jsonPath().getInt("object.userId");
+        studentUserId = response.jsonPath().getInt("object.userId");
     }
 
     @Then("user gets the response and do assertion_(US25)")
@@ -88,11 +88,11 @@ public class StudentManagementApi {
 
     @Then("user sends GET request with userId to check if the student is created successfully_(US25)")
     public void userSendsGETRequestWithUserIdToCheckIfTheStudentIsCreatedSuccessfully_us25() {
-        spec.pathParams("first", "students", "second", "getStudentById").queryParam("id", userId);
+        spec.pathParams("first", "students", "second", "getStudentById").queryParam("id", studentUserId);
         response = given(spec).body(body).when().get("/{first}/{second}");
 
         Assert.assertEquals(200, response.statusCode());
-        Assert.assertEquals(userId, actualData.getObject().getUserId());
+        Assert.assertEquals(studentUserId, actualData.getObject().getUserId());
         Assert.assertEquals(body.getUsername(), actualData.getObject().getUsername());
         Assert.assertEquals(body.getName(), actualData.getObject().getName());
         Assert.assertEquals(body.getSurname(), actualData.getObject().getSurname());
@@ -105,5 +105,14 @@ public class StudentManagementApi {
         Assert.assertTrue(actualData.getObject().isActive());
     }
 
+    @Then("user do GET request with studentUserID to check if the student is created successfully")
+    public void userDoGETRequestWithStudentUserIDToCheckIfTheStudentIsCreatedSuccessfully() {
+        spec.pathParams("first", "students", "second", "getStudentById").queryParam("id", studentUserId);
+        response = given(spec).when().get("/{first}/{second}");
+        Assert.assertEquals(200, response.statusCode());
+
+
+
+    }
 }
 

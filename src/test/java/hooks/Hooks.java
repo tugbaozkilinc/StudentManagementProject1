@@ -17,11 +17,6 @@ public class Hooks {
 
     }
 
-    @After("@ui")
-    public void tearDown() {
-        Driver.closeDriver();
-    }
-
 
     @Before("@api")
     public void setUpApi(){
@@ -33,8 +28,8 @@ public class Hooks {
         if (scenario.isFailed()) {
             final byte[] failedScreenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(failedScreenshot, "image/png", "failed-scenario-" + scenario.getName());
-            Driver.closeDriver();
         }
+        Driver.closeDriver();
     }
 
 

@@ -6,7 +6,7 @@ Feature: US015_creating_student_(vice_dean)
     And user clicks the menu button
     And user clicks the Student Management on the menu
 
-  @vice_dean_create_student_positive
+  @vice_dean_create_student_positive @ui
   Scenario: TC01_create_student_as_vice_dean_(Positive Test)
     And user selects the advisor teacher
     And user enters the name in the name text box

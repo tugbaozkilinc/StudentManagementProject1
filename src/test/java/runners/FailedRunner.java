@@ -18,7 +18,6 @@ import org.junit.runner.RunWith;
         glue = {"stepdefinitions", "hooks"},
         dryRun=false
 )
-
 public class FailedRunner {
 
 }
