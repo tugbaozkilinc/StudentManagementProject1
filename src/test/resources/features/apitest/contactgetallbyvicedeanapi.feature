@@ -1,4 +1,4 @@
-@vice_dean_message
+@vice_dean_message @api
 Feature: Vice Dean Messages Visibility
 
   Scenario: Vice Dean should see all messages

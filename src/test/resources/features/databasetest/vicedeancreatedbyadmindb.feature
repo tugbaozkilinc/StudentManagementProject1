@@ -1,4 +1,4 @@
-@vice_dean_created_by_admin_db
+@vice_dean_created_by_admin_db @db
 Feature: US23 Admin should be able to create vice dean account db
 
   Scenario: Creating vice dean account by admin (db test)

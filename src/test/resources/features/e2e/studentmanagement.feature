@@ -1,4 +1,4 @@
-@studentmanagemente2e @e2e @ui @api
+@studentmanagemente2e @e2e @ui
 Feature: StudentManagementEndToEnd
 
   Scenario: StudentManagementEndToEnd

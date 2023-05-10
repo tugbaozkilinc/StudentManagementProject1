@@ -1,4 +1,4 @@
-@contact_get_all_by_dean_api
+@contact_get_all_by_dean_api @api
 Feature: US07 Dean should be able to see the messages the users sent api
 
   @TC01_contact_get_all_by_dean_api

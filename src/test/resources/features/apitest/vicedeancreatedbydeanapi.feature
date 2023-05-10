@@ -1,4 +1,4 @@
-@vice_dean_created_by_dean_api
+@vice_dean_created_by_dean_api @api
 Feature: US06 Dean should be able to create vice dean account api
 
   @TC01_vice_dean_created_by_dean_api

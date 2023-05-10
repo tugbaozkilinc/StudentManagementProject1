@@ -1,4 +1,4 @@
-@vice_dean_created_by_admin_api
+@vice_dean_created_by_admin_api @api
 Feature: US23 Admin should be able to create vice dean account api
 
   @TC01_vice_dean_created_by_admin_api

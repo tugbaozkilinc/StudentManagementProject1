@@ -1,4 +1,4 @@
-@vicedean_create_teacher_api
+@vicedean_create_teacher_api @api
 Feature:Vicedean should be able to create a teacher
 
 

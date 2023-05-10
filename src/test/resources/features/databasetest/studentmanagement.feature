@@ -1,4 +1,4 @@
-@create_student_db
+@create_student_db @ui @db
 Feature: Student Creation database
 
   Scenario: Student creation database check

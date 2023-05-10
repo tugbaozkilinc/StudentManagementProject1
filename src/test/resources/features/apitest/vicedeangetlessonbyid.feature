@@ -1,4 +1,4 @@
-@ApiGetLessonByVicedean
+@ApiGetLessonByVicedean @api
   Feature: Get_LessonById
 
     Scenario: TC01_Vicedean_Lesson
