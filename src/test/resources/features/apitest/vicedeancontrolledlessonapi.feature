@@ -1,3 +1,4 @@
+@api
 Feature: US08 vicedean should be able to see lessons api
 
   @TC01_vicedeancontrolledlesson_api

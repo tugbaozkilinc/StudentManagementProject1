@@ -1,4 +1,4 @@
-@admin_api
+@admin_api @api
 Feature: AdminCreateApi
 
   Scenario:TC01_admin_test1

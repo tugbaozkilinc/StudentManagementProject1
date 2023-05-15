@@ -1,4 +1,4 @@
-@admin_create_student_api
+@admin_create_student_api @api
 Feature: Admin Student Creation
 
   Scenario: Admin should be able to create student

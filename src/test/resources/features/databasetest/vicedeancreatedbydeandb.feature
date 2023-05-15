@@ -1,4 +1,4 @@
-@vice_dean_created_by_dean_db
+@vice_dean_created_by_dean_db @db
 Feature: US06 Dean should be able to create vice dean account db
 
   Scenario: Creating vice dean account by dean (db test)

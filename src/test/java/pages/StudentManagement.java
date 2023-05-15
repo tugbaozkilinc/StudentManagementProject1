@@ -3,16 +3,10 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import utilities.Driver;
 
 import java.util.List;
 
-public class StudentManagement {
-
-    public StudentManagement() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+public class StudentManagement extends BasePage {
 
     @FindBy(id = "advisorTeacherId")
     public WebElement advisorTeacherDropdown;
