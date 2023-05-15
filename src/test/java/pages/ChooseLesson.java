@@ -1,21 +1,12 @@
 package pages;
 
-import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import utilities.ConfigReader;
-import utilities.Driver;
 
 import java.util.List;
 
-public class ChooseLesson {
-
-    public ChooseLesson() {
-        PageFactory.initElements(Driver.getDriver(), this);
-
-    }
+public class ChooseLesson extends BasePage {
 
     @FindBy(xpath = "(//*[.='Lesson'])[1]")
     public WebElement LessonText;
